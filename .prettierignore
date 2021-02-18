@@ -1,0 +1,4 @@
+*.lock
+.prettierignore
+LICENSE
+/dist

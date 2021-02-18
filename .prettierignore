@@ -1,0 +1,5 @@
+**/*.svg
+package.json
+*.lock
+.prettierignore
+LICENSE

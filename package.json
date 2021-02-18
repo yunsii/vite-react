@@ -34,18 +34,24 @@
     "node": ">=12.2.0"
   },
   "dependencies": {
-    "@vitjs/runtime": "^0.7.0",
     "@ant-design/icons": "^4.6.2",
+    "@ant-design/pro-form": "^1.60.0",
     "@ant-design/pro-layout": "^6.16.1",
+    "@vitjs/runtime": "^0.7.0",
     "ahooks": "^2.10.0",
     "antd": "^4.14.0",
     "classnames": "^2.2.6",
+    "concent": "^2.17.6",
+    "concent-plugin-loading": "^2.0.5",
+    "querystring": "^0.2.1",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "react-helmet-async": "^1.2.3",
+    "umi-request": "^1.4.0"
   },
   "devDependencies": {
-    "@types/babel__core": "^7.1.17",
     "@honkhonk/vite-plugin-svgr": "^1.1.0",
+    "@types/babel__core": "^7.1.17",
     "@types/classnames": "^2.2.11",
     "@types/node": "^14.14.37",
     "@types/react": "^17.0.0",
@@ -53,10 +59,10 @@
     "@typescript-eslint/parser": "^5.10.0",
     "@umijs/fabric": "^2.5.6",
     "@vitejs/plugin-react": "^1.1.1",
+    "@vitjs/vit": "^0.7.0",
     "cross-env": "^7.0.3",
     "eslint": "^7",
     "eslint-config-prettier": "^8.5.0",
-    "@vitjs/vit": "^0.7.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
     "husky": ">=6",
@@ -76,12 +82,12 @@
   "vite": {
     "optimizeDeps": {
       "include": [
-        "@vitjs/runtime",
         "@ant-design/icons",
         "@ant-design/icons/BulbOutlined",
         "@ant-design/icons/SmileOutlined",
         "@ant-design/icons/StarOutlined",
         "@ant-design/icons/UserOutlined",
+        "@ant-design/pro-form",
         "@ant-design/pro-layout",
         "@vitjs/runtime",
         "antd",
@@ -110,8 +116,13 @@
         "antd/es/tabs/style",
         "antd/es/typography/style",
         "classnames",
+        "concent",
+        "concent-plugin-loading",
+        "querystring",
         "react",
-        "react-dom"
+        "react-dom",
+        "react-helmet-async",
+        "umi-request"
       ]
     }
   }

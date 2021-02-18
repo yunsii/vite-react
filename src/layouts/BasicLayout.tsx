@@ -7,7 +7,8 @@ import { HomeOutlined } from '@ant-design/icons'
 import ProLayout from '@ant-design/pro-layout'
 import { history, Link, useLocation } from '@vitjs/runtime'
 
-import GlobalFooter from '@/containers/GlobalFooter'
+import GlobalFooter from '@/components/GlobalFooter'
+import RightContent from '@/components/GlobalHeader/RightContent'
 
 import defaultSettings from '../../config/defaultSettings'
 
@@ -25,6 +26,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
       logo='https://github.com/vitjs/vit/raw/master/icons/logo.svg'
       {...props}
       onMenuHeaderClick={() => history.push('/')}
+      rightContentRender={() => <RightContent />}
       menuItemRender={(menuItemProps, defaultDom) => {
         if (
           menuItemProps.isUrl ||

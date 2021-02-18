@@ -1,4 +1,4 @@
-import { Settings as LayoutSettings } from '@ant-design/pro-layout'
+import type { Settings as LayoutSettings } from '@ant-design/pro-layout'
 
 const Settings: LayoutSettings = {
   navTheme: 'light',

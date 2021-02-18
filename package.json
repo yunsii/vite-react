@@ -1,0 +1,115 @@
+{
+  "name": "vite-react",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "cross-env BROWSER=chrome vite --host",
+    "dev:force": "npm run dev -- --force",
+    "build": "vite build",
+    "serve": "vite preview --host",
+    "start": "npm run dev",
+    "lint": "npm run lint:js && npm run lint:prettier && npm run lint:prettier && npm run tsc",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "lint:prettier": "prettier -c --write \"src/**/*\" --end-of-line auto",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
+    "prettier": "prettier -c --write \"src/**/*\"",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --syntax less",
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
+  "engines": {
+    "node": ">=12.2.0"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "@ant-design/pro-layout": "^6.16.1",
+    "@vitjs/runtime": "^0.7.1",
+    "ahooks": "^2.10.0",
+    "antd": "^4.14.0",
+    "classnames": "^2.2.6",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "devDependencies": {
+    "@honkhonk/vite-plugin-svgr": "^1.1.0",
+    "@types/babel__core": "^7.1.17",
+    "@types/classnames": "^2.2.11",
+    "@types/node": "^14.14.37",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "@umijs/fabric": "^2.5.6",
+    "@vitejs/plugin-react": "^1.1.1",
+    "@vitjs/vit": "^0.7.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "husky": ">=6",
+    "less": "^4.1.1",
+    "lint-staged": ">=10",
+    "rollup-plugin-visualizer": "^5.5.2",
+    "typescript": "^4.2.4",
+    "unplugin-auto-import": "^0.6.6",
+    "vite": "^2.3.2",
+    "vite-plugin-imp": "^2.0.4",
+    "vite-plugin-optimize-persist": "^0.1.0",
+    "vite-plugin-package-config": "^0.1.0",
+    "vite-plugin-windicss": "^1.8.3",
+    "vite-tsconfig-paths": "^2.3.0",
+    "windicss": "^3.5.1"
+  },
+  "vite": {
+    "optimizeDeps": {
+      "include": [
+        "@ant-design/icons",
+        "@ant-design/icons/BulbOutlined",
+        "@ant-design/icons/SmileOutlined",
+        "@ant-design/icons/StarOutlined",
+        "@ant-design/icons/UserOutlined",
+        "@ant-design/pro-layout",
+        "@vitjs/runtime",
+        "antd",
+        "antd/es/alert/style",
+        "antd/es/avatar/style",
+        "antd/es/button/style",
+        "antd/es/card/style",
+        "antd/es/carousel/style",
+        "antd/es/cascader/style",
+        "antd/es/col/style",
+        "antd/es/collapse/style",
+        "antd/es/divider/style",
+        "antd/es/drawer/style",
+        "antd/es/dropdown/style",
+        "antd/es/menu/style",
+        "antd/es/message/style",
+        "antd/es/notification/style",
+        "antd/es/page-header/style",
+        "antd/es/rate/style",
+        "antd/es/row/style",
+        "antd/es/skeleton/style",
+        "antd/es/space/style",
+        "antd/es/spin/style",
+        "antd/es/steps/style",
+        "antd/es/table/style",
+        "antd/es/tabs/style",
+        "antd/es/typography/style",
+        "classnames",
+        "react",
+        "react-dom"
+      ]
+    }
+  }
+}

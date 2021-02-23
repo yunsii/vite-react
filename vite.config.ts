@@ -6,4 +6,7 @@ export default defineConfig({
   root: './src',
   base: '/vite-react/',
   plugins: [reactRefresh()],
+  server: {
+    open: true,
+  },
 });

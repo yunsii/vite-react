@@ -2,7 +2,7 @@ name: github pages
 on:
   push:
     branches:
-      - main # default branch
+      - master # default branch
 jobs:
   deploy:
     runs-on: ubuntu-18.04

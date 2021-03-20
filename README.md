@@ -27,7 +27,7 @@ vite@&#8203;2.0.1 之前配置 `server.open: true` 不能自动打开浏览器�
 
 #### 直接使用 lib/**/*.less 文件
 
-```
+```js
 vitePluginImp({
   libList: [
     {
@@ -43,7 +43,7 @@ vitePluginImp({
 
 #### 使用 lib/*/style/index.js
 
-```
+```js
 vitePluginImp({
   libList: [
     {
@@ -58,7 +58,7 @@ vitePluginImp({
 
 #### 最终方案
 
-```
+```js
 vitePluginImp({
   libList: [
     {

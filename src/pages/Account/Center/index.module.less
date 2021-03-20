@@ -1,0 +1,49 @@
+@import '~antd/es/style/themes/default.less';
+
+.avatarHolder {
+  margin-bottom: 24px;
+  text-align: center;
+
+  & > img {
+    width: 104px;
+    height: 104px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+  }
+
+  .name {
+    margin-bottom: 4px;
+    color: @heading-color;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.detail {
+  p {
+    position: relative;
+    margin-bottom: 8px;
+    padding-left: 26px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  i {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.tabsCard {
+  :global {
+    .ant-card-head {
+      padding: 0 16px;
+    }
+  }
+}

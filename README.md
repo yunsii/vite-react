@@ -1,6 +1,19 @@
 # Vite React
 
-Vite 从入门到放弃
+> Vite 从入门到放弃 ~
+
+尝试通过 Vite 构建一个类 Ant Design Pro 的项目，也就是从零搭建一个简单易用的中后台脚手架。
+
+## 技术栈
+
+- ahooks
+- @ant-design/pro-layout
+- antd
+- less
+- react-router-dom
+- react
+- typescript
+- vite
 
 ## Q & A
 

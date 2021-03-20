@@ -1,0 +1,91 @@
+/**
+ * Ant Design Pro v4 use `@ant-design/pro-layout` to handle Layout.
+ *
+ * @see You can view component api by: https://github.com/ant-design/ant-design-pro-layout
+ */
+import React, { useRef } from 'react';
+import type { MenuDataItem, BasicLayoutProps as ProLayoutProps } from '@ant-design/pro-layout';
+import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import { GithubOutlined, HomeOutlined } from '@ant-design/icons';
+
+import RightContent from '@/components/GlobalHeader/RightContent';
+import logo from '../assets/logo.svg';
+
+export type BasicLayoutProps = {
+  route: ProLayoutProps['route'];
+} & ProLayoutProps;
+
+const defaultFooterDom = (
+  <DefaultFooter
+    copyright={`${new Date().getFullYear()} theprimone 出品`}
+    links={[
+      {
+        key: 'github',
+        title: <GithubOutlined />,
+        href: 'https://github.com/theprimone/vite-react',
+        blankTarget: true,
+      },
+    ]}
+  />
+);
+
+const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
+  const { children } = props;
+
+  const menuDataRef = useRef<MenuDataItem[]>([]);
+  const history = useHistory();
+  const location = useLocation();
+
+  return (
+    <ProLayout
+      logo={logo}
+      title='Vite React'
+      {...props}
+      onMenuHeaderClick={() => history.push('/')}
+      menuItemRender={(menuItemProps, defaultDom) => {
+        if (
+          menuItemProps.isUrl ||
+          !menuItemProps.path ||
+          location.pathname === menuItemProps.path
+        ) {
+          return defaultDom;
+        }
+
+        return <Link to={menuItemProps.path}>{defaultDom}</Link>;
+      }}
+      rightContentRender={() => <RightContent />}
+      breadcrumbRender={(routers = []) => [
+        {
+          path: '/',
+          breadcrumbName: (<HomeOutlined />) as any,
+        },
+        ...routers,
+      ]}
+      itemRender={(route, params, routes, paths) => {
+        const first = routes.indexOf(route) === 0;
+        return first ? (
+          <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
+        ) : (
+          <span>{route.breadcrumbName}</span>
+        );
+      }}
+      footerRender={() => defaultFooterDom}
+      // menuDataRender={menuDataRender}
+      // rightContentRender={() => <RightContent />}
+      postMenuData={(menuData) => {
+        menuDataRef.current = menuData || [];
+        return menuData || [];
+      }}
+      // waterMarkProps={{
+      //   content: 'Ant Design Pro',
+      //   fontColor: 'rgba(24,144,255,0.15)',
+      // }}
+      fixSiderbar
+    >
+      {children}
+    </ProLayout>
+  );
+};
+
+export default BasicLayout;

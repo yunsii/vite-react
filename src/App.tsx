@@ -1,44 +1,68 @@
-import * as React from 'react';
+import React from 'react';
+import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
+import { SmileOutlined, UserOutlined } from '@ant-design/icons';
 
-import logo from './logo.svg';
-import './App.css';
+import BasicLayout from '@/layouts/BasicLayout';
+import Welcome from '@/pages/Welcome';
+import AccountCenter from '@/pages/Account/Center';
+import AccountSettings from '@/pages/Account/Settings';
 
-function App() {
-  const [count, setCount] = React.useState(0);
+export default function App() {
+  const history = useHistory();
+  const location = useLocation();
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button onClick={() => setCount((prevCount) => prevCount + 1)}>count is: {count}</button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className='App-link'
-            href='https://reactjs.org'
-            target='_blank'
-            rel='noopener noreferrer'
+    <div>
+      <Switch>
+        <Route path='/'>
+          <BasicLayout
+            history={history}
+            location={location}
+            route={{
+              path: '/',
+              routes: [
+                {
+                  path: '/welcome',
+                  icon: <SmileOutlined />,
+                  name: '欢迎页',
+                },
+                {
+                  path: '/account',
+                  icon: <UserOutlined />,
+                  name: '个人页',
+                  routes: [
+                    {
+                      path: '/account/center',
+                      name: '个人中心',
+                    },
+                    {
+                      path: '/account/settings',
+                      name: '个人设置',
+                    },
+                  ],
+                },
+              ],
+            }}
           >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className='App-link'
-            href='https://vitejs.dev/guide/features.html'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+            <Switch>
+              <Route path='/welcome'>
+                <Welcome />
+              </Route>
+              <Route path='/account'>
+                <Switch>
+                  <Route path='/account/center'>
+                    <AccountCenter />
+                  </Route>
+                  <Route path='/account/settings'>
+                    <AccountSettings />
+                  </Route>
+                </Switch>
+              </Route>
+              <Redirect to='/welcome' />
+            </Switch>
+          </BasicLayout>
+        </Route>
+      </Switch>
     </div>
   );
 }
-
-export default App;

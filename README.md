@@ -19,7 +19,7 @@
 
 ### 封装路由渲染函数
 
-参考 [Umi](https://github.com/umijs/umi/blob/master/packages/renderer-react/src/renderRoutes/renderRoutes.tsx#L163) 的路由渲染实现了 [renderRoutes](./core/renderRoutes/index.tsx#L87) 函数。
+参考 [Umi](https://github.com/umijs/umi/blob/master/packages/renderer-react/src/renderRoutes/renderRoutes.tsx#L163) 的路由渲染实现了 [renderRoutes](/src/core/renderRoutes/index.tsx#L87) 函数。
 
 ## Q & A
 

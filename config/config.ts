@@ -1,3 +1,3 @@
 export default {
-  base: '/vite-config/',
+  base: '/vite-react/',
 };

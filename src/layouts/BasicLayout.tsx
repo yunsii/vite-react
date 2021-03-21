@@ -31,8 +31,6 @@ const defaultFooterDom = (
 );
 
 const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
-  const { children } = props;
-
   const menuDataRef = useRef<MenuDataItem[]>([]);
   const history = useHistory();
   const location = useLocation();
@@ -51,7 +49,6 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
         ) {
           return defaultDom;
         }
-
         return <Link to={menuItemProps.path}>{defaultDom}</Link>;
       }}
       rightContentRender={() => <RightContent />}
@@ -71,8 +68,6 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
         );
       }}
       footerRender={() => defaultFooterDom}
-      // menuDataRender={menuDataRender}
-      // rightContentRender={() => <RightContent />}
       postMenuData={(menuData) => {
         menuDataRef.current = menuData || [];
         return menuData || [];
@@ -82,9 +77,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
       //   fontColor: 'rgba(24,144,255,0.15)',
       // }}
       fixSiderbar
-    >
-      {children}
-    </ProLayout>
+    />
   );
 };
 

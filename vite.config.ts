@@ -1,12 +1,14 @@
-import * as path from 'path';
+// import * as path from 'path';
 import { defineConfig } from 'vite';
 import reactRefresh from '@vitejs/plugin-react-refresh';
 import vitePluginImp from 'vite-plugin-imp';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
+import config from './config/config.ts';
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/vite-react/',
+  ...config,
   plugins: [
     reactRefresh(),
     tsconfigPaths(),

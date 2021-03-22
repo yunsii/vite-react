@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import renderRoutes from '@/core/renderRoutes';
 import routes from '@/routes';
 import config from '../config/config';
+import './runConcent';
 import './index.less';
 
 ReactDOM.render(

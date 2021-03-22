@@ -2007,6 +2007,11 @@ concat-map@0.0.1:
   resolved "https://registry.npm.taobao.org/concat-map/download/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
+concent@^2.14.14:
+  version "2.14.14"
+  resolved "https://registry.npm.taobao.org/concent/download/concent-2.14.14.tgz#a3804bb7eefd9c925088e6889798315a8cf20484"
+  integrity sha1-o4BLt+79nJJQiOaIl5gxWozyBIQ=
+
 confusing-browser-globals@^1.0.10:
   version "1.0.10"
   resolved "https://registry.npm.taobao.org/confusing-browser-globals/download/confusing-browser-globals-1.0.10.tgz#30d1e7f3d1b882b25ec4933d1d1adac353d20a59"

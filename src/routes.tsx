@@ -1,11 +1,12 @@
 import React from 'react';
-import { SmileOutlined, UserOutlined } from '@ant-design/icons';
+import { SmileOutlined, UserOutlined, BulbOutlined } from '@ant-design/icons';
 
 import type { IRoute } from '@/core/renderRoutes';
 import BasicLayout from '@/layouts/BasicLayout';
 import Welcome from '@/pages/Welcome';
 import AccountCenter from '@/pages/Account/Center';
 import AccountSettings from '@/pages/Account/Settings';
+import ConcentHelloWorld from '@/pages/Concent/HelloWorld';
 
 const routes: IRoute[] = [
   {
@@ -22,6 +23,12 @@ const routes: IRoute[] = [
         icon: <SmileOutlined />,
         name: '欢迎页',
         component: Welcome,
+      },
+      {
+        path: '/concent',
+        icon: <BulbOutlined />,
+        name: 'Concent Demo',
+        component: ConcentHelloWorld,
       },
       {
         path: '/account',

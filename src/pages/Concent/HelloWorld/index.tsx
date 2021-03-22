@@ -14,7 +14,7 @@ class DemoCls extends React.Component<any, { num: number }> {
     return (
       <div>
         <h1>class comp: {num}</h1>
-        <button onClick={this.inc}>changeNum</button>
+        <button onClick={this.inc}>inc()</button>
       </div>
     );
   }
@@ -29,7 +29,7 @@ export function DemoFn() {
   return (
     <div>
       <h1>fn comp: {state.num}</h1>
-      <button onClick={inc}>changeNum</button>
+      <button onClick={inc}>inc()</button>
     </div>
   );
 }

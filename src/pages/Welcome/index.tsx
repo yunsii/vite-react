@@ -11,7 +11,7 @@ const CodePreview: React.FC = ({ children }) => (
   </pre>
 );
 
-export default () => {
+export default function Welcome() {
   return (
     <PageContainer>
       <Card>
@@ -55,4 +55,4 @@ export default () => {
       </Card>
     </PageContainer>
   );
-};
+}

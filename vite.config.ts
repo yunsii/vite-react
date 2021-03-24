@@ -4,7 +4,7 @@ import reactRefresh from '@vitejs/plugin-react-refresh';
 import vitePluginImp from 'vite-plugin-imp';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-import config from './config/config.ts';
+import config from './config/config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -41,6 +41,15 @@ export default defineConfig({
       less: {
         // modifyVars: { 'primary-color': '#13c2c2' },
         javascriptEnabled: true,
+      },
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'lodash-es': ['lodash-es', 'lodash'],
+        },
       },
     },
   },

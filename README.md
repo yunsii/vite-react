@@ -2,7 +2,9 @@
 
 > Vite 从入门到放弃 ~
 
-尝试通过 Vite 构建一个类 Ant Design Pro 的项目，也就是从零搭建一个简单易用的中后台脚手架。
+尝试通过 Vite 构建一个类 Ant Design Pro 的项目，即从零搭建一个简单易用的中后台脚手架。
+
+> 基础框架基本搭好了，打算更进一步，正集中精力开发一个类 Umi 的 React 应用框架 [vitjs/vit](https://github.com/vitjs/vit/tree/feat/init)，使得脚手架尽量对外屏蔽细节。
 
 ## 技术实践
 

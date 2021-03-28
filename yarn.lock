@@ -1180,10 +1180,27 @@
   resolved "https://registry.npm.taobao.org/@types/minimist/download/@types/minimist-1.2.1.tgz?cache=0&sync_timestamp=1613379360400&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fminimist%2Fdownload%2F%40types%2Fminimist-1.2.1.tgz#283f669ff76d7b8260df8ab7a4262cc83d988256"
   integrity sha1-KD9mn/dte4Jg34q3pCYsyD2YglY=
 
+"@types/mkdirp@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/@types/mkdirp/download/@types/mkdirp-1.0.1.tgz?cache=0&sync_timestamp=1613379620218&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fmkdirp%2Fdownload%2F%40types%2Fmkdirp-1.0.1.tgz#0930b948914a78587de35458b86c907b6e98bbf6"
+  integrity sha1-CTC5SJFKeFh941RYuGyQe26Yu/Y=
+  dependencies:
+    "@types/node" "*"
+
+"@types/mustache@^4.1.1":
+  version "4.1.1"
+  resolved "https://registry.npm.taobao.org/@types/mustache/download/@types/mustache-4.1.1.tgz#fcfa2db0cee6261e66f2437dc2fe71e26c7856b4"
+  integrity sha1-/PotsM7mJh5m8kN9wv5x4mx4VrQ=
+
 "@types/node@*":
   version "14.14.35"
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-14.14.35.tgz#42c953a4e2b18ab931f72477e7012172f4ffa313"
   integrity sha1-QslTpOKxirkx9yR35wEhcvT/oxM=
+
+"@types/node@^14.14.37":
+  version "14.14.37"
+  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-14.14.37.tgz?cache=0&sync_timestamp=1616803582959&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-14.14.37.tgz#a3dd8da4eb84a996c36e331df98d82abd76b516e"
+  integrity sha1-o92NpOuEqZbDbjMd+Y2Cq9drUW4=
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -1440,6 +1457,35 @@
     "@babel/plugin-transform-react-jsx-self" "^7.12.13"
     "@babel/plugin-transform-react-jsx-source" "^7.12.13"
     react-refresh "^0.9.0"
+
+"@vitjs/core@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npm.taobao.org/@vitjs/core/download/@vitjs/core-0.1.1.tgz?cache=0&sync_timestamp=1616936146909&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vitjs%2Fcore%2Fdownload%2F%40vitjs%2Fcore-0.1.1.tgz#cd48885effbcf63248fa4db394910a79000e20d4"
+  integrity sha1-zUiIXv+89jJI+k2zlJEKeQAOINQ=
+  dependencies:
+    lodash "^4.17.21"
+    mkdirp "^1.0.4"
+
+"@vitjs/runtime@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npm.taobao.org/@vitjs/runtime/download/@vitjs/runtime-0.1.1.tgz?cache=0&sync_timestamp=1616936146851&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vitjs%2Fruntime%2Fdownload%2F%40vitjs%2Fruntime-0.1.1.tgz#654d2d2acc3235c15471b02fcde338fab3c04fc7"
+  integrity sha1-ZU0tKswyNcFUcbAvzeM4+rPAT8c=
+  dependencies:
+    react-loadable "^5.5.0"
+    react-router "^5.2.0"
+    react-router-dom "^5.2.0"
+
+"@vitjs/vit@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npm.taobao.org/@vitjs/vit/download/@vitjs/vit-0.1.1.tgz?cache=0&sync_timestamp=1616936151934&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vitjs%2Fvit%2Fdownload%2F%40vitjs%2Fvit-0.1.1.tgz#311fdf4490b6f4fedb65d06df4d3d52f7c1d06b7"
+  integrity sha1-MR/fRJC29P7bZdBt9NPVL3wdBrc=
+  dependencies:
+    "@ant-design/icons" "^4.6.2"
+    "@vitjs/core" "^0.1.1"
+    "@vitjs/runtime" "^0.1.1"
+    lodash "^4.17.21"
+    mkdirp "^1.0.4"
+    mustache "^4.1.0"
 
 acorn-jsx@^5.3.1:
   version "5.3.1"
@@ -4236,6 +4282,11 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "^1.2.5"
 
+mkdirp@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npm.taobao.org/mkdirp/download/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
+  integrity sha1-PrXtYmInVteaXw4qIh3+utdcL34=
+
 moment@^2.24.0, moment@^2.25.3, moment@^2.27.0:
   version "2.29.1"
   resolved "https://registry.npm.taobao.org/moment/download/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
@@ -4271,6 +4322,11 @@ multimatch@^5.0.0:
     array-union "^2.1.0"
     arrify "^2.0.1"
     minimatch "^3.0.4"
+
+mustache@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.npm.taobao.org/mustache/download/mustache-4.1.0.tgz#8c1b042238a982d2eb2d30efc6c14296ae3f699d"
+  integrity sha1-jBsEIjipgtLrLTDvxsFClq4/aZ0=
 
 nanoid@^3.1.20:
   version "3.1.22"
@@ -5266,7 +5322,7 @@ react-router-dom@^5.2.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-router@5.2.0:
+react-router@5.2.0, react-router@^5.2.0:
   version "5.2.0"
   resolved "https://registry.npm.taobao.org/react-router/download/react-router-5.2.0.tgz#424e75641ca8747fbf76e5ecca69781aa37ea293"
   integrity sha1-Qk51ZByodH+/duXsyml4GqN+opM=

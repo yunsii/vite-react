@@ -1,14 +1,15 @@
 // import * as path from 'path';
-import { defineConfig } from 'vite';
+import { UserConfig } from 'vite';
 import reactRefresh from '@vitejs/plugin-react-refresh';
 import vitePluginImp from 'vite-plugin-imp';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import vitApp from '@vitjs/vit';
 
-import config from './config/config';
+import routes from './config/routes';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  ...config,
+export default {
+  base: '/vite-react/',
   plugins: [
     reactRefresh(),
     tsconfigPaths(),
@@ -20,9 +21,15 @@ export default defineConfig({
         },
       ],
     }),
+    vitApp({
+      routes,
+      dynamicImport: {
+        loading: './components/PageLoading',
+      },
+    }),
   ],
   server: {
-    open: true,
+    // open: true,
     port: 8000,
   },
   resolve: {
@@ -53,4 +60,4 @@ export default defineConfig({
       },
     },
   },
-});
+} as UserConfig;

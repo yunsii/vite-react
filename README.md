@@ -4,8 +4,6 @@
 
 尝试通过 Vite 构建一个类 Ant Design Pro 的项目，即从零搭建一个简单易用的中后台脚手架。
 
-> 基础框架基本搭好了，打算更进一步，正集中精力开发一个类 Umi 的 React 应用框架 [vitjs/vit](https://github.com/vitjs/vit/tree/feat/init)，使得脚手架尽量对外屏蔽细节。
-
 ## 技术实践
 
 ### 核心技术栈
@@ -20,9 +18,7 @@
 - [typescript](https://github.com/microsoft/TypeScript)
 - [vite](https://github.com/vitejs/vite)
 
-### 封装路由渲染函数
-
-参考 [Umi](https://github.com/umijs/umi/blob/master/packages/renderer-react/src/renderRoutes/renderRoutes.tsx#L163) 的路由渲染实现了 [renderRoutes](/src/core/renderRoutes/index.tsx#L87) 函数。
+基于 [vitjs/vit](https://github.com/vitjs/vit/tree/feat/init) 构建。
 
 ## Q & A
 

@@ -18,7 +18,7 @@
 - [typescript](https://github.com/microsoft/TypeScript)
 - [vite](https://github.com/vitejs/vite)
 
-基于 [vitjs/vit](https://github.com/vitjs/vit/tree/feat/init) 构建。
+基于 [vitjs/vit](https://github.com/vitjs/vit) 构建。
 
 ## Q & A
 

@@ -1458,31 +1458,40 @@
     "@babel/plugin-transform-react-jsx-source" "^7.12.13"
     react-refresh "^0.9.0"
 
-"@vitjs/core@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.npm.taobao.org/@vitjs/core/download/@vitjs/core-0.1.1.tgz?cache=0&sync_timestamp=1616936146909&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vitjs%2Fcore%2Fdownload%2F%40vitjs%2Fcore-0.1.1.tgz#cd48885effbcf63248fa4db394910a79000e20d4"
-  integrity sha1-zUiIXv+89jJI+k2zlJEKeQAOINQ=
+"@vitjs/core@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@vitjs/core/-/core-0.1.2.tgz#8791506ac0f61217bf1c898594779d46a6622ff7"
+  integrity sha512-FohlAONIUy6BZvqwMC2YhguRMkOZ9AnwOunu9TUi5kZVI+eAjVNq7WaTuNLExiwcBXInTmvEbFkoP+x5kxeipA==
   dependencies:
     lodash "^4.17.21"
     mkdirp "^1.0.4"
 
-"@vitjs/runtime@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.npm.taobao.org/@vitjs/runtime/download/@vitjs/runtime-0.1.1.tgz?cache=0&sync_timestamp=1616936146851&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vitjs%2Fruntime%2Fdownload%2F%40vitjs%2Fruntime-0.1.1.tgz#654d2d2acc3235c15471b02fcde338fab3c04fc7"
-  integrity sha1-ZU0tKswyNcFUcbAvzeM4+rPAT8c=
+"@vitjs/runtime@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@vitjs/runtime/-/runtime-0.1.2.tgz#2d61586469d413b4e93b485074bedf9e1bc7bf49"
+  integrity sha512-AQHDdeAPoQRptJIoy+SN1/fQd/oxT+aEnHD4HMRALH0lhP6p+PhXFnQHJSVQJQlUOgt8Dsbjr9iOXLtG49hH9A==
   dependencies:
     react-loadable "^5.5.0"
     react-router "^5.2.0"
     react-router-dom "^5.2.0"
 
-"@vitjs/vit@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.npm.taobao.org/@vitjs/vit/download/@vitjs/vit-0.1.1.tgz?cache=0&sync_timestamp=1616936151934&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vitjs%2Fvit%2Fdownload%2F%40vitjs%2Fvit-0.1.1.tgz#311fdf4490b6f4fedb65d06df4d3d52f7c1d06b7"
-  integrity sha1-MR/fRJC29P7bZdBt9NPVL3wdBrc=
+"@vitjs/types@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@vitjs/types/-/types-0.1.2.tgz#8335fbe4d4194005da4fb659a019c338c00c06e5"
+  integrity sha512-ahfwsmqc1zIAjLg3oImjZgpU96qNhTe6SVwYpBvyJQe5+rzBZ21V4BNv8HAN8Oiqw15yO1SXEurXpf+lpLP7Mw==
+  dependencies:
+    "@vitjs/core" "^0.1.2"
+
+"@vitjs/vit@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@vitjs/vit/-/vit-0.1.3.tgz#e28c7b7d5b56e1d4a229db4126b46e5d31a7a119"
+  integrity sha512-rufKBBvR3a8NUUiq9C0EW/dvg/ADTWoim7DMxHKNYHshbsgQj/hJhHcWya3+sy+vrsS+gd4LWsalnjKekdMYew==
   dependencies:
     "@ant-design/icons" "^4.6.2"
-    "@vitjs/core" "^0.1.1"
-    "@vitjs/runtime" "^0.1.1"
+    "@vitjs/core" "^0.1.2"
+    "@vitjs/runtime" "^0.1.2"
+    "@vitjs/types" "^0.1.2"
+    chokidar "^3.5.1"
     lodash "^4.17.21"
     mkdirp "^1.0.4"
     mustache "^4.1.0"
@@ -1616,6 +1625,14 @@ antd@^4.14.0:
     rc-util "^5.9.4"
     scroll-into-view-if-needed "^2.2.25"
     warning "^4.0.3"
+
+anymatch@~3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-3.1.1.tgz#c55ecf02185e2469259399310c173ce31233b142"
+  integrity sha512-mM8522psRCqzV+6LhomX5wgp25YVibjh8Wj23I5RPkPppSVSjyKD2A2mBJmWGa+KN7f2D6LNh9jkBCeyLktzjg==
+  dependencies:
+    normalize-path "^3.0.0"
+    picomatch "^2.0.4"
 
 argparse@^1.0.7:
   version "1.0.10"
@@ -1836,6 +1853,11 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
+binary-extensions@^2.0.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
+  integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
+
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.npm.taobao.org/brace-expansion/download/brace-expansion-1.1.11.tgz?cache=0&sync_timestamp=1614010709807&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fbrace-expansion%2Fdownload%2Fbrace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -1860,7 +1882,7 @@ braces@^2.3.1:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
-braces@^3.0.1:
+braces@^3.0.1, braces@~3.0.2:
   version "3.0.2"
   resolved "https://registry.npm.taobao.org/braces/download/braces-3.0.2.tgz#3454e1a462ee8d599e236df336cd9ea4f8afe107"
   integrity sha1-NFThpGLujVmeI23zNs2epPiv4Qc=
@@ -2004,6 +2026,21 @@ character-reference-invalid@^1.0.0:
   version "1.1.4"
   resolved "https://registry.npm.taobao.org/character-reference-invalid/download/character-reference-invalid-1.1.4.tgz#083329cda0eae272ab3dbbf37e9a382c13af1560"
   integrity sha1-CDMpzaDq4nKrPbvzfpo4LBOvFWA=
+
+chokidar@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.1.tgz#ee9ce7bbebd2b79f49f304799d5468e31e14e68a"
+  integrity sha512-9+s+Od+W0VJJzawDma/gvBNQqkTiqYTWLuZoyAsivsI4AaWTCzHG06/TMjsf1cYe9Cb97UCEhjz7HvnPk2p/tw==
+  dependencies:
+    anymatch "~3.1.1"
+    braces "~3.0.2"
+    glob-parent "~5.1.0"
+    is-binary-path "~2.1.0"
+    is-glob "~4.0.1"
+    normalize-path "~3.0.0"
+    readdirp "~3.5.0"
+  optionalDependencies:
+    fsevents "~2.3.1"
 
 ci-info@^2.0.0:
   version "2.0.0"
@@ -3126,7 +3163,7 @@ glob-parent@^3.1.0:
     is-glob "^3.1.0"
     path-dirname "^1.0.0"
 
-glob-parent@^5.0.0, glob-parent@^5.1.0:
+glob-parent@^5.0.0, glob-parent@^5.1.0, glob-parent@~5.1.0:
   version "5.1.2"
   resolved "https://registry.npm.taobao.org/glob-parent/download/glob-parent-5.1.2.tgz?cache=0&sync_timestamp=1615065997979&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fglob-parent%2Fdownload%2Fglob-parent-5.1.2.tgz#869832c58034fe68a4093c17dc15e8340d8401c4"
   integrity sha1-hpgyxYA0/mikCTwX3BXoNA2EAcQ=
@@ -3496,6 +3533,13 @@ is-bigint@^1.0.1:
   resolved "https://registry.npm.taobao.org/is-bigint/download/is-bigint-1.0.1.tgz#6923051dfcbc764278540b9ce0e6b3213aa5ebc2"
   integrity sha1-aSMFHfy8dkJ4VAuc4OazITql68I=
 
+is-binary-path@~2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/is-binary-path/-/is-binary-path-2.1.0.tgz#ea1f7f3b80f064236e83470f86c09c254fb45b09"
+  integrity sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==
+  dependencies:
+    binary-extensions "^2.0.0"
+
 is-boolean-object@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/is-boolean-object/download/is-boolean-object-1.1.0.tgz#e2aaad3a3a8fca34c28f6eee135b156ed2587ff0"
@@ -3606,7 +3650,7 @@ is-glob@^3.1.0:
   dependencies:
     is-extglob "^2.1.0"
 
-is-glob@^4.0.0, is-glob@^4.0.1:
+is-glob@^4.0.0, is-glob@^4.0.1, is-glob@~4.0.1:
   version "4.0.1"
   resolved "https://registry.npm.taobao.org/is-glob/download/is-glob-4.0.1.tgz#7567dbe9f2f5e2467bc77ab83c4a29482407a5dc"
   integrity sha1-dWfb6fL14kZ7x3q4PEopSCQHpdw=
@@ -4397,6 +4441,11 @@ normalize-package-data@^3.0.0:
     semver "^7.3.4"
     validate-npm-package-license "^3.0.1"
 
+normalize-path@^3.0.0, normalize-path@~3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
+  integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+
 normalize-range@^0.1.2:
   version "0.1.2"
   resolved "https://registry.npm.taobao.org/normalize-range/download/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
@@ -4687,7 +4736,7 @@ path-type@^4.0.0:
   resolved "https://registry.npm.taobao.org/path-type/download/path-type-4.0.0.tgz?cache=0&sync_timestamp=1611752107592&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpath-type%2Fdownload%2Fpath-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha1-hO0BwKe6OAr+CdkKjBgNzZ0DBDs=
 
-picomatch@^2.0.5, picomatch@^2.2.1:
+picomatch@^2.0.4, picomatch@^2.0.5, picomatch@^2.2.1:
   version "2.2.2"
   resolved "https://registry.npm.taobao.org/picomatch/download/picomatch-2.2.2.tgz#21f333e9b6b8eaff02468f5146ea406d345f4dad"
   integrity sha1-IfMz6ba46v8CRo9RRupAbTRfTa0=
@@ -5427,6 +5476,13 @@ readable-stream@^1.0.33, readable-stream@~1.1.9:
     inherits "~2.0.1"
     isarray "0.0.1"
     string_decoder "~0.10.x"
+
+readdirp@~3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-3.5.0.tgz#9ba74c019b15d365278d2e91bb8c48d7b4d42c9e"
+  integrity sha512-cMhu7c/8rdhkHXWsY+osBhfSy0JikwpHK/5+imo+LpeasTF8ouErHrlYkwT0++njiyuDvc7OFY5T3ukvZ8qmFQ==
+  dependencies:
+    picomatch "^2.2.1"
 
 redent@^2.0.0:
   version "2.0.0"
@@ -6806,10 +6862,10 @@ vite-tsconfig-paths@^2.3.0:
     debug "^4.1.1"
     tsconfig-paths "^3.9.0"
 
-vite@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.npm.taobao.org/vite/download/vite-2.1.3.tgz#a31a844d26d3846b5a78f06970d1ea1f8a442955"
-  integrity sha1-oxqETSbThGtaePBpcNHqH4pEKVU=
+vite@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.npm.taobao.org/vite/download/vite-2.1.5.tgz#4857da441c62f7982c83cbd5f42a00330f20c9c1"
+  integrity sha1-SFfaRBxi95gsg8vV9CoAMw8gycE=
   dependencies:
     esbuild "^0.9.3"
     postcss "^8.2.1"

@@ -26,10 +26,7 @@ export default {
       dynamicImport: {
         loading: './components/PageLoading',
       },
-      history: {
-        type: 'hash',
-        options: {},
-      },
+      exportStatic: {},
     }),
   ],
   server: {

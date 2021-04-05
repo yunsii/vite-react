@@ -6,8 +6,8 @@
 import React, { useRef } from 'react';
 import type { MenuDataItem, BasicLayoutProps as ProLayoutProps } from '@ant-design/pro-layout';
 import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
-import { Link, useHistory, useLocation } from 'react-router-dom';
 import { GithubOutlined, HomeOutlined } from '@ant-design/icons';
+import { Link, useHistory, useLocation } from '@vitjs/vit';
 
 import RightContent from '@/components/GlobalHeader/RightContent';
 import logo from '../assets/logo.svg';
@@ -35,11 +35,16 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   const history = useHistory();
   const location = useLocation();
 
+  console.log('location', location);
+  console.log('props.location', props.location);
+  console.log('props.route', props.route);
+
   return (
     <ProLayout
       logo={logo}
       title='Vite React'
       {...props}
+      location={location}
       onMenuHeaderClick={() => history.push('/')}
       menuItemRender={(menuItemProps, defaultDom) => {
         if (

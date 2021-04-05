@@ -4,3 +4,4 @@ vite.config.ts
 /config
 /scripts
 .vit
+mock

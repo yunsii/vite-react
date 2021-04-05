@@ -1,7 +1,8 @@
 import React from 'react';
-import { SettingOutlined, UserOutlined } from '@ant-design/icons';
+import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Menu } from 'antd';
-import { useHistory } from 'react-router-dom';
+import { useConcent } from 'concent';
+import { history } from '@vitjs/vit';
 
 import HeaderDropdown from '@/components/HeaderDropdown';
 import { currentUser } from '@/pages/Account/Center';
@@ -12,7 +13,7 @@ export type GlobalHeaderRightProps = {
 };
 
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
-  const history = useHistory();
+  const { dispatch } = useConcent('login');
 
   const onMenuClick = (event: {
     key: React.Key;
@@ -21,6 +22,12 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
     domEvent: React.MouseEvent<HTMLElement>;
   }) => {
     const { key } = event;
+
+    if (key === 'logout') {
+      dispatch?.('logout');
+      return;
+    }
+
     history.push(`/account/${key}`);
   };
 
@@ -38,6 +45,11 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
           个人设置
         </Menu.Item>
       )}
+      {menu && <Menu.Divider />}
+      <Menu.Item key='logout'>
+        <LogoutOutlined />
+        退出登录
+      </Menu.Item>
     </Menu>
   );
   return (

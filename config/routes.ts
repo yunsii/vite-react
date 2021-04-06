@@ -3,18 +3,18 @@ export default [
     path: '/',
     component: './layouts/BlankLayout',
     routes: [
-      {
-        path: '/user',
-        component: './layouts/UserLayout',
-        routes: [
-          {
-            name: 'login',
-            path: '/user/login',
-            component: './pages/User/Login',
-            exact: true,
-          },
-        ],
-      },
+      // {
+      //   path: '/user',
+      //   component: './layouts/UserLayout',
+      //   routes: [
+      //     {
+      //       name: 'login',
+      //       path: '/user/login',
+      //       component: './pages/User/Login',
+      //       exact: true,
+      //     },
+      //   ],
+      // },
       {
         path: '/',
         component: './layouts/BasicLayout',

@@ -1552,10 +1552,10 @@
     "@babel/plugin-transform-react-jsx-source" "^7.12.13"
     react-refresh "^0.9.0"
 
-"@vitjs/core@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.npm.taobao.org/@vitjs/core/download/@vitjs/core-0.3.0.tgz#ac204b4c4d639a7cd5a512a95dae11c542754bc7"
-  integrity sha1-rCBLTE1jmnzVpRKpXa4RxUJ1S8c=
+"@vitjs/core@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@vitjs/core/-/core-0.3.2.tgz#7428fa49d521ee9e90583cb7f3f925fad1ba6ddd"
+  integrity sha512-rTqJuspem/kwwvPQXp/BmF+2UtFGvUZEvxPEpy+Wic8FN0HmbDMEW77neMFDCx506XJSXGqkTYYk/R3kM7K3Zg==
   dependencies:
     lodash "^4.17.21"
     mkdirp "^1.0.4"
@@ -1570,22 +1570,22 @@
     react-router "^5.2.0"
     react-router-dom "^5.2.0"
 
-"@vitjs/types@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.npm.taobao.org/@vitjs/types/download/@vitjs/types-0.3.0.tgz#b264fbc37436c5f6e9151db5bfc9b29519744076"
-  integrity sha1-smT7w3Q2xfbpFR21v8mylRl0QHY=
+"@vitjs/types@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@vitjs/types/-/types-0.3.2.tgz#851d1cb78bcba2a6b3e45c0a68179878c69b2367"
+  integrity sha512-T4SvFUmO5F4eedbejlS6Z+Am7vlyWomG5L8VI0POQsqjLLiJroTxc2kt+oT/u82Lm2DaoboNC1LlgKJbfv/uDw==
   dependencies:
-    "@vitjs/core" "^0.3.0"
+    "@vitjs/core" "^0.3.2"
 
-"@vitjs/vit@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@vitjs/vit/-/vit-0.3.1.tgz#facd3b2aaa4f31c51d1bc81e09f16180f77b1760"
-  integrity sha512-+AHu+8e3TfWX5bopNYr4rTc/6pBf01FUsNm1RATfEZks4v99B8XNZqNkIzpAS7yDeDzEogUxSldK6O03E8MUFw==
+"@vitjs/vit@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@vitjs/vit/-/vit-0.3.2.tgz#13ebf210e0579690a8222311c76fdc51b999c3ba"
+  integrity sha512-uobiSPUt/TgjpOLQa6DWsuLQvdZVv7APnDVc/3YOJOpVEx6Vm4FCFCn6E+rCXcqTl4YJfrQnspQTCDCDC/c9Dg==
   dependencies:
     "@ant-design/icons" "^4.6.2"
-    "@vitjs/core" "^0.3.0"
+    "@vitjs/core" "^0.3.2"
     "@vitjs/runtime" "^0.3.1"
-    "@vitjs/types" "^0.3.0"
+    "@vitjs/types" "^0.3.2"
     chokidar "^3.5.1"
     lodash "^4.17.21"
     mkdirp "^1.0.4"

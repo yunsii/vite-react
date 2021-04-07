@@ -1202,11 +1202,6 @@
     remark "^13.0.0"
     unist-util-find-all-after "^3.0.2"
 
-"@types/anymatch@*":
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/@types/anymatch/download/@types/anymatch-1.3.1.tgz?cache=0&sync_timestamp=1613378017677&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fanymatch%2Fdownload%2F%40types%2Fanymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
-  integrity sha1-M2utwb7sudrMOL6izzKt9ieoQho=
-
 "@types/classnames@^2.2.11":
   version "2.2.11"
   resolved "https://registry.npm.taobao.org/@types/classnames/download/@types/classnames-2.2.11.tgz#2521cc86f69d15c5b90664e4829d84566052c1cf"
@@ -1224,11 +1219,6 @@
   dependencies:
     "@types/minimatch" "*"
     "@types/node" "*"
-
-"@types/history@*":
-  version "4.7.8"
-  resolved "https://registry.npm.taobao.org/@types/history/download/@types/history-4.7.8.tgz#49348387983075705fe8f4e02fb67f7daaec4934"
-  integrity sha1-STSDh5gwdXBf6PTgL7Z/farsSTQ=
 
 "@types/js-cookie@^2.2.6":
   version "2.2.6"
@@ -1262,22 +1252,10 @@
   resolved "https://registry.npm.taobao.org/@types/minimist/download/@types/minimist-1.2.1.tgz?cache=0&sync_timestamp=1613379360400&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fminimist%2Fdownload%2F%40types%2Fminimist-1.2.1.tgz#283f669ff76d7b8260df8ab7a4262cc83d988256"
   integrity sha1-KD9mn/dte4Jg34q3pCYsyD2YglY=
 
-"@types/mkdirp@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npm.taobao.org/@types/mkdirp/download/@types/mkdirp-1.0.1.tgz?cache=0&sync_timestamp=1613379620218&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fmkdirp%2Fdownload%2F%40types%2Fmkdirp-1.0.1.tgz#0930b948914a78587de35458b86c907b6e98bbf6"
-  integrity sha1-CTC5SJFKeFh941RYuGyQe26Yu/Y=
-  dependencies:
-    "@types/node" "*"
-
 "@types/mockjs@^1.0.3":
   version "1.0.3"
   resolved "https://registry.npm.taobao.org/@types/mockjs/download/@types/mockjs-1.0.3.tgz#bd8ee3c7cbbd9a18788ab677b9e4f97c8d0bb0bf"
   integrity sha1-vY7jx8u9mhh4irZ3ueT5fI0LsL8=
-
-"@types/mustache@^4.1.1":
-  version "4.1.1"
-  resolved "https://registry.npm.taobao.org/@types/mustache/download/@types/mustache-4.1.1.tgz#fcfa2db0cee6261e66f2437dc2fe71e26c7856b4"
-  integrity sha1-/PotsM7mJh5m8kN9wv5x4mx4VrQ=
 
 "@types/node@*":
   version "14.14.35"
@@ -1311,31 +1289,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-loadable@^5.5.4":
-  version "5.5.4"
-  resolved "https://registry.npm.taobao.org/@types/react-loadable/download/@types/react-loadable-5.5.4.tgz#9bfb31e1299e9a3b23ea6cae437fa8813afde544"
-  integrity sha1-m/sx4Smemjsj6myuQ3+ogTr95UQ=
-  dependencies:
-    "@types/react" "*"
-    "@types/webpack" "*"
-
-"@types/react-router-dom@^5.1.7":
-  version "5.1.7"
-  resolved "https://registry.npm.taobao.org/@types/react-router-dom/download/@types/react-router-dom-5.1.7.tgz#a126d9ea76079ffbbdb0d9225073eb5797ab7271"
-  integrity sha1-oSbZ6nYHn/u9sNkiUHPrV5ercnE=
-  dependencies:
-    "@types/history" "*"
-    "@types/react" "*"
-    "@types/react-router" "*"
-
-"@types/react-router@*":
-  version "5.1.12"
-  resolved "https://registry.npm.taobao.org/@types/react-router/download/@types/react-router-5.1.12.tgz?cache=0&sync_timestamp=1614625116578&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact-router%2Fdownload%2F%40types%2Freact-router-5.1.12.tgz#0f300e09468e7aed86e18241c90238c18c377e51"
-  integrity sha1-DzAOCUaOeu2G4YJByQI4wYw3flE=
-  dependencies:
-    "@types/history" "*"
-    "@types/react" "*"
-
 "@types/react@*", "@types/react@^17.0.0":
   version "17.0.3"
   resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-17.0.3.tgz#ba6e215368501ac3826951eef2904574c262cc79"
@@ -1357,23 +1310,6 @@
   resolved "https://registry.npm.taobao.org/@types/scheduler/download/@types/scheduler-0.16.1.tgz?cache=0&sync_timestamp=1613384488348&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fscheduler%2Fdownload%2F%40types%2Fscheduler-0.16.1.tgz#18845205e86ff0038517aab7a18a62a6b9f71275"
   integrity sha1-GIRSBehv8AOFF6q3oYpiprn3EnU=
 
-"@types/source-list-map@*":
-  version "0.1.2"
-  resolved "https://registry.npm.taobao.org/@types/source-list-map/download/@types/source-list-map-0.1.2.tgz#0078836063ffaf17412349bba364087e0ac02ec9"
-  integrity sha1-AHiDYGP/rxdBI0m7o2QIfgrALsk=
-
-"@types/tapable@*":
-  version "1.0.6"
-  resolved "https://registry.npm.taobao.org/@types/tapable/download/@types/tapable-1.0.6.tgz#a9ca4b70a18b270ccb2bc0aaafefd1d486b7ea74"
-  integrity sha1-qcpLcKGLJwzLK8Cqr+/R1Ia36nQ=
-
-"@types/uglify-js@*":
-  version "3.13.0"
-  resolved "https://registry.npm.taobao.org/@types/uglify-js/download/@types/uglify-js-3.13.0.tgz#1cad8df1fb0b143c5aba08de5712ea9d1ff71124"
-  integrity sha1-HK2N8fsLFDxaugjeVxLqnR/3ESQ=
-  dependencies:
-    source-map "^0.6.1"
-
 "@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2":
   version "2.0.3"
   resolved "https://registry.npm.taobao.org/@types/unist/download/@types/unist-2.0.3.tgz?cache=0&sync_timestamp=1613384606374&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Funist%2Fdownload%2F%40types%2Funist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
@@ -1394,27 +1330,6 @@
     "@types/node" "*"
     "@types/unist" "*"
     "@types/vfile-message" "*"
-
-"@types/webpack-sources@*":
-  version "2.1.0"
-  resolved "https://registry.npm.taobao.org/@types/webpack-sources/download/@types/webpack-sources-2.1.0.tgz#8882b0bd62d1e0ce62f183d0d01b72e6e82e8c10"
-  integrity sha1-iIKwvWLR4M5i8YPQ0Bty5ugujBA=
-  dependencies:
-    "@types/node" "*"
-    "@types/source-list-map" "*"
-    source-map "^0.7.3"
-
-"@types/webpack@*":
-  version "4.41.26"
-  resolved "https://registry.npm.taobao.org/@types/webpack/download/@types/webpack-4.41.26.tgz?cache=0&sync_timestamp=1613384756517&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fwebpack%2Fdownload%2F%40types%2Fwebpack-4.41.26.tgz#27a30d7d531e16489f9c7607c747be6bc1a459ef"
-  integrity sha1-J6MNfVMeFkifnHYHx0e+a8GkWe8=
-  dependencies:
-    "@types/anymatch" "*"
-    "@types/node" "*"
-    "@types/tapable" "*"
-    "@types/uglify-js" "*"
-    "@types/webpack-sources" "*"
-    source-map "^0.6.0"
 
 "@typescript-eslint/eslint-plugin@^4.10.0":
   version "4.19.0"
@@ -1552,10 +1467,10 @@
     "@babel/plugin-transform-react-jsx-source" "^7.12.13"
     react-refresh "^0.9.0"
 
-"@vitjs/core@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@vitjs/core/-/core-0.3.2.tgz#7428fa49d521ee9e90583cb7f3f925fad1ba6ddd"
-  integrity sha512-rTqJuspem/kwwvPQXp/BmF+2UtFGvUZEvxPEpy+Wic8FN0HmbDMEW77neMFDCx506XJSXGqkTYYk/R3kM7K3Zg==
+"@vitjs/core@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@vitjs/core/-/core-0.3.3.tgz#8853ab02cdc74a6bbc02614bc125020e62d49632"
+  integrity sha512-Dzin3+C/3MFPc/4ZXaIj1PrOWgIfqwkItwrPcAKPpDYSd2K9Cup0b5iOiYtAT9eh/Bu36VCge9MLP7DkwI3ewg==
   dependencies:
     lodash "^4.17.21"
     mkdirp "^1.0.4"
@@ -1570,22 +1485,22 @@
     react-router "^5.2.0"
     react-router-dom "^5.2.0"
 
-"@vitjs/types@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@vitjs/types/-/types-0.3.2.tgz#851d1cb78bcba2a6b3e45c0a68179878c69b2367"
-  integrity sha512-T4SvFUmO5F4eedbejlS6Z+Am7vlyWomG5L8VI0POQsqjLLiJroTxc2kt+oT/u82Lm2DaoboNC1LlgKJbfv/uDw==
+"@vitjs/types@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@vitjs/types/-/types-0.3.3.tgz#757dda3ee705681c6d041d4fe9588f92d1cc3568"
+  integrity sha512-5oBEEYR0wpoSIPuSROOfIk/ltnUp5isvq936t2s1E0oQniEBa+Szz1MeOAiib9fLHloDSpJ5KCYS4K4SqBxKfQ==
   dependencies:
-    "@vitjs/core" "^0.3.2"
+    "@vitjs/core" "^0.3.3"
 
-"@vitjs/vit@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@vitjs/vit/-/vit-0.3.2.tgz#13ebf210e0579690a8222311c76fdc51b999c3ba"
-  integrity sha512-uobiSPUt/TgjpOLQa6DWsuLQvdZVv7APnDVc/3YOJOpVEx6Vm4FCFCn6E+rCXcqTl4YJfrQnspQTCDCDC/c9Dg==
+"@vitjs/vit@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@vitjs/vit/-/vit-0.3.3.tgz#0ccf82c2c76a39b49c172fafeef5455551729f15"
+  integrity sha512-aE8k5V37f8VB4whx+tPIb1a45UacW65lmrN2V+HaJAPNS/eOyc4CDTy41Y/uMjudqBopwvXsIJ4Y1SGclTDpVg==
   dependencies:
     "@ant-design/icons" "^4.6.2"
-    "@vitjs/core" "^0.3.2"
+    "@vitjs/core" "^0.3.3"
     "@vitjs/runtime" "^0.3.1"
-    "@vitjs/types" "^0.3.2"
+    "@vitjs/types" "^0.3.3"
     chokidar "^3.5.1"
     lodash "^4.17.21"
     mkdirp "^1.0.4"
@@ -6319,7 +6234,7 @@ source-map@^0.5.0, source-map@^0.5.6:
   resolved "https://registry.npm.taobao.org/source-map/download/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
 
-source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0:
+source-map@^0.6.1, source-map@~0.6.0:
   version "0.6.1"
   resolved "https://registry.npm.taobao.org/source-map/download/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha1-dHIq8y6WFOnCh6jQu95IteLxomM=

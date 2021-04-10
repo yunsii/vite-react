@@ -1,7 +1,6 @@
 import React from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography, Button } from 'antd';
-import { history } from '@vitjs/vit';
+import { Card, Alert, Typography } from 'antd';
 
 import styles from './index.module.less';
 
@@ -54,7 +53,6 @@ export default function Welcome() {
           </a>
         </Typography.Text>
         <CodePreview>yarn add @ant-design/pro-layout</CodePreview>
-        <Button onClick={() => history.push('/user/login')}>Go to login</Button>
       </Card>
     </PageContainer>
   );

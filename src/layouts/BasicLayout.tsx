@@ -3,14 +3,17 @@
  *
  * @see You can view component api by: https://github.com/ant-design/ant-design-pro-layout
  */
-import React, { useRef } from 'react';
-import type { MenuDataItem, BasicLayoutProps as ProLayoutProps } from '@ant-design/pro-layout';
+import React from 'react';
+import type { BasicLayoutProps as ProLayoutProps } from '@ant-design/pro-layout';
 import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
 import { GithubOutlined, HomeOutlined } from '@ant-design/icons';
-import { Link, useHistory, useLocation } from '@vitjs/vit';
+import { history, Link, useLocation } from '@vitjs/vit';
+import { useConcent } from 'concent';
 
 import RightContent from '@/components/GlobalHeader/RightContent';
-import logo from '../assets/logo.svg';
+import defaultSettings from '../../config/defaultSettings';
+
+const loginPath = '/user/login';
 
 export type BasicLayoutProps = {
   route: ProLayoutProps['route'];
@@ -31,20 +34,19 @@ const defaultFooterDom = (
 );
 
 const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
-  const menuDataRef = useRef<MenuDataItem[]>([]);
-  const history = useHistory();
   const location = useLocation();
-
-  console.log('location', location);
-  console.log('props.location', props.location);
-  console.log('props.route', props.route);
+  const { state } = useConcent('login');
 
   return (
     <ProLayout
-      logo={logo}
-      title='Vite React'
+      logo='/logo.svg'
       {...props}
-      location={location}
+      onPageChange={() => {
+        // 如果没有登录，重定向到 login
+        if (state.status !== 'ok' && history.location.pathname !== loginPath) {
+          history.push(loginPath);
+        }
+      }}
       onMenuHeaderClick={() => history.push('/')}
       menuItemRender={(menuItemProps, defaultDom) => {
         if (
@@ -73,15 +75,11 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
         );
       }}
       footerRender={() => defaultFooterDom}
-      postMenuData={(menuData) => {
-        menuDataRef.current = menuData || [];
-        return menuData || [];
-      }}
       // waterMarkProps={{
-      //   content: 'Ant Design Pro',
+      //   content: 'Vite React',
       //   fontColor: 'rgba(24,144,255,0.15)',
       // }}
-      fixSiderbar
+      {...defaultSettings}
     />
   );
 };

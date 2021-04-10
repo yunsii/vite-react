@@ -1,0 +1,1 @@
+import{r as e}from"./index.e534e5fa.js";import{C as r}from"./index.1285aa6e.js";import"./index.27fbac4b.js";import{C as t}from"./index.d3fe26c9.js";import"./lodash-es.dacdeb55.js";import"./index.92e459fd.js";import"./index.69395c37.js";function o(){return e.createElement(r,{bordered:!1,style:{marginBottom:24}},e.createElement(t,null))}export default o;

@@ -27,6 +27,7 @@ export default {
         loading: './components/PageLoading',
       },
       exportStatic: {},
+      mock: { productionEnabled: true },
     }),
   ],
   server: {

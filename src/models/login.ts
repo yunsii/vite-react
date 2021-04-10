@@ -9,6 +9,7 @@ import { getPageQuery } from '@/utils/utils';
 const Model: ModuleConfig = {
   state: {
     status: undefined,
+    type: undefined,
   },
 
   reducer: {

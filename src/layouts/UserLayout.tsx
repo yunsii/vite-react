@@ -4,7 +4,6 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import React from 'react';
 import { Link } from '@vitjs/vit';
 
-import logo from '../assets/logo.svg';
 import styles from './UserLayout.module.less';
 
 export type UserLayoutProps = {
@@ -46,7 +45,7 @@ const UserLayout: React.FC<UserLayoutProps> = (props) => {
           <div className={styles.top}>
             <div className={styles.header}>
               <Link to='/'>
-                <img alt='logo' className={styles.logo} src={logo} />
+                <img alt='logo' className={styles.logo} src='/logo.svg' />
                 <span className={styles.title}>Ant Design</span>
               </Link>
             </div>

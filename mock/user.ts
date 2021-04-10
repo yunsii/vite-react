@@ -1,4 +1,4 @@
-import type { MockMethod } from '@vitjs/vit/plugin';
+import type { MockMethod } from '@vitjs/vite-plugin';
 
 export default [
   {
@@ -7,14 +7,14 @@ export default [
     timeout: 240,
     response: ({ body }) => {
       const { password, userName, type } = body;
-      if (password === 'ant.design' && userName === 'admin') {
+      if (password === 'vite-react' && userName === 'admin') {
         return {
           status: 'ok',
           type,
           currentAuthority: 'admin',
         };
       }
-      if (password === 'ant.design' && userName === 'user') {
+      if (password === 'vite-react' && userName === 'user') {
         return {
           status: 'ok',
           type,
@@ -28,7 +28,6 @@ export default [
           currentAuthority: 'admin',
         };
       }
-
       return {
         status: 'error',
         type,

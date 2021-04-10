@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import { Alert, Space, message, Tabs } from 'antd';
 import {
   AlipayCircleOutlined,
   LockOutlined,
@@ -7,8 +9,8 @@ import {
   UserOutlined,
   WeiboCircleOutlined,
 } from '@ant-design/icons';
-import { Alert, Space, message, Tabs } from 'antd';
-import React, { useState } from 'react';
+import { useConcent } from 'concent';
+
 import ProForm, { ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 import { getFakeCaptcha } from '@/services/login';
 import type { LoginParamsType } from '@/services/login';
@@ -28,17 +30,16 @@ const LoginMessage: React.FC<{
   />
 );
 
-const Login: React.FC = (props) => {
-  const { userLogin = {}, submitting } = props;
-  const { status, type: loginType } = userLogin;
+const Login: React.FC = () => {
+  const { state, connectedState, dispatch } = useConcent({
+    module: 'login',
+    connect: { loading: ['login/login'] },
+  });
+  const submitting = connectedState.loading['login/login'];
   const [type, setType] = useState<string>('account');
 
   const handleSubmit = (values: LoginParamsType) => {
-    const { dispatch } = props;
-    dispatch({
-      type: 'login/login',
-      payload: { ...values, type },
-    });
+    dispatch('login', { ...values, type });
   };
 
   return (
@@ -67,8 +68,8 @@ const Login: React.FC = (props) => {
           <Tabs.TabPane key='mobile' tab='手机号登录' />
         </Tabs>
 
-        {status === 'error' && loginType === 'account' && !submitting && (
-          <LoginMessage content='账户或密码错误（admin/ant.design)' />
+        {state.status === 'error' && state.type === 'account' && !submitting && (
+          <LoginMessage content='账户或密码错误（admin/vite-react)' />
         )}
         {type === 'account' && (
           <>
@@ -92,7 +93,7 @@ const Login: React.FC = (props) => {
                 size: 'large',
                 prefix: <LockOutlined className={styles.prefixIcon} />,
               }}
-              placeholder='密码: ant.design'
+              placeholder='密码: vite-react'
               rules={[
                 {
                   required: true,
@@ -103,7 +104,7 @@ const Login: React.FC = (props) => {
           </>
         )}
 
-        {status === 'error' && loginType === 'mobile' && !submitting && (
+        {state.status === 'error' && state.type === 'mobile' && !submitting && (
           <LoginMessage content='验证码错误' />
         )}
         {type === 'mobile' && (

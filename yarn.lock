@@ -1486,17 +1486,17 @@
   dependencies:
     "@vitjs/core" "^0.4.0"
 
-"@vitjs/vit@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@vitjs/vit/-/vit-0.4.0.tgz#60b1aad1d0cc0eee5ecbeda9333ecd03ec80c211"
-  integrity sha512-RlTWfS6pRChD+s5cyEnj7qvq0jsLQ7/sPBMGkhj59nG8DsEsVRehYd68U9Ssq1zoURpwlxoJ73JjTtWWmWRXgw==
+"@vitjs/vit@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@vitjs/vit/-/vit-0.4.1.tgz#8c6b13d977f95e22a8fcfde63d9c188a88b410fb"
+  integrity sha512-I7bQkLtaAiaIKZI7178uioeN9oPNYydu/iZgBwwTL/aQQ8M1lpLYmXGhWS6Ito2BWX6n4h3Eb/S92sWIKvQLDw==
   dependencies:
     "@vitjs/runtime" "^0.4.0"
 
-"@vitjs/vite-plugin@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@vitjs/vite-plugin/-/vite-plugin-0.4.0.tgz#e990f456a0b6ff338bb7bb6e6db3fa6b55e2ef27"
-  integrity sha512-kxRbpFdtS2PxFu5wXHf0L9esPHKpqWHbJFBduRQqBN6N6PknFVMhVMJc+5vq+1KQMaGqVy7R/dNsc0JGdF+OKQ==
+"@vitjs/vite-plugin@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@vitjs/vite-plugin/-/vite-plugin-0.4.1.tgz#902581507409ef1c768708b622794aaa06cb444c"
+  integrity sha512-jHQdxx95fsdnjGy/4w+FveVotml9aFi82kVK/kmDYK2Z0KM7/VkrTXszMWGwZU83ZAZwk6OUQ3Xc+sMh4lYZHw==
   dependencies:
     "@ant-design/icons" "^4.6.2"
     "@vitjs/core" "^0.4.0"

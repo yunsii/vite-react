@@ -39,7 +39,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
 
   return (
     <ProLayout
-      logo='/logo.svg'
+      logo={`${window.routerBase}/logo.svg`}
       {...props}
       onPageChange={() => {
         // 如果没有登录，重定向到 login

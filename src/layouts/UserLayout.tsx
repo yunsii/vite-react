@@ -1,9 +1,10 @@
 import type { MenuDataItem } from '@ant-design/pro-layout';
-import { DefaultFooter, getMenuData, getPageTitle } from '@ant-design/pro-layout';
+import { getMenuData, getPageTitle } from '@ant-design/pro-layout';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import React from 'react';
 import { Link } from '@vitjs/vit';
 
+import GlobalFooter from '@/components/GlobalFooter';
 import styles from './UserLayout.module.less';
 
 export type UserLayoutProps = {
@@ -28,9 +29,11 @@ const UserLayout: React.FC<UserLayoutProps> = (props) => {
     },
   } = props;
   const { breadcrumb } = getMenuData(routes);
+  console.log('props', props);
   const title = getPageTitle({
     pathname: location.pathname,
     breadcrumb,
+    title: 'Vite React',
     ...props,
   });
   return (
@@ -46,14 +49,14 @@ const UserLayout: React.FC<UserLayoutProps> = (props) => {
             <div className={styles.header}>
               <Link to='/'>
                 <img alt='logo' className={styles.logo} src={`${window.routerBase}logo.svg`} />
-                <span className={styles.title}>Ant Design</span>
+                <span className={styles.title}>Vite React</span>
               </Link>
             </div>
-            <div className={styles.desc}>Ant Design 是西湖区最具影响力的 Web 设计规范</div>
+            <div className={styles.desc}>✨ Use Vite + React like a Pro!</div>
           </div>
           {children}
         </div>
-        <DefaultFooter />
+        <GlobalFooter />
       </div>
     </HelmetProvider>
   );

@@ -1,8 +1,8 @@
 # Vite React
 
-> Vite 从入门到放弃 ~
+✨ Use Vite + React like a Pro!
 
-尝试通过 Vite 构建一个类 Ant Design Pro 的项目，即从零搭建一个简单易用的中后台脚手架。
+> 尝试通过 Vite 构建一个类 Ant Design Pro 的项目，即从零搭建一个简单易用的中后台脚手架。
 
 ## 技术实践
 

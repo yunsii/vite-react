@@ -8,7 +8,7 @@ export default [
         component: './layouts/UserLayout',
         routes: [
           {
-            name: 'login',
+            name: '登录',
             path: '/user/login',
             component: './pages/User/Login',
           },

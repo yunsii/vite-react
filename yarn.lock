@@ -1493,10 +1493,10 @@
   dependencies:
     "@vitjs/runtime" "^0.4.0"
 
-"@vitjs/vite-plugin@^0.4.6":
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/@vitjs/vite-plugin/-/vite-plugin-0.4.6.tgz#a8bbf53ddbb6f056580dba8388e9f54add80d7f4"
-  integrity sha512-ttku2loPY1PBIqK5CmZaG6gFUg9TE1hdO5U7osdFEuMVqzwiNOdvDycGBZA3tC2V1ciXg2nXiTLNQjcyzosm3A==
+"@vitjs/vite-plugin@^0.4.7":
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/@vitjs/vite-plugin/-/vite-plugin-0.4.7.tgz#6859a33cb1b80a92cd26dd07cf4afc666403f32c"
+  integrity sha512-lmyeEXrW6ksYTXLQOe09m3sVD4lfMMWLxf1fgpYQRBKYRS6CtLiFN/3xKqGfW8otiHp1LFLFibZ7UxzWt4wYUg==
   dependencies:
     "@ant-design/icons" "^4.6.2"
     "@vitjs/core" "^0.4.0"

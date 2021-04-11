@@ -18,6 +18,7 @@ const Model: ModuleConfig = {
       actionCtx.dispatch('changeLoginStatus', response);
       // Login successfully
       if (response.status === 'ok') {
+        localStorage.setItem('status', 'ok');
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
         message.success('🎉 🎉 🎉  登录成功！');
@@ -42,6 +43,7 @@ const Model: ModuleConfig = {
     },
 
     logout() {
+      localStorage.removeItem('status');
       const { redirect } = getPageQuery();
       // Note: There may be security issues, please note
       if (window.location.pathname !== '/user/login' && !redirect) {

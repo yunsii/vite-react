@@ -5,12 +5,12 @@
  */
 import React from 'react';
 import type { BasicLayoutProps as ProLayoutProps } from '@ant-design/pro-layout';
-import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
-import { GithubOutlined, HomeOutlined } from '@ant-design/icons';
+import ProLayout from '@ant-design/pro-layout';
+import { HomeOutlined } from '@ant-design/icons';
 import { history, Link, useLocation } from '@vitjs/vit';
-import { useConcent } from 'concent';
 
 import RightContent from '@/components/GlobalHeader/RightContent';
+import GlobalFooter from '@/components/GlobalFooter';
 import defaultSettings from '../../config/defaultSettings';
 
 const loginPath = '/user/login';
@@ -19,23 +19,8 @@ export type BasicLayoutProps = {
   route: ProLayoutProps['route'];
 } & ProLayoutProps;
 
-const defaultFooterDom = (
-  <DefaultFooter
-    copyright={`${new Date().getFullYear()} theprimone 出品`}
-    links={[
-      {
-        key: 'github',
-        title: <GithubOutlined />,
-        href: 'https://github.com/theprimone/vite-react',
-        blankTarget: true,
-      },
-    ]}
-  />
-);
-
 const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   const location = useLocation();
-  const { state } = useConcent('login');
 
   return (
     <ProLayout
@@ -43,7 +28,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
       {...props}
       onPageChange={() => {
         // 如果没有登录，重定向到 login
-        if (state.status !== 'ok' && history.location.pathname !== loginPath) {
+        if (localStorage.getItem('status') !== 'ok' && history.location.pathname !== loginPath) {
           history.push(loginPath);
         }
       }}
@@ -74,7 +59,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
           <span>{route.breadcrumbName}</span>
         );
       }}
-      footerRender={() => defaultFooterDom}
+      footerRender={() => <GlobalFooter />}
       // waterMarkProps={{
       //   content: 'Vite React',
       //   fontColor: 'rgba(24,144,255,0.15)',

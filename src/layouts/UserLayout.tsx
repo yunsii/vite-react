@@ -1,10 +1,9 @@
 import type { MenuDataItem } from '@ant-design/pro-layout';
 import { getMenuData, getPageTitle } from '@ant-design/pro-layout';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import React from 'react';
 import { Link } from '@vitjs/vit';
 
-import GlobalFooter from '@/components/GlobalFooter';
+import GlobalFooter from '@/container/GlobalFooter';
 import styles from './UserLayout.module.less';
 
 export type UserLayoutProps = {
@@ -20,22 +19,20 @@ const UserLayout: React.FC<UserLayoutProps> = (props) => {
     route = {
       routes: [],
     },
-  } = props;
-  const { routes = [] } = route;
-  const {
     children,
     location = {
       pathname: '',
     },
   } = props;
+  const { routes = [] } = route;
   const { breadcrumb } = getMenuData(routes);
-  console.log('props', props);
   const title = getPageTitle({
     pathname: location.pathname,
     breadcrumb,
     title: 'Vite React',
     ...props,
   });
+
   return (
     <HelmetProvider>
       <Helmet>

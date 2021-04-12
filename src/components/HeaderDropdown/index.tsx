@@ -1,4 +1,3 @@
-import React from 'react';
 import type { DropDownProps } from 'antd/es/dropdown';
 import { Dropdown } from 'antd';
 import classNames from 'classnames';

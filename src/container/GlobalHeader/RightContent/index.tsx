@@ -1,4 +1,3 @@
-import React from 'react';
 import { Space } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import Avatar from './AvatarDropdown';

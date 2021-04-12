@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, Alert, Skeleton } from 'antd';
 
 export default function ComingSoon() {

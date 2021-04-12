@@ -1,4 +1,3 @@
-import React from 'react';
 import { Col, Row, Card } from 'antd';
 import { MailOutlined, HomeOutlined } from '@ant-design/icons';
 

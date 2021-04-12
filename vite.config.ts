@@ -62,4 +62,7 @@ export default {
       },
     },
   },
+  esbuild: {
+    jsxInject: "import * as React from 'react'",
+  },
 } as UserConfig;

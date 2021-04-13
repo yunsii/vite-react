@@ -39,7 +39,10 @@ const Login: React.FC = () => {
   const [type, setType] = useState<string>('account');
 
   const handleSubmit = (values: LoginParamsType) => {
-    dispatch('login', { ...values, type });
+    dispatch('login', {
+      ...values,
+      type,
+    });
   };
 
   return (

@@ -16,43 +16,58 @@ export default [
       },
       {
         path: '/',
-        component: './layouts/BasicLayout',
+        component: './layouts/SecurityLayout',
         routes: [
           {
             path: '/',
-            redirect: '/welcome',
-          },
-          {
-            path: '/welcome',
-            icon: 'smile',
-            name: '欢迎页',
-            component: './pages/Welcome',
-          },
-          {
-            path: '/concent',
-            icon: 'bulb',
-            name: 'Concent Demo',
-            component: './pages/Concent/HelloWorld',
-          },
-          {
-            path: '/account',
-            icon: 'user',
-            name: '个人页',
+            component: './layouts/BasicLayout',
             routes: [
               {
-                path: '/account/center',
-                name: '个人中心',
-                component: './pages/Account/Center',
+                path: '/',
+                redirect: '/welcome',
               },
               {
-                path: '/account/settings',
-                name: '个人设置',
-                component: './pages/Account/Settings',
+                path: '/welcome',
+                icon: 'smile',
+                name: '欢迎页',
+                component: './pages/Welcome',
+              },
+              {
+                path: '/concent',
+                icon: 'bulb',
+                name: 'Concent Demo',
+                component: './pages/Concent/HelloWorld',
+              },
+              {
+                path: '/account',
+                icon: 'user',
+                name: '个人页',
+                routes: [
+                  {
+                    path: '/account/center',
+                    name: '个人中心',
+                    component: './pages/Account/Center',
+                  },
+                  {
+                    path: '/account/settings',
+                    name: '个人设置',
+                    component: './pages/Account/Settings',
+                  },
+                ],
               },
             ],
           },
+          {
+            component: './pages/404',
+          },
         ],
       },
+      {
+        component: './pages/404',
+      },
     ],
+  },
+  {
+    component: './pages/404',
   },
 ];

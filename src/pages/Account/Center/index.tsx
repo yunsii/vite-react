@@ -1,19 +1,13 @@
 import { Col, Row, Card } from 'antd';
 import { MailOutlined, HomeOutlined } from '@ant-design/icons';
+import { useConcent } from 'concent';
 
 import ComingSoon from '@/components/ComingSoon';
 import styles from './index.module.less';
 
-export const currentUser = {
-  email: 'yuns.xie@qq.com',
-  address: '广东深圳',
-  avatar:
-    'https://avatars.githubusercontent.com/u/18096089?s=460&u=ac70c17caf8cb7e48d0a4f8b8ef28825688cbb8d&v=4',
-  name: '云深',
-  position: '前端开发工程师',
-};
-
 export default function AccountCenter() {
+  const { state: me } = useConcent('me');
+
   const renderUserInfo = () => (
     <div className={styles.detail}>
       <p>
@@ -22,7 +16,7 @@ export default function AccountCenter() {
             marginRight: 8,
           }}
         />
-        {currentUser.email}
+        {me.email}
       </p>
       <p>
         <HomeOutlined
@@ -30,7 +24,7 @@ export default function AccountCenter() {
             marginRight: 8,
           }}
         />
-        {currentUser.address}
+        {me.address}
       </p>
     </div>
   );
@@ -41,9 +35,9 @@ export default function AccountCenter() {
         <Card bordered={false} style={{ marginBottom: 24 }}>
           <div>
             <div className={styles.avatarHolder}>
-              <img alt='' src={currentUser.avatar} />
-              <div className={styles.name}>{currentUser.name}</div>
-              <div>{currentUser.position}</div>
+              <img alt='' src={me.avatar} />
+              <div className={styles.name}>{me.name}</div>
+              <div>{me.position}</div>
             </div>
             {renderUserInfo()}
           </div>

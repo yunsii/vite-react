@@ -4,7 +4,6 @@ import { useConcent } from 'concent';
 import { history } from '@vitjs/vit';
 
 import HeaderDropdown from '@/components/HeaderDropdown';
-import { currentUser } from '@/pages/Account/Center';
 import styles from './index.module.less';
 
 export type GlobalHeaderRightProps = {
@@ -13,6 +12,7 @@ export type GlobalHeaderRightProps = {
 
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
   const { dispatch } = useConcent('login');
+  const { state } = useConcent('me');
 
   const onMenuClick = (event: {
     key: React.Key;
@@ -54,8 +54,8 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
   return (
     <HeaderDropdown overlay={menuHeaderDropdown}>
       <span className={`${styles.action} ${styles.account}`}>
-        <Avatar size='small' className={styles.avatar} src={currentUser.avatar} alt='avatar' />
-        <span className={`${styles.name} anticon`}>{currentUser.name}</span>
+        <Avatar size='small' className={styles.avatar} src={state.avatar} alt='avatar' />
+        <span className={`${styles.name} anticon`}>{state.name}</span>
       </span>
     </HeaderDropdown>
   );

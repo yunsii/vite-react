@@ -2,11 +2,6 @@
   "name": "vite-react",
   "version": "0.0.0",
   "scripts": {
-    "syncC2Dist": "cp -r ../../my-open-source/concent/dist/* ./node_modules/concent/dist/",
-    "syncC2Lib": "cp -r ../../my-open-source/concent/lib/* ./node_modules/concent/lib/",
-    "syncC2Es": "cp -r ../../my-open-source/concent/es/* ./node_modules/concent/es/",
-    "syncC2Src": "cp -r ../../my-open-source/concent/src/* ./node_modules/concent/src/",
-    "c2": "npm run syncC2Dist & npm run syncC2Lib & npm run syncC2Es & npm run syncC2Src",
     "dev": "cross-env BROWSER=chrome vite",
     "build": "vite build",
     "serve": "vite preview",

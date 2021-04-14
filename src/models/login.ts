@@ -1,21 +1,47 @@
 import { message } from 'antd';
-import type { ModuleConfig } from 'concent';
+import { defineModule } from 'concent';
 import { history } from '@vitjs/vit';
 import { stringify } from 'querystring';
 
 import { fakeAccountLogin } from '@/services/login';
 import { getPageQuery } from '@/utils/utils';
 
-const Model: ModuleConfig = {
-  state: {
-    status: undefined,
-    type: undefined,
+type State = {
+  status: string | undefined;
+  type: string | undefined;
+};
+
+const iState = () => ({
+  status: undefined,
+  type: undefined,
+});
+
+const m = defineModule({
+  state: iState,
+
+  computed: {
+    xx(n) {
+      return n.type + '2';
+    }
+  },
+
+  lifecycle: {
+    willUnmount(dispatch, moduleState) {
+      console.log('属于当前模块的最后一个组件卸载时触发');
+      dispatch(m.r.clear);
+    }
   },
 
   reducer: {
-    login: async (payload, moduleState, actionCtx) => {
+    clear() {
+      return iState();
+    },
+
+    login: async (payload: any, moduleState, actionCtx) => {
       const response = await fakeAccountLogin(payload);
-      actionCtx.dispatch('changeLoginStatus', response);
+      // actionCtx.dispatch('changeLoginStatus', response);
+      actionCtx.dispatch(m.r.changeLoginStatus, response);
+
       // Login successfully
       if (response.status === 'ok') {
         localStorage.setItem('status', 'ok');
@@ -56,7 +82,7 @@ const Model: ModuleConfig = {
       }
     },
 
-    changeLoginStatus(payload) {
+    changeLoginStatus(payload: any) {
       // setAuthority(payload.currentAuthority);
       return {
         status: payload.status,
@@ -64,6 +90,8 @@ const Model: ModuleConfig = {
       };
     },
   },
-};
+});
+// };
 
-export default Model;
+
+export default m;

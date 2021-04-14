@@ -1,4 +1,4 @@
-import type { ModuleConfig } from 'concent';
+import { defineModule } from 'concent';
 
 import { queryMe } from '@/services/me';
 
@@ -10,7 +10,7 @@ export interface Me {
   position?: string;
 }
 
-const Model: ModuleConfig = {
+const Model = defineModule({
   state: {
     address: '',
     avatar: '',
@@ -35,6 +35,6 @@ const Model: ModuleConfig = {
       };
     },
   },
-};
+});
 
 export default Model;

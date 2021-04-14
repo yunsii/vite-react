@@ -9,7 +9,7 @@ import {
   UserOutlined,
   WeiboCircleOutlined,
 } from '@ant-design/icons';
-import { useConcent } from 'concent';
+import { useC2ModConn } from '@/services/concent';
 
 import ProForm, { ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 import { getFakeCaptcha } from '@/services/login';
@@ -28,21 +28,16 @@ const LoginMessage: React.FC<{
     type='error'
     showIcon
   />
-);
+  );
 
 const Login: React.FC = () => {
-  const { state, connectedState, dispatch } = useConcent({
-    module: 'login',
-    connect: { loading: ['login/login'] },
-  });
+  const { state, connectedState, mr } = useC2ModConn('login', ['loading']);
+
   const submitting = connectedState.loading['login/login'];
   const [type, setType] = useState<string>('account');
 
   const handleSubmit = (values: LoginParamsType) => {
-    dispatch('login', {
-      ...values,
-      type,
-    });
+    mr.login({ ...values, type });
   };
 
   return (

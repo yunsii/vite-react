@@ -2200,10 +2200,10 @@ concent-plugin-loading@^2.0.4:
   resolved "https://registry.yarnpkg.com/concent-plugin-loading/-/concent-plugin-loading-2.0.4.tgz#05f5bbc27540eb3022751af5ef1e8be6c1a9b7b5"
   integrity sha512-zw/btv7Dya3eLf+puptpDxnWA+5jM4TlgJW38WKYeCDT9u/rLsQpBk13ua890RiCNQKFFfVqacYJFvVYE8mqSA==
 
-concent@^2.14.15:
-  version "2.14.15"
-  resolved "https://registry.npm.taobao.org/concent/download/concent-2.14.15.tgz#d6f67b0566faf39873215191585b324324574b7c"
-  integrity sha1-1vZ7BWb685hzIVGRWFsyQyRXS3w=
+concent@^2.14.20:
+  version "2.14.20"
+  resolved "https://registry.yarnpkg.com/concent/-/concent-2.14.20.tgz#39fce146cb2d33752f94a746a8d3400b9e39ec40"
+  integrity sha512-lPQerTEYaJgxWHzAQWu4WaGCB6/cilFWLh/LiXOTZQl1EYSrMFevkTkp/8hJgQoyGQfqKLK9Qth9ZWoXXoZ+MA==
 
 confusing-browser-globals@^1.0.10:
   version "1.0.10"

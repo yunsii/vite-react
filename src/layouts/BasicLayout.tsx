@@ -23,7 +23,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
 
   return (
     <ProLayout
-      logo={`${window.routerBase}logo.svg`}
+      logo='https://github.com/vitjs/vit/raw/master/icons/logo.svg'
       {...props}
       onPageChange={() => {
         // 如果没有登录，重定向到 login

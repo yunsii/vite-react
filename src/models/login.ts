@@ -1,6 +1,6 @@
 import { message } from 'antd';
 import { defineModule } from 'concent';
-import { history } from '@vitjs/vit';
+import { history } from '@vitjs/runtime';
 import { stringify } from 'querystring';
 
 import { fakeAccountLogin } from '@/services/login';

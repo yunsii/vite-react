@@ -1,5 +1,5 @@
 import { Button, Result } from 'antd';
-import { history } from '@vitjs/vit';
+import { history } from '@vitjs/runtime';
 
 const NoFoundPage: React.FC = () => (
   <Result

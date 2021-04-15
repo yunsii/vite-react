@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useConcent } from 'concent';
-import { Redirect, useLocation } from '@vitjs/vit';
+import { Redirect, useLocation } from '@vitjs/runtime';
 import { stringify } from 'querystring';
 
 import PageLoading from '@/components/PageLoading';

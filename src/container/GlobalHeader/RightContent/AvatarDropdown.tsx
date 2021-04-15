@@ -1,7 +1,7 @@
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Menu } from 'antd';
 import { useConcent } from 'concent';
-import { history } from '@vitjs/vit';
+import { history } from '@vitjs/runtime';
 
 import HeaderDropdown from '@/components/HeaderDropdown';
 import styles from './index.module.less';

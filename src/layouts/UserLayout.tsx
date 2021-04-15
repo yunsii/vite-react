@@ -1,7 +1,7 @@
 import type { MenuDataItem } from '@ant-design/pro-layout';
 import { getMenuData, getPageTitle } from '@ant-design/pro-layout';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { Link } from '@vitjs/vit';
+import { Link } from '@vitjs/runtime';
 
 import GlobalFooter from '@/container/GlobalFooter';
 import styles from './UserLayout.module.less';
@@ -49,7 +49,7 @@ const UserLayout: React.FC<UserLayoutProps> = (props) => {
                 <span className={styles.title}>Vite React</span>
               </Link>
             </div>
-            <div className={styles.desc}>✨ Use Vite + React like a Pro!</div>
+            <div className={styles.desc}>🚀 Use Vite + React like a Pro!</div>
           </div>
           {children}
         </div>

@@ -6,41 +6,17 @@ import { stringify } from 'querystring';
 import { fakeAccountLogin } from '@/services/login';
 import { getPageQuery } from '@/utils/utils';
 
-type State = {
-  status: string | undefined;
-  type: string | undefined;
-};
-
-const iState = () => ({
-  status: undefined,
-  type: undefined,
-});
-
-const m = defineModule({
-  state: iState,
-
-  computed: {
-    xx(n) {
-      return n.type + '2';
-    }
-  },
-
-  lifecycle: {
-    willUnmount(dispatch, moduleState) {
-      console.log('属于当前模块的最后一个组件卸载时触发');
-      dispatch(m.r.clear);
-    }
+const module = defineModule({
+  state: {
+    status: '',
+    type: '',
   },
 
   reducer: {
-    clear() {
-      return iState();
-    },
-
     login: async (payload: any, moduleState, actionCtx) => {
       const response = await fakeAccountLogin(payload);
       // actionCtx.dispatch('changeLoginStatus', response);
-      actionCtx.dispatch(m.r.changeLoginStatus, response);
+      actionCtx.dispatch(module.reducer.changeLoginStatus, response);
 
       // Login successfully
       if (response.status === 'ok') {
@@ -91,7 +67,5 @@ const m = defineModule({
     },
   },
 });
-// };
 
-
-export default m;
+export default module;

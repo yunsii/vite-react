@@ -11,28 +11,12 @@ export interface Me {
 }
 
 const Model = defineModule({
-  state: {
-    address: '',
-    avatar: '',
-    email: '',
-    name: '',
-    position: '',
-  } as Me,
+  state: { address: '', avatar: '', email: '', name: '', position: '' } as Me,
 
   reducer: {
-    fetchMe: async (payload, moduleState, actionCtx) => {
+    fetchMe: async () => {
       const response = await queryMe();
-      actionCtx.dispatch('saveMe', response.data);
-    },
-
-    saveMe(payload) {
-      return {
-        address: payload.address,
-        avatar: payload.avatar,
-        email: payload.email,
-        name: payload.name,
-        position: payload.position,
-      };
+      return response.data;
     },
   },
 });

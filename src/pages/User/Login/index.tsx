@@ -9,9 +9,9 @@ import {
   UserOutlined,
   WeiboCircleOutlined,
 } from '@ant-design/icons';
-import { useC2ModConn } from '@/services/concent';
-
 import ProForm, { ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
+
+import { useC2ModConn } from '@/services/concent';
 import { getFakeCaptcha } from '@/services/login';
 import type { LoginParamsType } from '@/services/login';
 
@@ -28,7 +28,7 @@ const LoginMessage: React.FC<{
     type='error'
     showIcon
   />
-  );
+);
 
 const Login: React.FC = () => {
   const { state, connectedState, mr } = useC2ModConn('login', ['loading']);

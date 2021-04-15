@@ -45,7 +45,11 @@ const UserLayout: React.FC<UserLayoutProps> = (props) => {
           <div className={styles.top}>
             <div className={styles.header}>
               <Link to='/'>
-                <img alt='logo' className={styles.logo} src={`${window.routerBase}logo.svg`} />
+                <img
+                  alt='logo'
+                  className={styles.logo}
+                  src='https://github.com/vitjs/vit/raw/master/icons/logo.svg'
+                />
                 <span className={styles.title}>Vite React</span>
               </Link>
             </div>

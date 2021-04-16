@@ -11,27 +11,27 @@ export default [
         return {
           status: 'ok',
           type,
-          currentAuthority: 'admin',
+          authority: 'admin',
         };
       }
       if (password === 'vite-react' && userName === 'user') {
         return {
           status: 'ok',
           type,
-          currentAuthority: 'user',
+          authority: 'user',
         };
       }
       if (type === 'mobile') {
         return {
           status: 'ok',
           type,
-          currentAuthority: 'admin',
+          authority: 'admin',
         };
       }
       return {
         status: 'error',
         type,
-        currentAuthority: 'guest',
+        authority: 'guest',
       };
     },
   },

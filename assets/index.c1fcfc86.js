@@ -1,0 +1,1 @@
+import{r as e}from"./index.10e37caf.js";import{C as r}from"./index.a9cc6145.js";import"./index.eb9f2c39.js";import{A as o}from"./index.1a418a8a.js";import{S as t}from"./Skeleton.03190811.js";function n(){return e.createElement(r,{bordered:!1},e.createElement(o,{type:"info",message:"Coming soon..."}),e.createElement(t,null))}export{n as C};

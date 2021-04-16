@@ -26,16 +26,17 @@ export type RootCu = GetRootComputed<Models>;
 export type TGlobalSt = RootState[MODULE_GLOBAL];
 export type Modules = keyof RootState;
 
-/** ultil type based on actionCtx */
+/** util type based on actionCtx */
 export type AC<M extends Modules, FullState extends IAnyObj = RootState[M]> = IActionCtx<
   RootState,
   RootCu,
   M,
-  CtxM<{}, M>,
+  CtxM<Record<string, unknown>, M>,
   FullState
 >;
+
 // ********************************
-// ultil types based on Ctx
+// util types based on Ctx
 // ********************************
 
 // 从左到右: Extra, StaticExtra, Mapped
@@ -43,10 +44,10 @@ type OtherTypes = [any] | [any, any] | [any, any, any];
 
 /** belong one module.  CtxM<P, M, Se, RefCu> */
 export type CtxM<
-  P = {},
+  P = Record<string, unknown>,
   M extends Modules = MODULE_DEFAULT,
-  Se = {},
-  RefCu = {},
+  Se = Record<string, unknown>,
+  RefCu = Record<string, unknown>,
   Ot extends OtherTypes = OtherTypes
 > = ICtx<
   RootState,
@@ -55,7 +56,7 @@ export type CtxM<
   RootRdGhost,
   RootCu,
   P,
-  {},
+  Record<string, unknown>,
   M,
   MODULE_VOID,
   Se,
@@ -66,11 +67,11 @@ export type CtxM<
 
 /** belong one module，expand private state.  CtxMS<P, M, St, Se, RefCu> */
 export type CtxMS<
-  P = {},
+  P = Record<string, unknown>,
   M extends Modules = MODULE_DEFAULT,
-  St = {},
-  Se = {},
-  RefCu = {},
+  St = Record<string, unknown>,
+  Se = Record<string, unknown>,
+  RefCu = Record<string, unknown>,
   Ot extends OtherTypes = OtherTypes
 > = ICtx<
   RootState,
@@ -90,11 +91,11 @@ export type CtxMS<
 
 /** belong one module, connect other modules.  CtxMConn<P, M, Conn, Se, RefCu> */
 export type CtxMConn<
-  P = {},
+  P = Record<string, unknown>,
   M extends Modules = MODULE_DEFAULT,
   Conn extends Modules = MODULE_VOID,
-  Se = {},
-  RefCu = {},
+  Se = Record<string, unknown>,
+  RefCu = Record<string, unknown>,
   Ot extends OtherTypes = OtherTypes
 > = ICtx<
   RootState,
@@ -103,7 +104,7 @@ export type CtxMConn<
   RootRdGhost,
   RootCu,
   P,
-  {},
+  Record<string, unknown>,
   M,
   Conn,
   Se,
@@ -114,12 +115,12 @@ export type CtxMConn<
 
 /** belong one module，expand private state, connect other modules.  CtxMSConn<P, M, St, Conn, Se, RefCu>  */
 export type CtxMSConn<
-  P = {},
+  P = Record<string, unknown>,
   M extends Modules = MODULE_DEFAULT,
-  St = {},
+  St = Record<string, unknown>,
   Conn extends Modules = MODULE_VOID,
-  Se = {},
-  RefCu = {},
+  Se = Record<string, unknown>,
+  RefCu = Record<string, unknown>,
   Ot extends OtherTypes = OtherTypes
 > = ICtx<
   RootState,
@@ -139,11 +140,11 @@ export type CtxMSConn<
 
 /** expand private state, connect other modules.  CtxMSConn<P, St, Conn, Se, RefCu>  */
 export type CtxSConn<
-  P = {},
-  St = {},
+  P = Record<string, unknown>,
+  St = Record<string, unknown>,
   Conn extends Modules = MODULE_VOID,
-  Se = {},
-  RefCu = {},
+  Se = Record<string, unknown>,
+  RefCu = Record<string, unknown>,
   Ot extends OtherTypes = OtherTypes
 > = ICtx<
   RootState,
@@ -162,7 +163,13 @@ export type CtxSConn<
 >;
 
 /** expand private state.  CtxMSConn<P, St, Conn, Se, RefCu>  */
-export type CtxS<P = {}, St = {}, Se = {}, RefCu = {}, Ot extends OtherTypes = OtherTypes> = ICtx<
+export type CtxS<
+  P = Record<string, unknown>,
+  St = Record<string, unknown>,
+  Se = Record<string, unknown>,
+  RefCu = Record<string, unknown>,
+  Ot extends OtherTypes = OtherTypes
+> = ICtx<
   RootState,
   RootRd,
   RootRdCaller,
@@ -180,10 +187,10 @@ export type CtxS<P = {}, St = {}, Se = {}, RefCu = {}, Ot extends OtherTypes = O
 
 /** connect other modules.  CtxConn<P, Conn, Se, RefCu> */
 export type CtxConn<
-  P = {},
+  P = Record<string, unknown>,
   Conn extends Modules = MODULE_VOID,
-  Se = {},
-  RefCu = {},
+  Se = Record<string, unknown>,
+  RefCu = Record<string, unknown>,
   Ot extends OtherTypes = OtherTypes
 > = ICtx<
   RootState,
@@ -202,33 +209,32 @@ export type CtxConn<
 >;
 
 /** default series, when no module specified, the component belong to $$default module by default */
-export type DCtxDe<P = {}, Se = {}, RefCu = {}, Ot extends OtherTypes = OtherTypes> = CtxM<
-  P,
-  MODULE_DEFAULT,
-  Se,
-  RefCu,
-  Ot
->;
+export type DCtxDe<
+  P = Record<string, unknown>,
+  Se = Record<string, unknown>,
+  RefCu = Record<string, unknown>,
+  Ot extends OtherTypes = OtherTypes
+> = CtxM<P, MODULE_DEFAULT, Se, RefCu, Ot>;
 export type CtxDeS<
-  P = {},
-  St = {},
-  Se = {},
-  RefCu = {},
+  P = Record<string, unknown>,
+  St = Record<string, unknown>,
+  Se = Record<string, unknown>,
+  RefCu = Record<string, unknown>,
   Ot extends OtherTypes = OtherTypes
 > = CtxMS<P, MODULE_DEFAULT, St, Se, RefCu, Ot>;
 export type CtxDeSConn<
-  P = {},
-  St = {},
+  P = Record<string, unknown>,
+  St = Record<string, unknown>,
   Conn extends Modules = MODULE_VOID,
-  Se = {},
-  RefCu = {},
+  Se = Record<string, unknown>,
+  RefCu = Record<string, unknown>,
   Ot extends OtherTypes = OtherTypes
 > = CtxMSConn<P, MODULE_DEFAULT, St, Conn, Se, RefCu, Ot>;
 export type CtxDeConn<
-  P = {},
+  P = Record<string, unknown>,
   Conn extends Modules = MODULE_VOID,
-  Se = {},
-  RefCu = {},
+  Se = Record<string, unknown>,
+  RefCu = Record<string, unknown>,
   Ot extends OtherTypes = OtherTypes
 > = CtxSConn<P, MODULE_DEFAULT, Conn, Se, RefCu, Ot>;
 

@@ -1,0 +1,1 @@
+import{r as e}from"./vendor.82a814d9.js";import{C as r}from"./index.44430433.js";import{C as t}from"./index.7846971d.js";function o(){return e.createElement(r,{bordered:!1,style:{marginBottom:24}},e.createElement(t,null))}export default o;

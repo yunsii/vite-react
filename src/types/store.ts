@@ -11,7 +11,7 @@ import type {
   GetRootReducerCaller,
   GetRootReducerGhost,
 } from 'concent';
-import type { Models } from './mods';
+import type { Models } from './models';
 
 export type RootState = GetRootState<Models>;
 

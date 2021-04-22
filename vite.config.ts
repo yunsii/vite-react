@@ -53,15 +53,6 @@ export default {
       },
     },
   },
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'lodash-es': ['lodash-es', 'lodash'],
-        },
-      },
-    },
-  },
   esbuild: {
     jsxInject: "import * as React from 'react'",
   },

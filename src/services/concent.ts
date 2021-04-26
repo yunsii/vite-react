@@ -1,5 +1,14 @@
 // concent 相关的一些公共封装函数
 
+import {
+  useConcent,
+  reducer,
+  getState as getSt,
+  getGlobalState as getGst,
+  emit,
+  getComputed,
+  cst,
+} from 'concent';
 import type {
   ReducerCallerParams,
   IReducerFn,
@@ -12,17 +21,16 @@ import type {
   SetupFn,
   MultiComputed,
 } from 'concent';
-import {
-  useConcent,
-  reducer,
-  getState as getSt,
-  getGlobalState as getGst,
-  emit,
-  getComputed,
-  cst,
-} from 'concent';
 
-import type { CtxM, CtxMConn, CtxConn, Modules, RootRd, RootState, RootCu } from '../types/store';
+import type {
+  ModuleContext,
+  ModuleContextWithConnect,
+  ContextWithConnect,
+  Modules,
+  RootReducer,
+  RootState,
+  RootComputed,
+} from '../types/store';
 import type { EvMap } from '../types/eventMap';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -86,17 +94,19 @@ export async function callTarget(
 export interface ValidSetup {
   (ctx: ICtxBase): IAnyObj | void;
 }
+
 export interface ValidMapProps {
   (ctx: ICtxBase): IAnyObj;
 }
+
 export interface OptionsBase<
-  P extends IAnyObj,
+  Props extends IAnyObj,
   CuDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
   Mp extends ValidMapProps
 > {
-  props?: P;
+  props?: Props;
   tag?: string;
   ccClassKey?: string;
   extra?: Extra;
@@ -114,13 +124,13 @@ export interface OptionsBase<
   passCuDesc?: boolean;
 }
 export interface Options<
-  P extends IAnyObj,
+  Props extends IAnyObj,
   Setup extends ValidSetup,
   CuDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
   Mp extends ValidMapProps
-> extends OptionsBase<P, CuDesc, Extra, StaticExtra, Mp> {
+> extends OptionsBase<Props, CuDesc, Extra, StaticExtra, Mp> {
   setup?: Setup;
 }
 
@@ -153,15 +163,15 @@ export interface Options<
 export function useC2Mod<
   M extends Modules,
   Setup extends ValidSetup,
-  P extends IAnyObj,
+  Props extends IAnyObj,
   CuDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
   Mp extends ValidMapProps
->(moduleName: M, options?: Options<P, Setup, CuDesc, Extra, StaticExtra, Mp>) {
+>(moduleName: M, options?: Options<Props, Setup, CuDesc, Extra, StaticExtra, Mp>) {
   const { regOpt, ccClassKey } = priBuildCallParams(moduleName, [], options);
-  type Ctx = CtxM<
-    P,
+  type Ctx = ModuleContext<
+    Props,
     M,
     SettingsType<Setup>,
     ComputedValType<CuDesc>,
@@ -175,15 +185,15 @@ export function useC2ModConn<
   M extends Modules,
   Conn extends Modules[],
   Setup extends ValidSetup,
-  P extends IAnyObj,
+  Props extends IAnyObj,
   CuDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
   Mp extends ValidMapProps
->(moduleName: M, connect: Conn, options?: Options<P, Setup, CuDesc, Extra, StaticExtra, Mp>) {
+>(moduleName: M, connect: Conn, options?: Options<Props, Setup, CuDesc, Extra, StaticExtra, Mp>) {
   const { regOpt, ccClassKey } = priBuildCallParams(moduleName, connect, options);
-  type Ctx = CtxMConn<
-    P,
+  type Ctx = ModuleContextWithConnect<
+    Props,
     M,
     Conn[number],
     SettingsType<Setup>,
@@ -197,15 +207,15 @@ export function useC2ModConn<
 export function useC2Conn<
   Conn extends Modules[],
   Setup extends ValidSetup,
-  P extends IAnyObj,
+  Props extends IAnyObj,
   CuDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
   Mp extends ValidMapProps
->(connect: Conn, options?: Options<P, Setup, CuDesc, Extra, StaticExtra, Mp>) {
+>(connect: Conn, options?: Options<Props, Setup, CuDesc, Extra, StaticExtra, Mp>) {
   const { regOpt, ccClassKey } = priBuildCallParams(cst.MODULE_DEFAULT, connect, options);
-  type Ctx = CtxConn<
-    P,
+  type Ctx = ContextWithConnect<
+    Props,
     Conn[number],
     SettingsType<Setup>,
     ComputedValType<CuDesc>,
@@ -222,16 +232,16 @@ export function useC2Conn<
  */
 export function useSetup<
   T extends SetupFn,
-  P extends IAnyObj,
+  Props extends IAnyObj,
   CuDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
   Mp extends ValidMapProps
->(setup: T, options?: OptionsBase<P, CuDesc, Extra, StaticExtra, Mp>) {
+>(setup: T, options?: OptionsBase<Props, CuDesc, Extra, StaticExtra, Mp>) {
   const mergedOptions = { setup, ...options };
   const { regOpt, ccClassKey } = priBuildCallParams(cst.MODULE_DEFAULT, [], mergedOptions);
-  type Ctx = CtxM<
-    P,
+  type Ctx = ModuleContext<
+    Props,
     MODULE_DEFAULT,
     SettingsType<T>,
     ComputedValType<CuDesc>,
@@ -249,15 +259,15 @@ export function useSetup<
 export function typeCtxM<
   M extends Modules,
   Setup extends ValidSetup,
-  P extends IAnyObj,
+  Props extends IAnyObj,
   CuDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
   Mp extends ValidMapProps
->(moduleName: M, options?: Options<P, Setup, CuDesc, Extra, StaticExtra, Mp>, ctx?: any) {
+>(moduleName: M, options?: Options<Props, Setup, CuDesc, Extra, StaticExtra, Mp>, ctx?: any) {
   noop(moduleName, options);
-  type Ctx = CtxM<
-    P,
+  type Ctx = ModuleContext<
+    Props,
     M,
     SettingsType<Setup>,
     ComputedValType<CuDesc>,
@@ -291,32 +301,32 @@ export function makeUseC2Mod<M extends Modules>(moduleName: M) {
     /** 需要传入的 setup 函数 */
     useC2Mod: <
       Setup extends ValidSetup,
-      P extends IAnyObj,
+      Props extends IAnyObj,
       CuDesc extends MultiComputed<any>,
       Extra extends IAnyObj,
       StaticExtra extends any,
       Mp extends ValidMapProps
     >(
-      options?: Options<P, Setup, CuDesc, Extra, StaticExtra, Mp>,
+      options?: Options<Props, Setup, CuDesc, Extra, StaticExtra, Mp>,
     ) => {
       const { regOpt, ccClassKey } = priBuildCallParams(moduleName, [], options);
-      type Ctx = CtxM<
-        P,
+      type Ctx = ModuleContext<
+        Props,
         M,
         SettingsType<Setup>,
         ComputedValType<CuDesc>,
         [Extra, StaticExtra, ReturnType<Mp>]
       >;
-      return useConcent<P, Ctx>(regOpt, ccClassKey);
+      return useConcent<Props, Ctx>(regOpt, ccClassKey);
     },
     /** 推导 setup 函数的 ctx 参数类型 */
     typeCtx: (ctx: ICtxBase) => {
-      return ctx as CtxM<Record<string, unknown>, M>;
+      return ctx as ModuleContext<Record<string, unknown>, M>;
     },
   };
 }
 
-export const ccReducer = (reducer as unknown) as RootRd;
+export const ccReducer = (reducer as unknown) as RootReducer;
 
 /**
  * 获取 global 模块的状态
@@ -348,7 +358,7 @@ export function getModelState<T extends Modules>(modelName: T) {
 
 /** 获取目标模块状态 */
 export function getModelComputed<T extends Modules>(modelName: T) {
-  const modelComputed = getComputed(modelName) as RootCu[T];
+  const modelComputed = getComputed(modelName) as RootComputed[T];
   return modelComputed;
 }
 

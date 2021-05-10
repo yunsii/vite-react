@@ -31,12 +31,12 @@ import type {
   RootState,
   RootComputed,
 } from '../types/store';
-import type { EvMap } from '../types/eventMap';
+import type EventMap from '../types/concentEventMap';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function noop(...args: any[]) {}
 
-function priBuildCallParams(
+function buildCallParams(
   moduleName: string,
   connect: Modules[],
   options?: Options<any, any, any, any, any, any>,
@@ -47,12 +47,12 @@ function priBuildCallParams(
     tag,
     extra,
     staticExtra,
-    cuDesc,
-    passCuDesc = true,
+    computedDesc,
+    passComputedDesc = true,
     props = {},
-    ccClassKey,
+    concentClassKey,
   } = targetOptions;
-  const regOpt = {
+  const registerOptions = {
     module: moduleName,
     connect,
     setup,
@@ -60,10 +60,10 @@ function priBuildCallParams(
     tag,
     extra,
     staticExtra,
-    cuDesc: null as any,
+    computedDesc: null as any,
   };
-  if (passCuDesc) regOpt.cuDesc = cuDesc;
-  return { regOpt, ccClassKey };
+  if (passComputedDesc) registerOptions.computedDesc = computedDesc;
+  return { registerOptions, concentClassKey };
 }
 
 /**
@@ -101,19 +101,19 @@ export interface ValidMapProps {
 
 export interface OptionsBase<
   Props extends IAnyObj,
-  CuDesc extends MultiComputed<any>,
+  ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  Mp extends ValidMapProps
+  MapProps extends ValidMapProps
 > {
   props?: Props;
   tag?: string;
-  ccClassKey?: string;
+  concentClassKey?: string;
   extra?: Extra;
   staticExtra?: StaticExtra;
   /** 一个遗留的参数，对接 useConcent 的 mapProps，每一轮渲染都会调用，返回结果可通过 ctx.mapped 拿到 */
-  mapProps?: Mp;
-  cuDesc?: CuDesc;
+  mapProps?: MapProps;
+  computedDesc?: ComputedDesc;
   /**
    * 是否透传 cuSpec 给 useConcent 函数，默认为true，
    * 表示需要透传，此时用户不需要再setup函数体内调用 ctx.computed(cuSpec)
@@ -121,23 +121,23 @@ export interface OptionsBase<
    * 注意此时用户需要在 setup 函数体内调用 ctx.computed(cuSpec) 来完成示例计算函数的定义，
    * 否则 refComputed 里拿不到真正的计算结果
    */
-  passCuDesc?: boolean;
+  passComputedDesc?: boolean;
 }
 export interface Options<
   Props extends IAnyObj,
   Setup extends ValidSetup,
-  CuDesc extends MultiComputed<any>,
+  ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  Mp extends ValidMapProps
-> extends OptionsBase<Props, CuDesc, Extra, StaticExtra, Mp> {
+  MapProps extends ValidMapProps
+> extends OptionsBase<Props, ComputedDesc, Extra, StaticExtra, MapProps> {
   setup?: Setup;
 }
 
 /**
  * 属于某个模块
  * use the target model context you want by passing a module name
- * 如需要全局任意地方可通过 useC2Mod('xx') 导出 xx 模块上下文来使用，
+ * 如需要全局任意地方可通过 useModule('xx') 导出 xx 模块上下文来使用，
  * 需要在 src/models/index.js 显式的导出该模块
  *
  * -----------------------[Code example]-----------------------
@@ -150,78 +150,78 @@ export interface Options<
  * export default allModels;
  *
  * // 某些组件里使用
- * import { useC2Mod } from 'services/concent';
+ * import { useModule } from 'services/concent';
  *
  * function DemoComp(){
- *   const ctx = useC2Mod('xxxMod');
+ *   const ctx = useModule('xxxMod');
  *   return <h1>{ctx.state.hello}</h1>
  * }
  * --------------------------------------------------------------
  * @param moduleName
  * @param options {Options} - 可选参数，见 Options 定义
  */
-export function useC2Mod<
+export function useModule<
   M extends Modules,
   Setup extends ValidSetup,
   Props extends IAnyObj,
-  CuDesc extends MultiComputed<any>,
+  ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  Mp extends ValidMapProps
->(moduleName: M, options?: Options<Props, Setup, CuDesc, Extra, StaticExtra, Mp>) {
-  const { regOpt, ccClassKey } = priBuildCallParams(moduleName, [], options);
+  MapProps extends ValidMapProps
+>(moduleName: M, options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>) {
+  const { registerOptions, concentClassKey } = buildCallParams(moduleName, [], options);
   type Ctx = ModuleContext<
     Props,
     M,
     SettingsType<Setup>,
-    ComputedValType<CuDesc>,
-    [Extra, StaticExtra, ReturnType<Mp>]
+    ComputedValType<ComputedDesc>,
+    [Extra, StaticExtra, ReturnType<MapProps>]
   >;
-  return useConcent<Record<string, unknown>, Ctx>(regOpt, ccClassKey);
+  return useConcent<Record<string, unknown>, Ctx>(registerOptions, concentClassKey);
 }
 
 /** 属于某个模块，连接多个模块 */
-export function useC2ModConn<
+export function useModuleWithConnect<
   M extends Modules,
   Conn extends Modules[],
   Setup extends ValidSetup,
   Props extends IAnyObj,
-  CuDesc extends MultiComputed<any>,
+  ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  Mp extends ValidMapProps
->(moduleName: M, connect: Conn, options?: Options<Props, Setup, CuDesc, Extra, StaticExtra, Mp>) {
-  const { regOpt, ccClassKey } = priBuildCallParams(moduleName, connect, options);
+  MapProps extends ValidMapProps
+>(moduleName: M, connect: Conn, options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>) {
+  const { registerOptions, concentClassKey } = buildCallParams(moduleName, connect, options);
   type Ctx = ModuleContextWithConnect<
     Props,
     M,
     Conn[number],
     SettingsType<Setup>,
-    ComputedValType<CuDesc>,
-    [Extra, StaticExtra, ReturnType<Mp>]
+    ComputedValType<ComputedDesc>,
+    [Extra, StaticExtra, ReturnType<MapProps>]
   >;
-  return useConcent<Record<string, unknown>, Ctx>(regOpt, ccClassKey);
+  return useConcent<Record<string, unknown>, Ctx>(registerOptions, concentClassKey);
 }
 
 /** 连接多个模块 */
-export function useC2Conn<
+export function useConnect<
   Conn extends Modules[],
   Setup extends ValidSetup,
   Props extends IAnyObj,
-  CuDesc extends MultiComputed<any>,
+  ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  Mp extends ValidMapProps
->(connect: Conn, options?: Options<Props, Setup, CuDesc, Extra, StaticExtra, Mp>) {
-  const { regOpt, ccClassKey } = priBuildCallParams(cst.MODULE_DEFAULT, connect, options);
+  MapProps extends ValidMapProps
+>(connect: Conn, options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>) {
+  const { registerOptions, concentClassKey } = buildCallParams(cst.MODULE_DEFAULT, connect, options);
   type Ctx = ContextWithConnect<
     Props,
     Conn[number],
     SettingsType<Setup>,
-    ComputedValType<CuDesc>,
-    [Extra, StaticExtra, ReturnType<Mp>]
+    ComputedValType<ComputedDesc>,
+    [Extra, StaticExtra, ReturnType<MapProps>]
   >;
-  return useConcent<Record<string, unknown>, Ctx>(regOpt, ccClassKey);
+  return useConcent<Record<string, unknown>, Ctx>(registerOptions, concentClassKey);
 }
 
 /**
@@ -233,21 +233,21 @@ export function useC2Conn<
 export function useSetup<
   T extends SetupFn,
   Props extends IAnyObj,
-  CuDesc extends MultiComputed<any>,
+  ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  Mp extends ValidMapProps
->(setup: T, options?: OptionsBase<Props, CuDesc, Extra, StaticExtra, Mp>) {
+  MapProps extends ValidMapProps
+>(setup: T, options?: OptionsBase<Props, ComputedDesc, Extra, StaticExtra, MapProps>) {
   const mergedOptions = { setup, ...options };
-  const { regOpt, ccClassKey } = priBuildCallParams(cst.MODULE_DEFAULT, [], mergedOptions);
+  const { registerOptions, concentClassKey } = buildCallParams(cst.MODULE_DEFAULT, [], mergedOptions);
   type Ctx = ModuleContext<
     Props,
     MODULE_DEFAULT,
     SettingsType<T>,
-    ComputedValType<CuDesc>,
-    [Extra, StaticExtra, ReturnType<Mp>]
+    ComputedValType<ComputedDesc>,
+    [Extra, StaticExtra, ReturnType<MapProps>]
   >;
-  const { settings } = useConcent<Record<string, unknown>, Ctx>(regOpt, ccClassKey);
+  const { settings } = useConcent<Record<string, unknown>, Ctx>(registerOptions, concentClassKey);
   return settings;
 }
 
@@ -256,34 +256,34 @@ export function useSetup<
  * 在 class 组件成员变量使用时不需要传递第三位参数 ctx，组件实例化时会由 concent 注入并替换
  * 在 setup 函数里使用时，可直接传入已经创建好的 ctx
  */
-export function typeCtxM<
+export function typeContextModule<
   M extends Modules,
   Setup extends ValidSetup,
   Props extends IAnyObj,
-  CuDesc extends MultiComputed<any>,
+  ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  Mp extends ValidMapProps
->(moduleName: M, options?: Options<Props, Setup, CuDesc, Extra, StaticExtra, Mp>, ctx?: any) {
+  MapProps extends ValidMapProps
+>(moduleName: M, options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>, ctx?: any) {
   noop(moduleName, options);
   type Ctx = ModuleContext<
     Props,
     M,
     SettingsType<Setup>,
-    ComputedValType<CuDesc>,
-    [Extra, StaticExtra, ReturnType<Mp>]
+    ComputedValType<ComputedDesc>,
+    [Extra, StaticExtra, ReturnType<MapProps>]
   >;
   return (ctx || {}) as Ctx;
 }
 
 /**
- * useC2Mod 的工厂函数，返回钩子函数的同时，也提供了帮助推导 setup 函数的 ctx 参数类型的辅助函数
+ * useModule 的工厂函数，返回钩子函数的同时，也提供了帮助推导 setup 函数的 ctx 参数类型的辅助函数
  * 注意! 此工厂函数仅适用于 setup 函数 ctx 参数不需要感知 props, extra 类型时，方可使用
  *
  * @param moduleName
  * @param options
  * -----------------------[Code example]-----------------------
- * const ret = makeUseC2Mod("Counter");
+ * const ret = makeUseModule("Counter");
  * function setupA1(c: any) {
  *   const ctx = ret.typeCtx(c);
  *   const cu = ctx.computed({countX6: (n) => n.value * 6 });
@@ -291,33 +291,33 @@ export function typeCtxM<
  * }
  *
  * export function UseC2ModByFactory() {
- *   const ctx = ret.useC2Mod({ setup: setupA1 });
+ *   const ctx = ret.useModule({ setup: setupA1 });
  *   return <h1>{ctx.state.bigValue} {ctx.settings.cu.countX6}</h1>
  * }
  * --------------------------------------------------------------
  */
-export function makeUseC2Mod<M extends Modules>(moduleName: M) {
+export function makeUseModule<M extends Modules>(moduleName: M) {
   return {
     /** 需要传入的 setup 函数 */
-    useC2Mod: <
+    useModule: <
       Setup extends ValidSetup,
       Props extends IAnyObj,
-      CuDesc extends MultiComputed<any>,
+      ComputedDesc extends MultiComputed<any>,
       Extra extends IAnyObj,
       StaticExtra extends any,
-      Mp extends ValidMapProps
+      MapProps extends ValidMapProps
     >(
-      options?: Options<Props, Setup, CuDesc, Extra, StaticExtra, Mp>,
+      options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>,
     ) => {
-      const { regOpt, ccClassKey } = priBuildCallParams(moduleName, [], options);
+      const { registerOptions, concentClassKey } = buildCallParams(moduleName, [], options);
       type Ctx = ModuleContext<
         Props,
         M,
         SettingsType<Setup>,
-        ComputedValType<CuDesc>,
-        [Extra, StaticExtra, ReturnType<Mp>]
+        ComputedValType<ComputedDesc>,
+        [Extra, StaticExtra, ReturnType<MapProps>]
       >;
-      return useConcent<Props, Ctx>(regOpt, ccClassKey);
+      return useConcent<Props, Ctx>(registerOptions, concentClassKey);
     },
     /** 推导 setup 函数的 ctx 参数类型 */
     typeCtx: (ctx: ICtxBase) => {
@@ -326,7 +326,7 @@ export function makeUseC2Mod<M extends Modules>(moduleName: M) {
   };
 }
 
-export const ccReducer = (reducer as unknown) as RootReducer;
+export const concentReducer = (reducer as unknown) as RootReducer;
 
 /**
  * 获取 global 模块的状态
@@ -362,7 +362,7 @@ export function getModelComputed<T extends Modules>(modelName: T) {
   return modelComputed;
 }
 
-type EvKeys = keyof EvMap;
+type EventKeys = keyof EventMap;
 
 /**
  * 发射事件
@@ -370,7 +370,7 @@ type EvKeys = keyof EvMap;
  * @param eventName - 事件名
  * @param args
  */
-export function ccEmit<E extends EvKeys, T extends EvMap[E]>(eventName: E, ...args: T) {
+export function concentEmit<E extends EventKeys, T extends EventMap[E]>(eventName: E, ...args: T) {
   emit(eventName, ...args);
 }
 
@@ -380,34 +380,34 @@ export function ccEmit<E extends EvKeys, T extends EvMap[E]>(eventName: E, ...ar
  * @param eventDesc - [eventName, id]
  * @param args
  */
-export function ccEmitId<E extends EvKeys, T extends EvMap[E]>(eventDesc: [E, string], ...args: T) {
+export function concentEmitId<E extends EventKeys, T extends EventMap[E]>(eventDesc: [E, string], ...args: T) {
   emit(eventDesc, ...args);
 }
 
-type OnFn = <E extends EvKeys>(eventName: E, cb: (...args: EvMap[E]) => void) => void;
+type OnFn = <E extends EventKeys>(eventName: E, cb: (...args: EventMap[E]) => void) => void;
 
 /**
  * 配合 EvMap，为 ctx.on 装配类型
  * 外部调用时传入具体的事件名就推导出 cb 函数的参数列表类型
  *
  * function setup(ctx: Ctx){
- *   const on = ctxOn(ctx);
+ *   const on = contextOn(ctx);
  *   on('xxx',(a, b)=>{
  *    // 此处 ts 能感知 a、b 的具体类型
  *   })
  * }
  */
-export function ctxOn(ctx: ICtxBase) {
+export function contextOn(ctx: ICtxBase) {
   return ctx.on as OnFn;
 }
 
-type OnIdFn = <E extends EvKeys>(eventDesc: [E, string], cb: (...args: EvMap[E]) => void) => void;
+type OnIdFn = <E extends EventKeys>(eventDesc: [E, string], cb: (...args: EventMap[E]) => void) => void;
 
 /**
  * 可以携带 id 的 ctx.on
  *
  * @param ctx
  */
-export function ctxOnId(ctx: ICtxBase) {
+export function contextOnId(ctx: ICtxBase) {
   return ctx.on as OnIdFn;
 }

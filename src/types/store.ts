@@ -132,7 +132,7 @@ export type ModuleContextWithConnectAndPrivateState<
 >;
 
 /** expand private state, connect other modules. */
-export type ContextWithConnectWithPrivateState<
+export type ContextWithConnectAndPrivateState<
   Props = Record<string, unknown>,
   PrivateState = Record<string, unknown>,
   ConnectModule extends Modules = MODULE_VOID,
@@ -202,14 +202,14 @@ export type ContextWithConnect<
 >;
 
 /** default series, when no module specified, the component belong to $$default module by default */
-export type DCtxDe<
+export type DefaultContext<
   Props = Record<string, unknown>,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
   Extra extends OtherTypes = OtherTypes
 > = ModuleContext<Props, MODULE_DEFAULT, Settings, RefComputed, Extra>;
 
-export type CtxDeS<
+export type DefaultContextWithPrivateState<
   Props = Record<string, unknown>,
   PrivateState = Record<string, unknown>,
   Settings = Record<string, unknown>,
@@ -224,7 +224,7 @@ export type CtxDeS<
   Extra
 >;
 
-export type CtxDeSConn<
+export type DefaultContextWithConnectAndPrivateState<
   Props = Record<string, unknown>,
   PrivateState = Record<string, unknown>,
   ConnectModule extends Modules = MODULE_VOID,
@@ -241,13 +241,13 @@ export type CtxDeSConn<
   Extra
 >;
 
-export type CtxDeConn<
+export type DefaultContextWithConnect<
   Props = Record<string, unknown>,
   ConnectModule extends Modules = MODULE_VOID,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
   Extra extends OtherTypes = OtherTypes
-> = ContextWithConnectWithPrivateState<
+> = ContextWithConnectAndPrivateState<
   Props,
   MODULE_DEFAULT,
   ConnectModule,

@@ -11,7 +11,7 @@ import {
 } from '@ant-design/icons';
 import ProForm, { ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 
-import { useC2ModConn } from '@/services/concent';
+import { useModuleWithConnect } from '@/services/concent';
 import { getFakeCaptcha } from '@/services/login';
 import type { LoginParamsType } from '@/services/login';
 
@@ -31,7 +31,7 @@ const LoginMessage: React.FC<{
 );
 
 const Login: React.FC = () => {
-  const { state, connectedState, mr } = useC2ModConn('login', ['loading']);
+  const { state, connectedState, mr } = useModuleWithConnect('login', ['loading']);
 
   const submitting = connectedState.loading['login/login'];
   const [type, setType] = useState<string>('account');

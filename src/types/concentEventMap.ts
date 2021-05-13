@@ -5,5 +5,5 @@
  * 管理所有事件名对应参数类型的 mappedType
  */
 export default interface EventMap {
-  'someEvent': [number, string],
+  countChange: [number];
 }

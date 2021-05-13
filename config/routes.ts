@@ -36,7 +36,13 @@ export default [
                 path: '/concent',
                 icon: 'bulb',
                 name: 'Concent Demo',
-                component: './pages/Concent/HelloWorld',
+                routes: [
+                  {
+                    path: '/concent/hello-world',
+                    name: 'Hello World',
+                    component: './pages/Concent/HelloWorld',
+                  },
+                ],
               },
               {
                 path: '/account',

@@ -3,7 +3,7 @@ import { getMenuData, getPageTitle } from '@ant-design/pro-layout';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link } from '@vitjs/runtime';
 
-import GlobalFooter from '@/container/GlobalFooter';
+import GlobalFooter from '@/containers/GlobalFooter';
 import styles from './UserLayout.module.less';
 
 export type UserLayoutProps = {

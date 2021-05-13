@@ -1,0 +1,1 @@
+import{g as e,bD as r,c4 as o}from"./vendor.cad3022f.js";import{C as t}from"./index.622ddf77.js";function s(){return e.exports.createElement(t,{bordered:!1},e.exports.createElement(r,{type:"info",message:"Coming soon..."}),e.exports.createElement(o,null))}export{s as C};

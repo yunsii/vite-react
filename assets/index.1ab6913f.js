@@ -1,1 +1,0 @@
-import{g as e,bC as r,c2 as n}from"./vendor.de76d4ed.js";import{C as o}from"./index.06f8e20a.js";function t(){return e.createElement(o,{bordered:!1},e.createElement(r,{type:"info",message:"Coming soon..."}),e.createElement(n,null))}export{t as C};

@@ -1,0 +1,1 @@
+import{g as e,c5 as t,W as s,h as a}from"./vendor.cad3022f.js";export default()=>e.exports.createElement(t,{status:"404",title:"404",subTitle:"Sorry, the page you visited does not exist.",extra:e.exports.createElement(s,{type:"primary",onClick:()=>a.push("/")},"Back Home")});

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Alert, Space, message, Tabs } from 'antd';
 import {
   AlipayCircleOutlined,
@@ -9,6 +9,7 @@ import {
   UserOutlined,
   WeiboCircleOutlined,
 } from '@ant-design/icons';
+import type { ProFormInstance } from '@ant-design/pro-form';
 import ProForm, { ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 
 import { useModuleWithConnect } from '@/services/concent';
@@ -35,6 +36,7 @@ const Login: React.FC = () => {
 
   const submitting = connectedState.loading['login/login'];
   const [type, setType] = useState<string>('account');
+  const formRef = useRef<ProFormInstance>();
 
   const handleSubmit = (values: LoginParamsType) => {
     mr.login({ ...values, type });
@@ -43,6 +45,7 @@ const Login: React.FC = () => {
   return (
     <div className={styles.main}>
       <ProForm
+        formRef={formRef}
         initialValues={{
           autoLogin: true,
         }}
@@ -90,6 +93,9 @@ const Login: React.FC = () => {
               fieldProps={{
                 size: 'large',
                 prefix: <LockOutlined className={styles.prefixIcon} />,
+                onPressEnter: () => {
+                  formRef.current?.submit();
+                },
               }}
               placeholder='密码: vite-react'
               rules={[

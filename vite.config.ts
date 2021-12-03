@@ -3,6 +3,8 @@ import { UserConfig } from 'vite';
 import reactRefresh from '@vitejs/plugin-react-refresh';
 import vitePluginImp from 'vite-plugin-imp';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import OptimizationPersist from 'vite-plugin-optimize-persist';
+import PkgConfig from 'vite-plugin-package-config';
 import vitApp from '@vitjs/vit';
 
 import routes from './config/routes';
@@ -13,6 +15,8 @@ export default {
   plugins: [
     reactRefresh(),
     tsconfigPaths(),
+    PkgConfig(),
+    OptimizationPersist(),
     vitePluginImp({
       libList: [
         {

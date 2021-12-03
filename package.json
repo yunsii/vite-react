@@ -36,6 +36,44 @@
     "typescript": "^4.2.4",
     "vite": "^2.3.2",
     "vite-plugin-imp": "^2.0.4",
+    "vite-plugin-optimize-persist": "^0.1.0",
+    "vite-plugin-package-config": "^0.1.0",
     "vite-tsconfig-paths": "^2.3.0"
+  },
+  "vite": {
+    "optimizeDeps": {
+      "include": [
+        "@ant-design/icons",
+        "@ant-design/icons/BulbOutlined",
+        "@ant-design/icons/SmileOutlined",
+        "@ant-design/icons/UserOutlined",
+        "@ant-design/pro-form",
+        "@ant-design/pro-layout",
+        "@vitjs/runtime",
+        "antd",
+        "antd/es/alert/style",
+        "antd/es/avatar/style",
+        "antd/es/card/style",
+        "antd/es/col/style",
+        "antd/es/divider/style",
+        "antd/es/dropdown/style",
+        "antd/es/menu/style",
+        "antd/es/message/style",
+        "antd/es/notification/style",
+        "antd/es/row/style",
+        "antd/es/skeleton/style",
+        "antd/es/space/style",
+        "antd/es/tabs/style",
+        "antd/es/typography/style",
+        "classnames",
+        "concent",
+        "concent-plugin-loading",
+        "querystring",
+        "react",
+        "react-dom",
+        "react-helmet-async",
+        "umi-request"
+      ]
+    }
   }
 }

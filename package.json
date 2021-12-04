@@ -15,7 +15,7 @@
     "ahooks": "^2.10.0",
     "antd": "^4.14.0",
     "classnames": "^2.2.6",
-    "concent": "~2.14.20",
+    "concent": "^2.14.20",
     "concent-plugin-loading": "^2.0.4",
     "querystring": "^0.2.1",
     "react": "^17.0.0",

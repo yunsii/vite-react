@@ -1960,10 +1960,10 @@ concent-plugin-loading@^2.0.4:
   resolved "https://registry.npmmirror.com/concent-plugin-loading/download/concent-plugin-loading-2.0.5.tgz#a2e4eaa00042f585abfd4ee3705da7341049c587"
   integrity sha1-ouTqoABC9YWr/U7jcF2nNBBJxYc=
 
-concent@~2.14.20:
-  version "2.14.26"
-  resolved "https://registry.npmmirror.com/concent/download/concent-2.14.26.tgz#295685f87448a65782aa8fe856455b889f65990a"
-  integrity sha1-KVaF+HRIpleCqo/oVkVbiJ9lmQo=
+concent@^2.14.20:
+  version "2.16.8"
+  resolved "https://registry.npmmirror.com/concent/download/concent-2.16.8.tgz#cb917de4bcf1fc93855863498e704a07ad269e3b"
+  integrity sha512-wq8spud7UKRH1rZA+dY1f897OrVR5c+tgwQKfXAxb9BhlqISbqU9gM4Bc41AzRLMe2gfTc7oL6JmPnNqCpIptg==
 
 connect@^3.7.0:
   version "3.7.0"

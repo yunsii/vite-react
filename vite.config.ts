@@ -1,6 +1,6 @@
 // import * as path from 'path';
 import { UserConfig } from 'vite';
-import reactRefresh from '@vitejs/plugin-react-refresh';
+import react from '@vitejs/plugin-react';
 import vitePluginImp from 'vite-plugin-imp';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import OptimizationPersist from 'vite-plugin-optimize-persist';
@@ -13,7 +13,13 @@ import routes from './config/routes';
 export default {
   base: '/vite-react/',
   plugins: [
-    reactRefresh(),
+    react({
+      babel: {
+        parserOpts: {
+          plugins: ['decorators-legacy'],
+        },
+      },
+    }),
     tsconfigPaths(),
     PkgConfig(),
     OptimizationPersist(),
@@ -57,7 +63,13 @@ export default {
       },
     },
   },
-  esbuild: {
-    jsxInject: "import * as React from 'react'",
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-venders': ['react', 'react-dom', 'react-route-dom'],
+        },
+      },
+    },
   },
 } as UserConfig;

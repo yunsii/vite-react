@@ -1,0 +1,1 @@
+import"./index.db91889e.js";import{C as o}from"./index.477b3148.js";import"./index.e1e119ee.js";import{A as r}from"./index.543d7f51.js";import{S as s}from"./Skeleton.48b8d522.js";import{m as n,j as e}from"./react-venders.4ac041b7.js";function f(){return n(o,{bordered:!1,children:[e(r,{type:"info",message:"Coming soon..."}),e(s,{})]})}export{f as C};

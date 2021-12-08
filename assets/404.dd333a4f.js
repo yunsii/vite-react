@@ -1,1 +1,0 @@
-import{c as e,cj as t,ac as s,h as o}from"./vendor.4b537733.js";const r=()=>e.exports.createElement(t,{status:"404",title:"404",subTitle:"Sorry, the page you visited does not exist.",extra:e.exports.createElement(s,{type:"primary",onClick:()=>o.push("/")},"Back Home")});export{r as default};

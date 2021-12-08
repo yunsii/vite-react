@@ -67,7 +67,7 @@ export default {
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-venders': ['react', 'react-dom', 'react-route-dom'],
+          'react-venders': ['react', 'react-dom', '@vitjs/runtime'],
         },
       },
     },

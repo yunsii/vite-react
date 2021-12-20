@@ -5,6 +5,7 @@ import vitePluginImp from 'vite-plugin-imp';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import OptimizationPersist from 'vite-plugin-optimize-persist';
 import PkgConfig from 'vite-plugin-package-config';
+import { visualizer } from 'rollup-plugin-visualizer';
 import vitApp from '@vitjs/vit';
 
 import routes from './config/routes';
@@ -39,6 +40,7 @@ export default {
       exportStatic: {},
       mock: { productionEnabled: true },
     }),
+    visualizer(),
   ],
   server: {
     // open: true,

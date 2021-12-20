@@ -1946,6 +1946,15 @@ clean-regexp@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.5"
 
+cliui@^7.0.2:
+  version "7.0.4"
+  resolved "https://registry.npm.taobao.org/cliui/download/cliui-7.0.4.tgz#a0265ee655476fc807aea9df3df8df7783808b4f"
+  integrity sha1-oCZe5lVHb8gHrqnfPfjfd4OAi08=
+  dependencies:
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    wrap-ansi "^7.0.0"
+
 clone-regexp@^2.1.0:
   version "2.2.0"
   resolved "https://registry.npm.taobao.org/clone-regexp/download/clone-regexp-2.2.0.tgz?cache=0&sync_timestamp=1617892092032&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fclone-regexp%2Fdownload%2Fclone-regexp-2.2.0.tgz#7d65e00885cd8796405c35a737e7a86b7429e36f"
@@ -2838,6 +2847,11 @@ gensync@^1.0.0-beta.2:
   resolved "https://registry.npm.taobao.org/gensync/download/gensync-1.0.0-beta.2.tgz#32a6ee76c3d7f52d46b2b1ae5d93fea8580a25e0"
   integrity sha1-MqbudsPX9S1GsrGuXZP+qFgKJeA=
 
+get-caller-file@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.npm.taobao.org/get-caller-file/download/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
+  integrity sha1-T5RBKoLbMvNuOwuXQfipf+sDH34=
+
 get-intrinsic@^1.0.2, get-intrinsic@^1.1.0, get-intrinsic@^1.1.1:
   version "1.1.1"
   resolved "https://registry.nlark.com/get-intrinsic/download/get-intrinsic-1.1.1.tgz#15f59f376f855c446963948f0d24cd3637b4abc6"
@@ -3223,6 +3237,11 @@ is-decimal@^1.0.0:
   resolved "https://registry.npmmirror.com/is-decimal/download/is-decimal-1.0.4.tgz#65a3a5958a1c5b63a706e1b333d7cd9f630d3fa5"
   integrity sha1-ZaOllYocW2OnBuGzM9fNn2MNP6U=
 
+is-docker@^2.0.0:
+  version "2.2.1"
+  resolved "https://registry.nlark.com/is-docker/download/is-docker-2.2.1.tgz?cache=0&sync_timestamp=1630452160203&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fis-docker%2Fdownload%2Fis-docker-2.2.1.tgz#33eeabe23cfe86f14bde4408a02c0cfb853acdaa"
+  integrity sha1-M+6r4jz+hvFL3kQIoCwM+4U6zao=
+
 is-extglob@^2.1.1:
   version "2.1.1"
   resolved "https://registry.npm.taobao.org/is-extglob/download/is-extglob-2.1.1.tgz#a88c02535791f02ed37c76a1b9ea9773c833f8c2"
@@ -3340,6 +3359,13 @@ is-what@^3.12.0:
   version "3.14.1"
   resolved "https://registry.npmmirror.com/is-what/download/is-what-3.14.1.tgz?cache=0&sync_timestamp=1634283360064&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fis-what%2Fdownload%2Fis-what-3.14.1.tgz#e1222f46ddda85dead0fd1c9df131760e77755c1"
   integrity sha1-4SIvRt3ahd6tD9HJ3xMXYOd3VcE=
+
+is-wsl@^2.1.1:
+  version "2.2.0"
+  resolved "https://registry.npm.taobao.org/is-wsl/download/is-wsl-2.2.0.tgz#74a4c76e77ca9fd3f932f290c17ea326cd157271"
+  integrity sha1-dKTHbnfKn9P5MvKQwX6jJs0VcnE=
+  dependencies:
+    is-docker "^2.0.0"
 
 isarray@0.0.1:
   version "0.0.1"
@@ -3795,7 +3821,7 @@ mustache@^4.1.0:
   resolved "https://registry.npmmirror.com/mustache/download/mustache-4.2.0.tgz#e5892324d60a12ec9c2a73359edca52972bf6f64"
   integrity sha1-5YkjJNYKEuycKnM1ntylKXK/b2Q=
 
-nanoid@^3.1.30:
+nanoid@^3.1.22, nanoid@^3.1.30:
   version "3.1.30"
   resolved "https://registry.npmmirror.com/nanoid/download/nanoid-3.1.30.tgz#63f93cc548d2a113dc5dfbc63bfa09e2b9b64362"
   integrity sha1-Y/k8xUjSoRPcXfvGO/oJ4rm2Q2I=
@@ -3967,6 +3993,14 @@ onetime@^5.1.0:
   integrity sha1-0Oluu1awdHbfHdnEgG5SN5hcpF4=
   dependencies:
     mimic-fn "^2.1.0"
+
+open@^7.4.2:
+  version "7.4.2"
+  resolved "https://registry.npmmirror.com/open/download/open-7.4.2.tgz#b8147e26dcf3e426316c730089fd71edd29c2321"
+  integrity sha1-uBR+Jtzz5CYxbHMAif1x7dKcIyE=
+  dependencies:
+    is-docker "^2.0.0"
+    is-wsl "^2.1.1"
 
 optionator@^0.9.1:
   version "0.9.1"
@@ -4911,6 +4945,11 @@ repeat-string@^1.0.0:
   resolved "https://registry.nlark.com/repeat-string/download/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
   integrity sha1-jcrkcOHIirwtYA//Sndihtp15jc=
 
+require-directory@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.npm.taobao.org/require-directory/download/require-directory-2.1.1.tgz#8c64ad5fd30dab1c976e2344ffe7f792a6a6df42"
+  integrity sha1-jGStX9MNqxyXbiNE/+f3kqam30I=
+
 require-from-string@^2.0.2:
   version "2.0.2"
   resolved "https://registry.nlark.com/require-from-string/download/require-from-string-2.0.2.tgz#89a7fdd938261267318eafe14f9c32e598c36909"
@@ -4968,6 +5007,16 @@ rimraf@^3.0.2:
   integrity sha1-8aVAK6YiCtUswSgrrBrjqkn9Bho=
   dependencies:
     glob "^7.1.3"
+
+rollup-plugin-visualizer@^5.5.2:
+  version "5.5.2"
+  resolved "https://registry.nlark.com/rollup-plugin-visualizer/download/rollup-plugin-visualizer-5.5.2.tgz#ae2130ee5ae4a2d901e764e492b71357cb95eed7"
+  integrity sha1-riEw7lrkotkB52TkkrcTV8uV7tc=
+  dependencies:
+    nanoid "^3.1.22"
+    open "^7.4.2"
+    source-map "^0.7.3"
+    yargs "^16.2.0"
 
 rollup@^2.59.0:
   version "2.60.2"
@@ -5112,6 +5161,11 @@ source-map@^0.6.1, source-map@~0.6.0:
   resolved "https://registry.nlark.com/source-map/download/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha1-dHIq8y6WFOnCh6jQu95IteLxomM=
 
+source-map@^0.7.3:
+  version "0.7.3"
+  resolved "https://registry.npm.taobao.org/source-map/download/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
+  integrity sha1-UwL4FpAxc1ImVECS5kmB91F1A4M=
+
 spdx-correct@^3.0.0:
   version "3.1.1"
   resolved "https://registry.npm.taobao.org/spdx-correct/download/spdx-correct-3.1.1.tgz#dece81ac9c1e6713e5f7d1b6f17d468fa53d89a9"
@@ -5168,7 +5222,7 @@ string-convert@^0.2.0:
   resolved "https://registry.nlark.com/string-convert/download/string-convert-0.2.1.tgz#6982cc3049fbb4cd85f8b24568b9d9bf39eeff97"
   integrity sha1-aYLMMEn7tM2F+LJFaLnZvznu/5c=
 
-string-width@^4.2.0, string-width@^4.2.2, string-width@^4.2.3:
+string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.2, string-width@^4.2.3:
   version "4.2.3"
   resolved "https://registry.npmmirror.com/string-width/download/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha1-JpxxF9J7Ba0uU2gwqOyJXvnG0BA=
@@ -5758,6 +5812,15 @@ word-wrap@^1.2.3:
   resolved "https://registry.nlark.com/word-wrap/download/word-wrap-1.2.3.tgz#610636f6b1f703891bd34771ccb17fb93b47079c"
   integrity sha1-YQY29rH3A4kb00dxzLF/uTtHB5w=
 
+wrap-ansi@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.nlark.com/wrap-ansi/download/wrap-ansi-7.0.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fwrap-ansi%2Fdownload%2Fwrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
+  integrity sha1-Z+FFz/UQpqaYS98RUpEdadLrnkM=
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+
 wrappy@1:
   version "1.0.2"
   resolved "https://registry.nlark.com/wrappy/download/wrappy-1.0.2.tgz?cache=0&sync_timestamp=1619133505879&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fwrappy%2Fdownload%2Fwrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
@@ -5773,6 +5836,11 @@ write-file-atomic@^3.0.3:
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
 
+y18n@^5.0.5:
+  version "5.0.8"
+  resolved "https://registry.npm.taobao.org/y18n/download/y18n-5.0.8.tgz?cache=0&sync_timestamp=1617822684820&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fy18n%2Fdownload%2Fy18n-5.0.8.tgz#7f4934d0f7ca8c56f95314939ddcd2dd91ce1d55"
+  integrity sha1-f0k00PfKjFb5UxSTndzS3ZHOHVU=
+
 yallist@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npm.taobao.org/yallist/download/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
@@ -5783,10 +5851,23 @@ yaml@^1.10.0:
   resolved "https://registry.npmmirror.com/yaml/download/yaml-1.10.2.tgz?cache=0&sync_timestamp=1636797216143&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fyaml%2Fdownload%2Fyaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
   integrity sha1-IwHF/78StGfejaIzOkWeKeeSDks=
 
-yargs-parser@^20.2.3:
+yargs-parser@^20.2.2, yargs-parser@^20.2.3:
   version "20.2.9"
   resolved "https://registry.npmmirror.com/yargs-parser/download/yargs-parser-20.2.9.tgz?cache=0&sync_timestamp=1637031026512&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fyargs-parser%2Fdownload%2Fyargs-parser-20.2.9.tgz#2eb7dc3b0289718fc295f362753845c41a0c94ee"
   integrity sha1-LrfcOwKJcY/ClfNidThFxBoMlO4=
+
+yargs@^16.2.0:
+  version "16.2.0"
+  resolved "https://registry.npmmirror.com/yargs/download/yargs-16.2.0.tgz#1c82bf0f6b6a66eafce7ef30e376f49a12477f66"
+  integrity sha1-HIK/D2tqZur85+8w43b0mhJHf2Y=
+  dependencies:
+    cliui "^7.0.2"
+    escalade "^3.1.1"
+    get-caller-file "^2.0.5"
+    require-directory "^2.1.1"
+    string-width "^4.2.0"
+    y18n "^5.0.5"
+    yargs-parser "^20.2.2"
 
 zwitch@^1.0.0:
   version "1.0.5"

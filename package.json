@@ -54,6 +54,7 @@
         "antd",
         "antd/es/alert/style",
         "antd/es/avatar/style",
+        "antd/es/button/style",
         "antd/es/card/style",
         "antd/es/col/style",
         "antd/es/divider/style",

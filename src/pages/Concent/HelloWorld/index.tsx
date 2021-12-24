@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { register } from 'concent';
-import { Card, Divider } from 'antd';
+import { Button, Card, Divider } from 'antd';
 import { PageContainer } from '@ant-design/pro-layout';
 
 import { useModule, concentEmit, contextOn } from '@/services/concent';
@@ -21,7 +21,7 @@ class DemoClass extends Component<any, { num: number }> {
     return (
       <div>
         <h1>class component: {num}</h1>
-        <button onClick={this.inc}>increase()</button>
+        <Button onClick={this.inc}>increase()</Button>
       </div>
     );
   }
@@ -39,7 +39,7 @@ export function DemoFunction() {
   return (
     <div>
       <h1>function component: {state.num}</h1>
-      <button onClick={inc}>increase()</button>
+      <Button onClick={inc}>increase()</Button>
     </div>
   );
 }

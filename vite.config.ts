@@ -7,6 +7,7 @@ import OptimizationPersist from 'vite-plugin-optimize-persist';
 import PkgConfig from 'vite-plugin-package-config';
 import { visualizer } from 'rollup-plugin-visualizer';
 import vitApp from '@vitjs/vit';
+import { getThemeVariables } from 'antd/dist/theme';
 
 import routes from './config/routes';
 
@@ -61,6 +62,10 @@ export default {
     preprocessorOptions: {
       less: {
         // modifyVars: { 'primary-color': '#13c2c2' },
+        modifyVars: getThemeVariables({
+          // dark: true, // 开启暗黑模式
+          // compact: true, // 开启紧凑模式
+        }),
         javascriptEnabled: true,
       },
     },

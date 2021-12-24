@@ -1,5 +1,5 @@
 // import * as path from 'path';
-import { UserConfig } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import vitePluginImp from 'vite-plugin-imp';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -12,7 +12,7 @@ import { getThemeVariables } from 'antd/dist/theme';
 import routes from './config/routes';
 
 // https://vitejs.dev/config/
-export default {
+export default defineConfig({
   base: '/vite-react/',
   plugins: [
     react({
@@ -79,4 +79,4 @@ export default {
       },
     },
   },
-} as UserConfig;
+});

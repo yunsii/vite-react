@@ -1,1 +1,0 @@
-import"./index.db91889e.js";import{B as e}from"./button.4c5d92d4.js";import{R as s}from"./index.1fd6fe2b.js";import{j as t,h as o}from"./react-venders.4ac041b7.js";const n=()=>t(s,{status:"404",title:"404",subTitle:"Sorry, the page you visited does not exist.",extra:t(e,{type:"primary",onClick:()=>o.push("/"),children:"Back Home"})});export{n as default};

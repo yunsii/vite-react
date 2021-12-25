@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "cross-env BROWSER=chrome vite --host",
+    "dev:force": "npm run dev -- --force",
     "build": "vite build",
     "serve": "vite preview --host",
     "start": "npm run dev"

@@ -3,10 +3,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import vitePluginImp from 'vite-plugin-imp';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import OptimizationPersist from 'vite-plugin-optimize-persist';
-import PkgConfig from 'vite-plugin-package-config';
+import optimizationPersist from 'vite-plugin-optimize-persist';
+import pkgConfig from 'vite-plugin-package-config';
 import { visualizer } from 'rollup-plugin-visualizer';
 import vitApp from '@vitjs/vit';
+import windiCSS from 'vite-plugin-windicss';
 import { getThemeVariables } from 'antd/dist/theme';
 
 import routes from './config/routes';
@@ -23,8 +24,8 @@ export default defineConfig({
       },
     }),
     tsconfigPaths(),
-    PkgConfig(),
-    OptimizationPersist(),
+    pkgConfig(),
+    optimizationPersist(),
     vitePluginImp({
       libList: [
         {
@@ -41,6 +42,7 @@ export default defineConfig({
       exportStatic: {},
       mock: { productionEnabled: true },
     }),
+    windiCSS(),
     visualizer(),
   ],
   server: {

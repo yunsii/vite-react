@@ -3,14 +3,13 @@ import { MailOutlined, HomeOutlined } from '@ant-design/icons';
 import { useConcent } from 'concent';
 
 import ComingSoon from '@/components/ComingSoon';
-import styles from './index.module.less';
 
 export default function AccountCenter() {
   const { state: me } = useConcent('me');
 
   const renderUserInfo = () => (
-    <div className={styles.detail}>
-      <p>
+    <div>
+      <p className='pl-26px' mb='8px'>
         <MailOutlined
           style={{
             marginRight: 8,
@@ -18,7 +17,7 @@ export default function AccountCenter() {
         />
         {me.email}
       </p>
-      <p>
+      <p className='pl-26px'>
         <HomeOutlined
           style={{
             marginRight: 8,
@@ -34,9 +33,9 @@ export default function AccountCenter() {
       <Col lg={7} md={24} xs={24}>
         <Card bordered={false} style={{ marginBottom: 24 }}>
           <div>
-            <div className={styles.avatarHolder}>
-              <img alt='' src={me.avatar} />
-              <div className={styles.name}>{me.name}</div>
+            <div className='mb-24px text-center'>
+              <img src={me.avatar} className='inline w-104px h-104px mb-20px rounded-full' />
+              <div className='mb-4px font-medium font-20px text-20px'>{me.name}</div>
               <div>{me.position}</div>
             </div>
             {renderUserInfo()}

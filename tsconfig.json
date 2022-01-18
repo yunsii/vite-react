@@ -22,5 +22,5 @@
       "@@/*": ["./src/.vit/*"]
     }
   },
-  "include": ["./src"]
+  "include": ["./src", "./*.ts"]
 }

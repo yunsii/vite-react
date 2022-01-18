@@ -1,10 +1,11 @@
 import { PageContainer } from '@ant-design/pro-layout';
 import { Card, Alert, Typography } from 'antd';
+import classNames from 'classnames';
 
 import styles from './index.module.less';
 
 const CodePreview: React.FC = ({ children }) => (
-  <pre className={styles.pre}>
+  <pre className={classNames(styles.pre, 'my-12px', 'px-20px', 'py-12px')}>
     <code>
       <Typography.Text copyable>{children}</Typography.Text>
     </code>

@@ -43,7 +43,7 @@ const UserLayout: React.FC<UserLayoutProps> = (props) => {
       </Helmet>
 
       <div className={styles.container}>
-        <div className='pt-32px'>
+        <div className='flex-auto pt-32px'>
           <div className='text-center'>
             <div className='h-44px leading-44px'>
               <Link to='/'>

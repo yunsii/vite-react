@@ -6,13 +6,12 @@ import GlobalFooter from '@/containers/GlobalFooter';
 
 import styles from './UserLayout.module.less';
 
-import type { MenuDataItem } from '@ant-design/pro-layout';
+import type { History } from '@vitjs/runtime';
 
 export type UserLayoutProps = {
-  breadcrumbNameMap: Record<string, MenuDataItem>;
-  match?: any;
+  history: History;
   location: any;
-  history: any;
+  match?: any;
   route: any;
 };
 
@@ -26,6 +25,7 @@ const UserLayout: React.FC<UserLayoutProps> = (props) => {
       pathname: '',
     },
   } = props;
+
   const { routes = [] } = route;
   const { breadcrumb } = getMenuData(routes);
   const title = getPageTitle({
@@ -43,14 +43,14 @@ const UserLayout: React.FC<UserLayoutProps> = (props) => {
       </Helmet>
 
       <div className={styles.container}>
-        <div className={styles.content}>
-          <div className={styles.top}>
-            <div className={styles.header}>
+        <div className='pt-32px'>
+          <div className='text-center'>
+            <div className='h-44px leading-44px'>
               <Link to='/'>
                 <img
-                  alt='logo'
-                  className={styles.logo}
                   src='https://github.com/vitjs/vit/raw/master/icons/logo.svg'
+                  className='inline h-44px mr-16px align-top'
+                  alt='logo'
                 />
                 <span className={styles.title}>Vite React</span>
               </Link>

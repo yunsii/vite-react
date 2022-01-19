@@ -3,14 +3,16 @@
  *
  * @see You can view component api by: https://github.com/ant-design/ant-design-pro-layout
  */
-import type { BasicLayoutProps as ProLayoutProps } from '@ant-design/pro-layout';
 import ProLayout from '@ant-design/pro-layout';
 import { HomeOutlined } from '@ant-design/icons';
 import { history, Link, useLocation } from '@vitjs/runtime';
 
 import RightContent from '@/containers/GlobalHeader/RightContent';
 import GlobalFooter from '@/containers/GlobalFooter';
+
 import defaultSettings from '../../config/defaultSettings';
+
+import type { BasicLayoutProps as ProLayoutProps } from '@ant-design/pro-layout';
 
 const loginPath = '/user/login';
 

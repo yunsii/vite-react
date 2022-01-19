@@ -1,7 +1,8 @@
+import { stringify } from 'querystring';
+
 import { message } from 'antd';
 import { defineModule } from 'concent';
 import { history } from '@vitjs/runtime';
-import { stringify } from 'querystring';
 
 import { fakeAccountLogin } from '@/services/login';
 import { getPageQuery } from '@/utils/utils';
@@ -22,7 +23,7 @@ const module = defineModule({
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
         message.success('🎉 🎉 🎉  登录成功！');
-        
+
         let { redirect } = params as { redirect: string };
         if (redirect) {
           const redirectUrlParams = new URL(redirect);

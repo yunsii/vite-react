@@ -1,10 +1,13 @@
-import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Menu } from 'antd';
 import { useConcent } from 'concent';
 import { history } from '@vitjs/runtime';
+import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 
 import HeaderDropdown from '@/components/HeaderDropdown';
+
 import styles from './index.module.less';
+
+import type { MenuProps } from 'antd';
 
 export type GlobalHeaderRightProps = {
   menu?: boolean;
@@ -14,13 +17,8 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
   const { dispatch } = useConcent('login');
   const { state } = useConcent('me');
 
-  const onMenuClick = (event: {
-    key: React.Key;
-    keyPath: React.Key[];
-    item: React.ReactInstance;
-    domEvent: React.MouseEvent<HTMLElement>;
-  }) => {
-    const { key } = event;
+  const onMenuClick: MenuProps['onClick'] = (info) => {
+    const { key } = info;
 
     if (key === 'logout') {
       dispatch?.('logout');

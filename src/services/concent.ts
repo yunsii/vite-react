@@ -9,6 +9,7 @@ import {
   getComputed,
   cst,
 } from 'concent';
+
 import type {
   ReducerCallerParams,
   IReducerFn,
@@ -21,7 +22,6 @@ import type {
   SetupFn,
   MultiComputed,
 } from 'concent';
-
 import type {
   ModuleContext,
   ModuleContextWithConnect,
@@ -87,7 +87,7 @@ export async function callTarget(
     }
   } catch (err) {
     // eslint-disable-next-line no-console
-    console.log('callTarget error:', err.message);
+    console.log('callTarget error:', (err as Error).message);
   }
 }
 
@@ -104,7 +104,7 @@ export interface OptionsBase<
   ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  MapProps extends ValidMapProps
+  MapProps extends ValidMapProps,
 > {
   props?: Props;
   tag?: string;
@@ -129,7 +129,7 @@ export interface Options<
   ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  MapProps extends ValidMapProps
+  MapProps extends ValidMapProps,
 > extends OptionsBase<Props, ComputedDesc, Extra, StaticExtra, MapProps> {
   setup?: Setup;
 }
@@ -167,7 +167,7 @@ export function useModule<
   ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  MapProps extends ValidMapProps
+  MapProps extends ValidMapProps,
 >(moduleName: M, options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>) {
   const { registerOptions, concentClassKey } = buildCallParams(moduleName, [], options);
   type Ctx = ModuleContext<
@@ -189,8 +189,12 @@ export function useModuleWithConnect<
   ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  MapProps extends ValidMapProps
->(moduleName: M, connect: Conn, options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>) {
+  MapProps extends ValidMapProps,
+>(
+  moduleName: M,
+  connect: Conn,
+  options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>,
+) {
   const { registerOptions, concentClassKey } = buildCallParams(moduleName, connect, options);
   type Ctx = ModuleContextWithConnect<
     Props,
@@ -211,9 +215,13 @@ export function useConnect<
   ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  MapProps extends ValidMapProps
+  MapProps extends ValidMapProps,
 >(connect: Conn, options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>) {
-  const { registerOptions, concentClassKey } = buildCallParams(cst.MODULE_DEFAULT, connect, options);
+  const { registerOptions, concentClassKey } = buildCallParams(
+    cst.MODULE_DEFAULT,
+    connect,
+    options,
+  );
   type Ctx = ContextWithConnect<
     Props,
     Conn[number],
@@ -236,10 +244,14 @@ export function useSetup<
   ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  MapProps extends ValidMapProps
+  MapProps extends ValidMapProps,
 >(setup: T, options?: OptionsBase<Props, ComputedDesc, Extra, StaticExtra, MapProps>) {
   const mergedOptions = { setup, ...options };
-  const { registerOptions, concentClassKey } = buildCallParams(cst.MODULE_DEFAULT, [], mergedOptions);
+  const { registerOptions, concentClassKey } = buildCallParams(
+    cst.MODULE_DEFAULT,
+    [],
+    mergedOptions,
+  );
   type Ctx = ModuleContext<
     Props,
     MODULE_DEFAULT,
@@ -263,8 +275,12 @@ export function typeContextModule<
   ComputedDesc extends MultiComputed<any>,
   Extra extends IAnyObj,
   StaticExtra extends any,
-  MapProps extends ValidMapProps
->(moduleName: M, options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>, ctx?: any) {
+  MapProps extends ValidMapProps,
+>(
+  moduleName: M,
+  options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>,
+  ctx?: any,
+) {
   noop(moduleName, options);
   type Ctx = ModuleContext<
     Props,
@@ -305,7 +321,7 @@ export function makeUseModule<M extends Modules>(moduleName: M) {
       ComputedDesc extends MultiComputed<any>,
       Extra extends IAnyObj,
       StaticExtra extends any,
-      MapProps extends ValidMapProps
+      MapProps extends ValidMapProps,
     >(
       options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>,
     ) => {
@@ -326,7 +342,7 @@ export function makeUseModule<M extends Modules>(moduleName: M) {
   };
 }
 
-export const concentReducer = (reducer as unknown) as RootReducer;
+export const concentReducer = reducer as unknown as RootReducer;
 
 /**
  * 获取 global 模块的状态
@@ -380,7 +396,10 @@ export function concentEmit<E extends EventKeys, T extends EventMap[E]>(eventNam
  * @param eventDesc - [eventName, id]
  * @param args
  */
-export function concentEmitId<E extends EventKeys, T extends EventMap[E]>(eventDesc: [E, string], ...args: T) {
+export function concentEmitId<E extends EventKeys, T extends EventMap[E]>(
+  eventDesc: [E, string],
+  ...args: T
+) {
   emit(eventDesc, ...args);
 }
 
@@ -401,7 +420,10 @@ export function contextOn(ctx: ICtxBase) {
   return ctx.on as OnFn;
 }
 
-type OnIdFn = <E extends EventKeys>(eventDesc: [E, string], cb: (...args: EventMap[E]) => void) => void;
+type OnIdFn = <E extends EventKeys>(
+  eventDesc: [E, string],
+  cb: (...args: EventMap[E]) => void,
+) => void;
 
 /**
  * 可以携带 id 的 ctx.on

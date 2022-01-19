@@ -11,7 +11,6 @@ import type {
   GetRootReducerCaller,
   GetRootReducerGhost,
 } from 'concent';
-
 import type { Models } from './models';
 
 export type RootState = GetRootState<Models>;
@@ -30,7 +29,7 @@ export type Modules = keyof RootState;
 
 export type ActionContext<
   M extends Modules,
-  ModuleState extends IAnyObj = RootState[M]
+  ModuleState extends IAnyObj = RootState[M],
 > = IActionCtx<RootState, RootComputed, M, ModuleContext<Record<string, unknown>, M>, ModuleState>;
 
 // 从左到右: Extra, StaticExtra, Mapped
@@ -41,7 +40,7 @@ export type ModuleContext<
   ModuleName extends Modules = MODULE_DEFAULT,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
-  Extra extends OtherTypes = OtherTypes
+  Extra extends OtherTypes = OtherTypes,
 > = ICtx<
   RootState,
   RootReducer,
@@ -65,7 +64,7 @@ export type ModuleContextWithPrivateState<
   PrivateState = Record<string, unknown>,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
-  Extra extends OtherTypes = OtherTypes
+  Extra extends OtherTypes = OtherTypes,
 > = ICtx<
   RootState,
   RootReducer,
@@ -89,7 +88,7 @@ export type ModuleContextWithConnect<
   ConnectModule extends Modules = MODULE_VOID,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
-  Extra extends OtherTypes = OtherTypes
+  Extra extends OtherTypes = OtherTypes,
 > = ICtx<
   RootState,
   RootReducer,
@@ -114,7 +113,7 @@ export type ModuleContextWithConnectAndPrivateState<
   ConnectModule extends Modules = MODULE_VOID,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
-  Extra extends OtherTypes = OtherTypes
+  Extra extends OtherTypes = OtherTypes,
 > = ICtx<
   RootState,
   RootReducer,
@@ -138,7 +137,7 @@ export type ContextWithConnectAndPrivateState<
   ConnectModule extends Modules = MODULE_VOID,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
-  Extra extends OtherTypes = OtherTypes
+  Extra extends OtherTypes = OtherTypes,
 > = ICtx<
   RootState,
   RootReducer,
@@ -161,7 +160,7 @@ export type ContextWithPrivateState<
   PrivateState = Record<string, unknown>,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
-  Extra extends OtherTypes = OtherTypes
+  Extra extends OtherTypes = OtherTypes,
 > = ICtx<
   RootState,
   RootReducer,
@@ -184,7 +183,7 @@ export type ContextWithConnect<
   ConnectModule extends Modules = MODULE_VOID,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
-  Extra extends OtherTypes = OtherTypes
+  Extra extends OtherTypes = OtherTypes,
 > = ICtx<
   RootState,
   RootReducer,
@@ -206,7 +205,7 @@ export type DefaultContext<
   Props = Record<string, unknown>,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
-  Extra extends OtherTypes = OtherTypes
+  Extra extends OtherTypes = OtherTypes,
 > = ModuleContext<Props, MODULE_DEFAULT, Settings, RefComputed, Extra>;
 
 export type DefaultContextWithPrivateState<
@@ -214,7 +213,7 @@ export type DefaultContextWithPrivateState<
   PrivateState = Record<string, unknown>,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
-  Extra extends OtherTypes = OtherTypes
+  Extra extends OtherTypes = OtherTypes,
 > = ModuleContextWithPrivateState<
   Props,
   MODULE_DEFAULT,
@@ -230,7 +229,7 @@ export type DefaultContextWithConnectAndPrivateState<
   ConnectModule extends Modules = MODULE_VOID,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
-  Extra extends OtherTypes = OtherTypes
+  Extra extends OtherTypes = OtherTypes,
 > = ModuleContextWithConnectAndPrivateState<
   Props,
   MODULE_DEFAULT,
@@ -246,7 +245,7 @@ export type DefaultContextWithConnect<
   ConnectModule extends Modules = MODULE_VOID,
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
-  Extra extends OtherTypes = OtherTypes
+  Extra extends OtherTypes = OtherTypes,
 > = ContextWithConnectAndPrivateState<
   Props,
   MODULE_DEFAULT,

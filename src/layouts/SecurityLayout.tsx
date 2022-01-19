@@ -1,12 +1,17 @@
+import { stringify } from 'querystring';
+
 import { useEffect } from 'react';
 import { useConcent } from 'concent';
 import { Redirect, useLocation } from '@vitjs/runtime';
-import { stringify } from 'querystring';
 
 import PageLoading from '@/components/PageLoading';
 
 const SecurityLayout: React.FC = ({ children }) => {
-  const { state: me, connectedState, dispatch } = useConcent({
+  const {
+    state: me,
+    connectedState,
+    dispatch,
+  } = useConcent({
     module: 'me',
     connect: { loading: ['me/fetchMe'] },
   });

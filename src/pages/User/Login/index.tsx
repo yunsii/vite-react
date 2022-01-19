@@ -9,7 +9,6 @@ import {
   UserOutlined,
   WeiboCircleOutlined,
 } from '@ant-design/icons';
-import type { ProFormInstance } from '@ant-design/pro-form';
 import ProForm, { ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 
 import { useModuleWithConnect } from '@/services/concent';
@@ -17,6 +16,8 @@ import { getFakeCaptcha } from '@/services/login';
 import type { LoginParamsType } from '@/services/login';
 
 import styles from './index.module.less';
+
+import type { ProFormInstance } from '@ant-design/pro-form';
 
 const LoginMessage: React.FC<{
   content: string;

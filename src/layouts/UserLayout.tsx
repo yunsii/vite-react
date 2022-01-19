@@ -1,10 +1,12 @@
-import type { MenuDataItem } from '@ant-design/pro-layout';
-import { getMenuData, getPageTitle } from '@ant-design/pro-layout';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { getMenuData, getPageTitle } from '@ant-design/pro-layout';
 import { Link } from '@vitjs/runtime';
 
 import GlobalFooter from '@/containers/GlobalFooter';
+
 import styles from './UserLayout.module.less';
+
+import type { MenuDataItem } from '@ant-design/pro-layout';
 
 export type UserLayoutProps = {
   breadcrumbNameMap: Record<string, MenuDataItem>;

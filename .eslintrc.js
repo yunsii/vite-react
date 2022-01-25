@@ -43,5 +43,11 @@ module.exports = {
     // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unresolved.md#importno-unresolved
     'import/no-unresolved': [2, { ignore: ['.css$'] }],
     'no-unused-expressions': 'off',
+    '@typescript-eslint/consistent-type-imports': [
+      1,
+      {
+        disallowTypeAnnotations: false,
+      },
+    ],
   },
 };

@@ -1,0 +1,26 @@
+.test-container {
+  position: relative;
+  background: orange;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' transform='translate(5,5)'><rect width='14' height='14' style='fill:rgb(62, 207, 142)' rx='24'/><path style='fill:rgb(255,255,255)' d='M9.6 4.2a.5.5 0 01.9.6l-3.6 5c-.1.2-.4.3-.7.1L3.7 7.4a.5.5 0 11.6-.8l2 1.2 3.3-3.6z'/></svg>");
+    background-size: cover;
+    content: '';
+  }
+
+  // &::after {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 24px;
+  //   height: 24px;
+  //   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' transform='translate(5,5)'><rect width='14' height='14' style='fill:rgb(62, 207, 142)' rx='24'/><path style='fill:rgb(255,255,255)' d='M9.6 4.2a.5.5 0 01.9.6l-3.6 5c-.1.2-.4.3-.7.1L3.7 7.4a.5.5 0 11.6-.8l2 1.2 3.3-3.6z'/></svg>");
+  //   background-size: cover;
+  //   content: '';
+  // }
+}

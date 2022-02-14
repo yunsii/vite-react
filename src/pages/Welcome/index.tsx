@@ -1,3 +1,5 @@
+import './index.less';
+
 import { Card, Alert, Typography } from 'antd';
 import classNames from 'classnames';
 import { PageContainer } from '@ant-design/pro-layout';
@@ -53,6 +55,7 @@ export default function Welcome() {
           </a>
         </Typography.Text>
         <CodePreview>yarn add @ant-design/pro-layout</CodePreview>
+        <div className='test-container'>test</div>
       </Card>
     </PageContainer>
   );

@@ -7,6 +7,7 @@ import optimizationPersist from 'vite-plugin-optimize-persist';
 import pkgConfig from 'vite-plugin-package-config';
 import { visualizer } from 'rollup-plugin-visualizer';
 import vitApp from '@vitjs/vit';
+import viteRestart from 'vite-plugin-restart';
 import windiCSS from 'vite-plugin-windicss';
 import { getThemeVariables } from 'antd/dist/theme';
 
@@ -16,6 +17,7 @@ import routes from './config/routes';
 export default defineConfig({
   base: '/vite-react/',
   plugins: [
+    // viteRestart(),
     react({
       babel: {
         parserOpts: {
@@ -42,7 +44,9 @@ export default defineConfig({
       exportStatic: {},
       mock: { productionEnabled: true },
     }),
-    windiCSS(),
+    windiCSS({
+      transformCSS: false,
+    }),
     visualizer(),
   ],
   server: {

@@ -6038,6 +6038,13 @@ vite-plugin-package-config@^0.1.0:
   dependencies:
     debug "^4.3.3"
 
+vite-plugin-restart@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.npmmirror.com/vite-plugin-restart/-/vite-plugin-restart-0.1.1.tgz#2a926442d9ba675f2a29477c113f53bf464da02d"
+  integrity sha512-kBxOqRrdbjVmC0PiT2KNXZogpgqA2epMkny//VjWnOS2k9NV/vXA7PYgf8/1lmBCZsC+iMj1C1ODuAR/9Sig4A==
+  dependencies:
+    micromatch "^4.0.4"
+
 vite-plugin-windicss@^1.6.3:
   version "1.6.3"
   resolved "https://registry.npmmirror.com/vite-plugin-windicss/download/vite-plugin-windicss-1.6.3.tgz#64afa460eaff610a376e320c450ec79d0b6f6330"

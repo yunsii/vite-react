@@ -2,11 +2,11 @@
 
 🚀 Use Vite + React like a Pro!
 
-> 尝试通过 Vite 构建一个类 [Ant Design Pro](https://github.com/ant-design/ant-design-pro) 的项目，即从零搭建一个简单易用的中后台脚手架。
+> Try to build a class via Vite [Ant Design Pro](https://github.com/ant-design/ant-design-pro) The project, that is, built a simple and easy-to-use middle background scaffolding from zero.
 
-## 技术实践
+## Technical practice
 
-基于 [vitjs/vit](https://github.com/vitjs/vit) 构建。
+Construct based on [vitjs/vit](https://github.com/vitjs/vit).
 
 - [ahooks](https://ahooks.js.org/hooks)
 - [@ant-design/pro-layout](https://procomponents.ant.design/components/layout)

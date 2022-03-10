@@ -22,7 +22,7 @@ const module = defineModule({
         localStorage.setItem('status', 'ok');
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
-        message.success('🎉 🎉 🎉  登录成功！');
+        message.success('🎉 🎉 🎉  Login successful！');
 
         let { redirect } = params as { redirect: string };
         if (redirect) {

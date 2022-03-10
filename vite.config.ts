@@ -14,7 +14,7 @@ import routes from './config/routes';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/vite-react/',
+  cacheDir: '.vite',
   plugins: [
     react({
       babel: {
@@ -47,7 +47,7 @@ export default defineConfig({
   ],
   server: {
     // open: true,
-    port: 8000,
+    port: 3000,
   },
   resolve: {
     alias: [
@@ -65,8 +65,8 @@ export default defineConfig({
       less: {
         // modifyVars: { 'primary-color': '#13c2c2' },
         modifyVars: getThemeVariables({
-          // dark: true, // 开启暗黑模式
-          // compact: true, // 开启紧凑模式
+          // dark: true, // Open dark mode
+          // compact: true, // Open compact mode
         }),
         javascriptEnabled: true,
       },

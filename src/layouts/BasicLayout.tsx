@@ -1,7 +1,8 @@
 /**
  * Ant Design Pro v4 use `@ant-design/pro-layout` to handle Layout.
  *
- * @see You can view component api by: https://github.com/ant-design/ant-design-pro-layout
+ * You can view component api by: 
+ * @see https://github.com/ant-design/ant-design-pro-layout
  */
 import ProLayout from '@ant-design/pro-layout';
 import { HomeOutlined } from '@ant-design/icons';
@@ -28,7 +29,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
       logo='https://github.com/vitjs/vit/raw/master/icons/logo.svg'
       {...props}
       onPageChange={() => {
-        // 如果没有登录，重定向到 login
+        // If you don't log in, redirect to login
         if (localStorage.getItem('status') !== 'ok' && history.location.pathname !== loginPath) {
           history.push(loginPath);
         }

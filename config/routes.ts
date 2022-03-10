@@ -8,7 +8,7 @@ export default [
         component: './layouts/UserLayout',
         routes: [
           {
-            name: '登录',
+            name: 'Log in',
             path: '/user/login',
             component: './pages/User/Login',
           },
@@ -29,7 +29,7 @@ export default [
               {
                 path: '/welcome',
                 icon: 'smile',
-                name: '欢迎页',
+                name: 'Welcome page',
                 component: './pages/Welcome',
               },
               {
@@ -47,16 +47,16 @@ export default [
               {
                 path: '/account',
                 icon: 'user',
-                name: '个人页',
+                name: 'Personal page',
                 routes: [
                   {
                     path: '/account/center',
-                    name: '个人中心',
+                    name: 'Personal center',
                     component: './pages/Account/Center',
                   },
                   {
                     path: '/account/settings',
-                    name: '个人设置',
+                    name: 'Personal settings',
                     component: './pages/Account/Settings',
                   },
                 ],

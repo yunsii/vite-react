@@ -5,24 +5,24 @@ import { extend } from 'umi-request';
 import { notification } from 'antd';
 
 const codeMessage: Record<number, string> = {
-  200: '服务器成功返回请求的数据。',
-  201: '新建或修改数据成功。',
-  202: '一个请求已经进入后台排队（异步任务）。',
-  204: '删除数据成功。',
-  400: '发出的请求有错误，服务器没有进行新建或修改数据的操作。',
-  401: '用户没有权限（令牌、用户名、密码错误）。',
-  403: '用户得到授权，但是访问是被禁止的。',
-  404: '发出的请求针对的是不存在的记录，服务器没有进行操作。',
-  406: '请求的格式不可得。',
-  410: '请求的资源被永久删除，且不会再得到的。',
-  422: '当创建一个对象时，发生一个验证错误。',
-  500: '服务器发生错误，请检查服务器。',
-  502: '网关错误。',
-  503: '服务不可用，服务器暂时过载或维护。',
-  504: '网关超时。',
+  200: 'The server successfully returns the requested data.',
+  201: 'New or modify the data success.',
+  202: 'A request has entered the background queue (asynchronous task).',
+  204: 'Delete data success.',
+  400: 'The requested request has an error, and the server does not make new or modify the data.',
+  401: 'The user has no permission (token, user name, password error).',
+  403: 'The user is authorized, but the access is disabled.',
+  404: 'The request for the request is not a record, and the server does not operate.',
+  406: 'The format of the request is not available.',
+  410: 'The requested resource is permanently deleted and will not be obtained.',
+  422: 'A verification error occurs when an object is created.',
+  500: 'The server has an error, please check the server.',
+  502: 'Gateway error.',
+  503: 'Service is not available, the server temporarily overloads or maintains.',
+  504: 'Gateway timeout.',
 };
 
-/** 异常处理程序 */
+/** Abnormal handler */
 const errorHandler = (error: { response: Response }): Response => {
   const { response } = error;
   if (response && response.status) {
@@ -30,22 +30,22 @@ const errorHandler = (error: { response: Response }): Response => {
     const { status, url } = response;
 
     notification.error({
-      message: `请求错误 ${status}: ${url}`,
+      message: `Request error ${status}: ${url}`,
       description: errorText,
     });
   } else if (!response) {
     notification.error({
-      description: '您的网络发生异常，无法连接服务器',
-      message: '网络异常',
+      description: 'Your network has an exception, unable to connect the server',
+      message: 'network anomaly',
     });
   }
   return response;
 };
 
-/** 配置request请求时的默认参数 */
+/** Default parameters when configuring request requests */
 const request = extend({
-  errorHandler, // 默认错误处理
-  credentials: 'include', // 默认请求是否带上cookie
+  errorHandler, // Default error handling
+  credentials: 'include', // Default request to bring cookie
 });
 
 export default request;

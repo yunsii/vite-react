@@ -19,7 +19,7 @@ const SecurityLayout: React.FC = ({ children }) => {
   const location = useLocation();
 
   // You can replace it to your authentication rule (such as check token exists)
-  // 你可以把它替换成你自己的登录认证规则（比如判断 token 是否存在）
+  // You can replace it into your own login authentication rules (such as determining if the token is existing)
   const isLogin = me && !!me.email;
   const queryString = stringify({
     redirect: window.location.href,

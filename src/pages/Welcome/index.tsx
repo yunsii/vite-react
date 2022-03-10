@@ -17,7 +17,7 @@ export default function Welcome() {
     <PageContainer>
       <Card>
         <Alert
-          message={'更快更强的重型组件，已经发布。'}
+          message={'Faster and stronger heavy components have been released.'}
           type='success'
           showIcon
           banner
@@ -27,13 +27,13 @@ export default function Welcome() {
           }}
         />
         <Typography.Text strong>
-          高级表格
+          Advanced form
           <a
             href='https://procomponents.ant.design/components/table'
             rel='noopener noreferrer'
             target='__blank'
           >
-            欢迎使用
+            welcome
           </a>
         </Typography.Text>
         <CodePreview>yarn add @ant-design/pro-table</CodePreview>
@@ -43,13 +43,13 @@ export default function Welcome() {
             marginBottom: 12,
           }}
         >
-          高级布局
+          Advanced layout
           <a
             href='https://procomponents.ant.design/components/layout'
             rel='noopener noreferrer'
             target='__blank'
           >
-            欢迎使用
+            welcome
           </a>
         </Typography.Text>
         <CodePreview>yarn add @ant-design/pro-layout</CodePreview>

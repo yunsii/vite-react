@@ -26,7 +26,7 @@ export default function GlobalFooter() {
           blankTarget: true,
         },
       ]}
-      copyright={`${new Date().getFullYear()} ${authorId} 出品`}
+      copyright={`${new Date().getFullYear()} ${authorId} Exhibition`}
     />
   );
 }

@@ -7,8 +7,8 @@ import { useModule, concentEmit, contextOn } from '@/services/concent';
 
 @register('counter')
 class DemoClass extends Component<any, { num: number }> {
-  // 此时 setState 提交的状态触发自己重渲染
-  // 同时也会触发其他同样属于 counter 模块的实例且消费了具体数据的实例重渲染
+  // At this point, the status submitted by SetState triggers yourself rendering
+  // Also triggers other instances of the Counter module and consume specific data rendering
   inc = () => {
     const num = this.state.num + 1;
     this.setState({ num });

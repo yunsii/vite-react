@@ -1,7 +1,7 @@
-import { Component } from 'react';
-import { register } from 'concent';
-import { Button, Card, Divider } from 'antd';
 import { PageContainer } from '@ant-design/pro-layout';
+import { Button, Card, Divider } from 'antd';
+import { register } from 'concent';
+import { Component } from 'react';
 
 import { useModule, concentEmit, contextOn } from '@/services/concent';
 

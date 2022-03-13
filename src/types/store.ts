@@ -1,3 +1,4 @@
+import type { Models } from './models';
 import type {
   ICtx,
   IActionCtx,
@@ -11,7 +12,6 @@ import type {
   GetRootReducerCaller,
   GetRootReducerGhost,
 } from 'concent';
-import type { Models } from './models';
 
 export type RootState = GetRootState<Models>;
 
@@ -27,10 +27,13 @@ export type GlobalState = RootState[MODULE_GLOBAL];
 
 export type Modules = keyof RootState;
 
-export type ActionContext<
-  M extends Modules,
-  ModuleState extends IAnyObj = RootState[M],
-> = IActionCtx<RootState, RootComputed, M, ModuleContext<Record<string, unknown>, M>, ModuleState>;
+export type ActionContext<M extends Modules, ModuleState extends IAnyObj = RootState[M]> = IActionCtx<
+  RootState,
+  RootComputed,
+  M,
+  ModuleContext<Record<string, unknown>, M>,
+  ModuleState
+>;
 
 // 从左到右: Extra, StaticExtra, Mapped
 type OtherTypes = [any] | [any, any] | [any, any, any];
@@ -214,14 +217,7 @@ export type DefaultContextWithPrivateState<
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
   Extra extends OtherTypes = OtherTypes,
-> = ModuleContextWithPrivateState<
-  Props,
-  MODULE_DEFAULT,
-  PrivateState,
-  Settings,
-  RefComputed,
-  Extra
->;
+> = ModuleContextWithPrivateState<Props, MODULE_DEFAULT, PrivateState, Settings, RefComputed, Extra>;
 
 export type DefaultContextWithConnectAndPrivateState<
   Props = Record<string, unknown>,
@@ -246,14 +242,7 @@ export type DefaultContextWithConnect<
   Settings = Record<string, unknown>,
   RefComputed = Record<string, unknown>,
   Extra extends OtherTypes = OtherTypes,
-> = ContextWithConnectAndPrivateState<
-  Props,
-  MODULE_DEFAULT,
-  ConnectModule,
-  Settings,
-  RefComputed,
-  Extra
->;
+> = ContextWithConnectAndPrivateState<Props, MODULE_DEFAULT, ConnectModule, Settings, RefComputed, Extra>;
 
 export type ItemsType<Arr> = Arr extends readonly (infer E)[] ? E : never;
 

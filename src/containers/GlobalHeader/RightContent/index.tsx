@@ -1,7 +1,8 @@
-import { Space } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
+import { Space } from 'antd';
 
 import Avatar from './AvatarDropdown';
+
 import styles from './index.module.less';
 
 export type SiderTheme = 'light' | 'dark';

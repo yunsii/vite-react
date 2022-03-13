@@ -1,5 +1,5 @@
-import { Col, Row, Card } from 'antd';
 import { MailOutlined, HomeOutlined } from '@ant-design/icons';
+import { Col, Row, Card } from 'antd';
 import { useConcent } from 'concent';
 
 import ComingSoon from '@/components/ComingSoon';

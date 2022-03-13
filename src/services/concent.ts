@@ -1,15 +1,17 @@
 // concent 相关的一些公共封装函数
 
-import {
-  useConcent,
-  reducer,
-  getState as getSt,
-  getGlobalState as getGst,
-  emit,
-  getComputed,
-  cst,
-} from 'concent';
+import { useConcent, reducer, getState as getSt, getGlobalState as getGst, emit, getComputed, cst } from 'concent';
 
+import type EventMap from '../types/concentEventMap';
+import type {
+  ModuleContext,
+  ModuleContextWithConnect,
+  ContextWithConnect,
+  Modules,
+  RootReducer,
+  RootState,
+  RootComputed,
+} from '../types/store';
 import type {
   ReducerCallerParams,
   IReducerFn,
@@ -22,25 +24,11 @@ import type {
   SetupFn,
   MultiComputed,
 } from 'concent';
-import type {
-  ModuleContext,
-  ModuleContextWithConnect,
-  ContextWithConnect,
-  Modules,
-  RootReducer,
-  RootState,
-  RootComputed,
-} from '../types/store';
-import type EventMap from '../types/concentEventMap';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function noop(...args: any[]) {}
 
-function buildCallParams(
-  moduleName: string,
-  connect: Modules[],
-  options?: Options<any, any, any, any, any, any>,
-) {
+function buildCallParams(moduleName: string, connect: Modules[], options?: Options<any, any, any, any, any, any>) {
   const targetOptions = options || {};
   const {
     setup,
@@ -72,10 +60,7 @@ function buildCallParams(
  * @param callerParams
  * @param actionCtx
  */
-export async function callTarget(
-  callerParams: ReducerCallerParams | [IReducerFn, any],
-  actionCtx: IActionCtxBase,
-) {
+export async function callTarget(callerParams: ReducerCallerParams | [IReducerFn, any], actionCtx: IActionCtxBase) {
   try {
     /** 支持 reducer 文件里内部调用 actionCtx.dispatch(loading, [targetFn, payload]) */
     if (Array.isArray(callerParams)) {
@@ -190,11 +175,7 @@ export function useModuleWithConnect<
   Extra extends IAnyObj,
   StaticExtra extends any,
   MapProps extends ValidMapProps,
->(
-  moduleName: M,
-  connect: Conn,
-  options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>,
-) {
+>(moduleName: M, connect: Conn, options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>) {
   const { registerOptions, concentClassKey } = buildCallParams(moduleName, connect, options);
   type Ctx = ModuleContextWithConnect<
     Props,
@@ -217,11 +198,7 @@ export function useConnect<
   StaticExtra extends any,
   MapProps extends ValidMapProps,
 >(connect: Conn, options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>) {
-  const { registerOptions, concentClassKey } = buildCallParams(
-    cst.MODULE_DEFAULT,
-    connect,
-    options,
-  );
+  const { registerOptions, concentClassKey } = buildCallParams(cst.MODULE_DEFAULT, connect, options);
   type Ctx = ContextWithConnect<
     Props,
     Conn[number],
@@ -247,11 +224,7 @@ export function useSetup<
   MapProps extends ValidMapProps,
 >(setup: T, options?: OptionsBase<Props, ComputedDesc, Extra, StaticExtra, MapProps>) {
   const mergedOptions = { setup, ...options };
-  const { registerOptions, concentClassKey } = buildCallParams(
-    cst.MODULE_DEFAULT,
-    [],
-    mergedOptions,
-  );
+  const { registerOptions, concentClassKey } = buildCallParams(cst.MODULE_DEFAULT, [], mergedOptions);
   type Ctx = ModuleContext<
     Props,
     MODULE_DEFAULT,
@@ -276,11 +249,7 @@ export function typeContextModule<
   Extra extends IAnyObj,
   StaticExtra extends any,
   MapProps extends ValidMapProps,
->(
-  moduleName: M,
-  options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>,
-  ctx?: any,
-) {
+>(moduleName: M, options?: Options<Props, Setup, ComputedDesc, Extra, StaticExtra, MapProps>, ctx?: any) {
   noop(moduleName, options);
   type Ctx = ModuleContext<
     Props,
@@ -396,10 +365,7 @@ export function concentEmit<E extends EventKeys, T extends EventMap[E]>(eventNam
  * @param eventDesc - [eventName, id]
  * @param args
  */
-export function concentEmitId<E extends EventKeys, T extends EventMap[E]>(
-  eventDesc: [E, string],
-  ...args: T
-) {
+export function concentEmitId<E extends EventKeys, T extends EventMap[E]>(eventDesc: [E, string], ...args: T) {
   emit(eventDesc, ...args);
 }
 
@@ -420,10 +386,7 @@ export function contextOn(ctx: ICtxBase) {
   return ctx.on as OnFn;
 }
 
-type OnIdFn = <E extends EventKeys>(
-  eventDesc: [E, string],
-  cb: (...args: EventMap[E]) => void,
-) => void;
+type OnIdFn = <E extends EventKeys>(eventDesc: [E, string], cb: (...args: EventMap[E]) => void) => void;
 
 /**
  * 可以携带 id 的 ctx.on

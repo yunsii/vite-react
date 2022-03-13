@@ -27,10 +27,41 @@ module.exports = {
     'import/namespace': 2,
     'import/default': 2,
     'import/export': 2,
+    'import/no-unresolved': [2, { ignore: ['^virtual:windi.css$'] }],
+    // https://github.com/import-js/eslint-plugin-import/issues/1639
     'import/order': [
       'error',
       {
         pathGroups: [
+          {
+            pattern: '*.svg?component',
+            patternOptions: {
+              dot: true,
+              nocomment: true,
+              matchBase: true,
+            },
+            group: 'internal',
+            position: 'after',
+          },
+          {
+            pattern: '*.svg',
+            patternOptions: {
+              dot: true,
+              nocomment: true,
+              matchBase: true,
+            },
+            group: 'internal',
+            position: 'after',
+          },
+          {
+            pattern: '@/**/*.@(less|scss)',
+            group: 'internal',
+            position: 'after',
+          },
+          {
+            pattern: './**/*.@(less|scss)',
+            group: 'index',
+          },
           {
             pattern: '@/**',
             group: 'internal',
@@ -38,10 +69,29 @@ module.exports = {
         ],
         groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
         'newlines-between': 'always',
+        warnOnUnassignedImports: true,
+        alphabetize: {
+          order: 'asc' /* sort in ascending order. Options: ['ignore', 'asc', 'desc'] */,
+          caseInsensitive: false /* ignore case. Options: [true, false] */,
+        },
       },
     ],
-    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unresolved.md#importno-unresolved
-    'import/no-unresolved': [2, { ignore: ['.css$'] }],
+    '@typescript-eslint/no-this-alias': [
+      'error',
+      {
+        allowDestructuring: false, // Disallow `const { props, state } = this`; true by default
+        allowedNames: ['self'], // Allow `const self = this`; `[]` by default
+      },
+    ],
+    '@typescript-eslint/no-empty-interface': 0,
+    'import/no-named-as-default-member': 0,
+    '@typescript-eslint/consistent-type-imports': [
+      1,
+      {
+        disallowTypeAnnotations: false,
+      },
+    ],
+    '@typescript-eslint/triple-slash-reference': 0,
     'no-unused-expressions': 'off',
   },
 };

@@ -1,6 +1,6 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { getMenuData, getPageTitle } from '@ant-design/pro-layout';
 import { Link } from '@vitjs/runtime';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import GlobalFooter from '@/containers/GlobalFooter';
 

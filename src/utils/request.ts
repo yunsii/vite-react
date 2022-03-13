@@ -1,8 +1,8 @@
 // ref: https://github.com/ant-design/ant-design-pro/blob/master/src/utils/request.ts
 
 /** Request 网络请求工具 更详细的 api 文档: https://github.com/umijs/umi-request */
-import { extend } from 'umi-request';
 import { notification } from 'antd';
+import { extend } from 'umi-request';
 
 const codeMessage: Record<number, string> = {
   200: '服务器成功返回请求的数据。',

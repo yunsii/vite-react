@@ -1,5 +1,3 @@
-import { useRef, useState } from 'react';
-import { Alert, Space, message, Tabs } from 'antd';
 import {
   AlipayCircleOutlined,
   LockOutlined,
@@ -9,7 +7,9 @@ import {
   UserOutlined,
   WeiboCircleOutlined,
 } from '@ant-design/icons';
-import ProForm, { ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
+import { ProForm, ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
+import { Alert, Space, message, Tabs } from 'antd';
+import { useRef, useState } from 'react';
 
 import { useModuleWithConnect } from '@/services/concent';
 import { getFakeCaptcha } from '@/services/login';
@@ -109,9 +109,7 @@ const Login: React.FC = () => {
           </>
         )}
 
-        {state.status === 'error' && state.type === 'mobile' && !submitting && (
-          <LoginMessage content='验证码错误' />
-        )}
+        {state.status === 'error' && state.type === 'mobile' && !submitting && <LoginMessage content='验证码错误' />}
         {type === 'mobile' && (
           <>
             <ProFormText

@@ -1,8 +1,8 @@
 import { stringify } from 'querystring';
 
-import { useEffect } from 'react';
-import { useConcent } from 'concent';
 import { Redirect, useLocation } from '@vitjs/runtime';
+import { useConcent } from 'concent';
+import { useEffect } from 'react';
 
 import PageLoading from '@/components/PageLoading';
 

@@ -3,12 +3,12 @@
  *
  * @see You can view component api by: https://github.com/ant-design/ant-design-pro-layout
  */
-import ProLayout from '@ant-design/pro-layout';
 import { HomeOutlined } from '@ant-design/icons';
+import ProLayout from '@ant-design/pro-layout';
 import { history, Link, useLocation } from '@vitjs/runtime';
 
-import RightContent from '@/containers/GlobalHeader/RightContent';
 import GlobalFooter from '@/containers/GlobalFooter';
+import RightContent from '@/containers/GlobalHeader/RightContent';
 
 import defaultSettings from '../../config/defaultSettings';
 
@@ -35,11 +35,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
       }}
       onMenuHeaderClick={() => history.push('/')}
       menuItemRender={(menuItemProps, defaultDom) => {
-        if (
-          menuItemProps.isUrl ||
-          !menuItemProps.path ||
-          location.pathname === menuItemProps.path
-        ) {
+        if (menuItemProps.isUrl || !menuItemProps.path || location.pathname === menuItemProps.path) {
           return defaultDom;
         }
         return <Link to={menuItemProps.path}>{defaultDom}</Link>;
@@ -54,11 +50,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
       ]}
       itemRender={(route, params, routes, paths) => {
         const first = routes.indexOf(route) === 0;
-        return first ? (
-          <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
-        ) : (
-          <span>{route.breadcrumbName}</span>
-        );
+        return first ? <Link to={paths.join('/')}>{route.breadcrumbName}</Link> : <span>{route.breadcrumbName}</span>;
       }}
       footerRender={() => <GlobalFooter />}
       // waterMarkProps={{

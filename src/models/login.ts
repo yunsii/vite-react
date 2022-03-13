@@ -1,8 +1,8 @@
 import { stringify } from 'querystring';
 
+import { history } from '@vitjs/runtime';
 import { message } from 'antd';
 import { defineModule } from 'concent';
-import { history } from '@vitjs/runtime';
 
 import { fakeAccountLogin } from '@/services/login';
 import { getPageQuery } from '@/utils/utils';

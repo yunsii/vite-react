@@ -49,9 +49,9 @@
     "vite-plugin-imp": "^2.0.4",
     "vite-plugin-optimize-persist": "^0.1.0",
     "vite-plugin-package-config": "^0.1.0",
-    "vite-plugin-windicss": "^1.6.3",
+    "vite-plugin-windicss": "^1.8.3",
     "vite-tsconfig-paths": "^2.3.0",
-    "windicss": "^3.4.3"
+    "windicss": "^3.5.1"
   },
   "vite": {
     "optimizeDeps": {
@@ -59,6 +59,7 @@
         "@ant-design/icons",
         "@ant-design/icons/BulbOutlined",
         "@ant-design/icons/SmileOutlined",
+        "@ant-design/icons/StarOutlined",
         "@ant-design/icons/UserOutlined",
         "@ant-design/pro-form",
         "@ant-design/pro-layout",
@@ -77,6 +78,7 @@
         "antd/es/row/style",
         "antd/es/skeleton/style",
         "antd/es/space/style",
+        "antd/es/table/style",
         "antd/es/tabs/style",
         "antd/es/typography/style",
         "classnames",

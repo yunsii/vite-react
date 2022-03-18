@@ -9,7 +9,7 @@ export default function AccountCenter() {
 
   const renderUserInfo = () => (
     <div>
-      <p className='pl-26px' mb='8px'>
+      <p className='pl-26px mb-8px'>
         <MailOutlined
           style={{
             marginRight: 8,
@@ -35,7 +35,9 @@ export default function AccountCenter() {
           <div>
             <div className='mb-24px text-center'>
               <img src={me.avatar} className='inline w-104px h-104px mb-20px rounded-full' />
-              <div className='mb-4px font-medium font-20px text-20px'>{me.name}</div>
+              <div className='mb-4px' w-font='medium' w-text='20px'>
+                {me.name}
+              </div>
               <div>{me.position}</div>
             </div>
             {renderUserInfo()}

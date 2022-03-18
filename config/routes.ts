@@ -33,6 +33,12 @@ export default [
                 component: './pages/Welcome',
               },
               {
+                path: '/ant-design',
+                icon: 'star',
+                name: 'Ant Design',
+                component: './pages/AntDesign',
+              },
+              {
                 path: '/concent',
                 icon: 'bulb',
                 name: 'Concent Demo',

@@ -8,13 +8,10 @@ import ProLayout from '@ant-design/pro-layout';
 import { history, Link, useLocation } from '@vitjs/runtime';
 
 import GlobalFooter from '@/containers/GlobalFooter';
-import RightContent from '@/containers/GlobalHeader/RightContent';
 
 import defaultSettings from '../../config/defaultSettings';
 
 import type { BasicLayoutProps as ProLayoutProps } from '@ant-design/pro-layout';
-
-const loginPath = '/user/login';
 
 export type BasicLayoutProps = {
   route: ProLayoutProps['route'];
@@ -27,12 +24,6 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
     <ProLayout
       logo='https://github.com/vitjs/vit/raw/master/icons/logo.svg'
       {...props}
-      onPageChange={() => {
-        // 如果没有登录，重定向到 login
-        if (localStorage.getItem('status') !== 'ok' && history.location.pathname !== loginPath) {
-          history.push(loginPath);
-        }
-      }}
       onMenuHeaderClick={() => history.push('/')}
       menuItemRender={(menuItemProps, defaultDom) => {
         if (menuItemProps.isUrl || !menuItemProps.path || location.pathname === menuItemProps.path) {
@@ -40,7 +31,6 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
         }
         return <Link to={menuItemProps.path}>{defaultDom}</Link>;
       }}
-      rightContentRender={() => <RightContent />}
       breadcrumbRender={(routers = []) => [
         {
           path: '/',

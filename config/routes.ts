@@ -1,22 +1,10 @@
 export default [
   {
     path: '/',
-    component: './layouts/BlankLayout',
+    component: './layouts/RootLayout',
     routes: [
       {
-        path: '/user',
-        component: './layouts/UserLayout',
-        routes: [
-          {
-            name: '登录',
-            path: '/user/login',
-            component: './pages/User/Login',
-          },
-        ],
-      },
-      {
         path: '/',
-        component: './layouts/SecurityLayout',
         routes: [
           {
             path: '/',
@@ -37,35 +25,6 @@ export default [
                 icon: 'star',
                 name: 'Ant Design',
                 component: './pages/AntDesign',
-              },
-              {
-                path: '/concent',
-                icon: 'bulb',
-                name: 'Concent Demo',
-                routes: [
-                  {
-                    path: '/concent/hello-world',
-                    name: 'Hello World',
-                    component: './pages/Concent/HelloWorld',
-                  },
-                ],
-              },
-              {
-                path: '/account',
-                icon: 'user',
-                name: '个人页',
-                routes: [
-                  {
-                    path: '/account/center',
-                    name: '个人中心',
-                    component: './pages/Account/Center',
-                  },
-                  {
-                    path: '/account/settings',
-                    name: '个人设置',
-                    component: './pages/Account/Settings',
-                  },
-                ],
               },
             ],
           },

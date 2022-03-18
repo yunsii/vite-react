@@ -52,14 +52,10 @@ export default defineConfig({
     }),
     vitApp({
       routes,
-      globalImport: {
-        aheadModules: ['concent.ts'],
-      },
       dynamicImport: {
         loading: './components/PageLoading',
       },
       exportStatic: {},
-      mock: { productionEnabled: true },
     }),
     windiCSS(),
     visualizer(),

@@ -8,6 +8,7 @@ import pkgConfig from 'vite-plugin-package-config';
 import { visualizer } from 'rollup-plugin-visualizer';
 import vitApp from '@vitjs/vit';
 import windiCSS from 'vite-plugin-windicss';
+import autoImport from 'unplugin-auto-import/vite';
 import { getThemeVariables } from 'antd/dist/theme';
 
 import routes from './config/routes';
@@ -26,6 +27,21 @@ export default defineConfig({
     tsconfigPaths(),
     pkgConfig(),
     optimizationPersist(),
+    autoImport({
+      imports: [
+        'react',
+        {
+          react: [
+            'useImperativeHandle',
+            'createElement',
+            'cloneElement',
+            'createContext',
+            'useLayoutEffect',
+            'forwardRef',
+          ],
+        },
+      ],
+    }),
     vitePluginImp({
       libList: [
         {

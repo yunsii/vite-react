@@ -23,6 +23,7 @@
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
+    "@honkhonk/vite-plugin-svgr": "^1.1.0",
     "@types/babel__core": "^7.1.17",
     "@types/classnames": "^2.2.11",
     "@types/node": "^14.14.37",

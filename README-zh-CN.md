@@ -8,10 +8,10 @@
 
 ## ✨ Features
 
-- 🛠 TypeScript + Eslint + Prettier + Stylelint 预设配置
-- ❤️ Less + Windi CSS 愉悦的 CSS 开发体验
+- 🛠 [TypeScript](https://github.com/microsoft/TypeScript) + [ESLint](https://github.com/eslint/eslint) + [Prettier](https://github.com/prettier/prettier) + [Stylelint](https://github.com/stylelint/stylelint) + [lint-staged](https://github.com/okonet/lint-staged) 预设配置
+- ❤️ [Less](https://github.com/less/less.js) + [Windi CSS](https://github.com/windicss/windicss) 愉悦的 CSS 开发体验
 - ⚙️ 完善的 Vite 插件预设，追求极致的开发体验
-- 💡 完整适配 antd，支持样式按需引入
+- 💡 完整适配 [Ant Design](https://github.com/ant-design/ant-design)，支持样式按需引入
 - 💎 提供不同定制程度的脚手架，自由选择，方便上手
 
 ## 总有一款适合你

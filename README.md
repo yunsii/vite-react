@@ -8,10 +8,10 @@ English | [简体中文](./README.zh-CN.md)
 
 ## ✨ Features
 
-- 🛠 TypeScript + Eslint + Prettier + Stylelint, preset configurations
-- ❤️ Less + Windi CSS, enjoyable CSS development experience
+- 🛠 [TypeScript](https://github.com/microsoft/TypeScript) + [ESLint](https://github.com/eslint/eslint) + [Prettier](https://github.com/prettier/prettier) + [Stylelint](https://github.com/stylelint/stylelint) + [lint-staged](https://github.com/okonet/lint-staged), preset configurations
+- ❤️ [Less](https://github.com/less/less.js) + [Windi CSS](https://github.com/windicss/windicss), enjoyable CSS development experience
 - ⚙️ Preset Vite plugins reasonable, the pursuit of the ultimate development experience
-- 💡 Fully features of antd, support style import on demand
+- 💡 Fully features of [Ant Design](https://github.com/ant-design/ant-design), support style import on demand
 - 💎 Provide different degrees of custom scaffolding, free choice, easy to use
 
 ## Always one option fit for you

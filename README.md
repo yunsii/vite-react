@@ -1,31 +1,33 @@
+English | [简体中文](./README.zh-CN.md)
+
 # Vite React
 
 🚀 Use Vite + React like a Pro!
 
-> 尝试通过 [Vite](https://github.com/vitejs/vite) 构建一个类 [Ant Design Pro](https://github.com/ant-design/ant-design-pro) 的项目，即从零搭建一个简单易用的中后台脚手架。
+> Try building an [Ant Design Pro](https://github.com/ant-design/ant-design-pro)-like project with [Vite](https://github.com/vitejs/vite), which builds an easy-to-use mid-background scaffolding from scratch.
 
 ## ✨ Features
 
-- 🛠 TypeScript + Eslint + Prettier + Stylelint 预设配置
-- ❤️ Less + Windi CSS 愉悦的 CSS 开发体验
-- ⚙️ 完善的 Vite 插件预设，追求极致的开发体验
-- 💡 完整适配 antd，支持样式按需引入
-- 💎 提供不同定制程度的脚手架，自由选择，方便上手
+- 🛠 TypeScript + Eslint + Prettier + Stylelint, preset configurations
+- ❤️ Less + Windi CSS, enjoyable CSS development experience
+- ⚙️ Preset Vite plugins reasonable, the pursuit of the ultimate development experience
+- 💡 Fully features of antd, support style import on demand
+- 💎 Provide different degrees of custom scaffolding, free choice, easy to use
 
-## 总有一款适合你
+## Always one option fit for you
 
-由于每个人需求不同，也为了减少用户的心智负担，所以将越来越复杂的本项目做了拆分。但开发环境配置保持不变，也方便用户个性化定制开发环境。以下展示的是各个分支预设的核心依赖。
+Due to the different needs of everybody, and in order to reduce the mental burden of users, the increasingly complex project was split, but the development environment configuration remained unchanged, which also made it convenient for users to customize the development environment. The following shows the preset core dependencies of each branch.
 
 ### [⭐️ feat/base](https://github.com/yunsii/vite-react/tree/feat/base)
 
-仅提供最原始的 React 开发支持，方便做一个无路由的小项目，比如 Hello World，抑或基于此搭建更复杂的脚手架。
+Only provides primitive React development support for small, routless projects such as Hello World or for custom more complex scaffolding.
 
 - [react](https://github.com/facebook/react)
 - [react-dom](https://github.com/facebook/react/blob/main/packages/react-dom/README.md)
 
 ### [⭐️ feat/vitjs](https://github.com/yunsii/vite-react/tree/feat/vitjs)
 
-基于 [vitjs/vit](https://github.com/vitjs/vit) 构建，接管了路由和应用入口，支持自定义 Mock 数据。可以很方便的搭建一个基于路由的复杂应用。
+Based on [vitjs/vit](https://github.com/vitjs/vit), take over the route and application entry, support custom MOCK data. It can be convenient to build a complicated application based on routing.
 
 - [react](https://github.com/facebook/react)
 - [react-dom](https://github.com/facebook/react/blob/main/packages/react-dom/README.md)
@@ -33,7 +35,7 @@
 
 ### [⭐️ master](https://github.com/yunsii/vite-react)*
 
-包含上个分支的所有特性，同时支持了 antd 的完整使用体验，实现了 Ant Design Pro 的页面布局。
+Contains all the features of the previous branch, while supporting the fully features of antd, ant implements of [Ant Design Pro](https://github.com/ant-design/ant-design-pro) page layout
 
 - [react](https://github.com/facebook/react)
 - [react-dom](https://github.com/facebook/react/blob/main/packages/react-dom/README.md)
@@ -44,7 +46,7 @@
 
 ### [⭐️ feat/concent](https://github.com/yunsii/vite-react/tree/feat/concent)
 
-包含上个分支的所有特性，使用 concent 作为全局状态管理工具。
+Contains all the features of the previous branch, Use [concent](https://github.com/concentjs/concent) as a global state management tool.
 
 - [react](https://github.com/facebook/react)
 - [react-dom](https://github.com/facebook/react/blob/main/packages/react-dom/README.md)

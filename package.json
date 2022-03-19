@@ -35,7 +35,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@ant-design/pro-layout": "^6.16.1",
-    "@vitjs/runtime": "^0.7.0",
+    "@vitjs/runtime": "^0.7.1",
     "ahooks": "^2.10.0",
     "antd": "^4.14.0",
     "classnames": "^2.2.6",

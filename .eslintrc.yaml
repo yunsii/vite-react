@@ -37,6 +37,12 @@ rules:
         pathGroups:
           [
             {
+              pattern: '*.svg?component',
+              patternOptions: { dot: true, nocomment: true, matchBase: true },
+              group: 'internal',
+              position: 'after',
+            },
+            {
               pattern: '*.svg',
               patternOptions: { dot: true, nocomment: true, matchBase: true },
               group: internal,

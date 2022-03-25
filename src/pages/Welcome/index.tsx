@@ -1,49 +1,59 @@
-import './index.less'
+import { PageContainer } from '@ant-design/pro-layout'
+import { Card, Alert, Typography } from 'antd'
+import classNames from 'classnames'
+
+import styles from './index.module.less'
+
+const CodePreview: React.FC = ({ children }) => (
+  <pre className={classNames(styles.pre, 'my-12px px-20px py-12px')}>
+    <code>
+      <Typography.Text copyable>{children}</Typography.Text>
+    </code>
+  </pre>
+)
 
 export default function Welcome() {
-  const [count, setCount] = useState<number>(0)
-
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img
-          src='https://github.com/vitjs/vit/raw/master/icons/logo.svg'
-          className='App-logo mb-24px'
-          alt='logo'
+    <PageContainer>
+      <Card>
+        <Alert
+          message={'更快更强的重型组件，已经发布。'}
+          type='success'
+          showIcon
+          banner
+          style={{
+            margin: -12,
+            marginBottom: 24,
+          }}
         />
-        <p>Hello Vite-React!</p>
-        <p>
-          <button
-            type='button'
-            className='px-8px rounded-8px'
-            onClick={() => setCount((currentCount) => currentCount + 1)}
-          >
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>Welcome/index.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
+        <Typography.Text strong>
+          高级表格
           <a
-            className='App-link'
-            href='https://reactjs.org'
-            target='_blank'
+            href='https://procomponents.ant.design/components/table'
             rel='noopener noreferrer'
+            target='__blank'
           >
-            Learn React
+            欢迎使用
           </a>
-          {' | '}
+        </Typography.Text>
+        <CodePreview>yarn add @ant-design/pro-table</CodePreview>
+        <Typography.Text
+          strong
+          style={{
+            marginBottom: 12,
+          }}
+        >
+          高级布局
           <a
-            className='App-link'
-            href='https://vitejs.dev/guide/features.html'
-            target='_blank'
+            href='https://procomponents.ant.design/components/layout'
             rel='noopener noreferrer'
+            target='__blank'
           >
-            Vite Docs
+            欢迎使用
           </a>
-        </p>
-      </header>
-    </div>
+        </Typography.Text>
+        <CodePreview>yarn add @ant-design/pro-layout</CodePreview>
+      </Card>
+    </PageContainer>
   )
 }

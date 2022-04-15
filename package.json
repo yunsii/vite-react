@@ -67,52 +67,8 @@
     "unplugin-auto-import": "^0.6.6",
     "vite": "^2.3.2",
     "vite-plugin-imp": "^2.0.4",
-    "vite-plugin-optimize-persist": "^0.1.0",
-    "vite-plugin-package-config": "^0.1.0",
     "vite-plugin-windicss": "^1.8.3",
     "vite-tsconfig-paths": "^2.3.0",
     "windicss": "^3.5.1"
-  },
-  "vite": {
-    "optimizeDeps": {
-      "include": [
-        "@vitjs/runtime",
-        "@ant-design/icons",
-        "@ant-design/icons/BulbOutlined",
-        "@ant-design/icons/SmileOutlined",
-        "@ant-design/icons/StarOutlined",
-        "@ant-design/icons/UserOutlined",
-        "@ant-design/pro-layout",
-        "@vitjs/runtime",
-        "antd",
-        "antd/es/alert/style",
-        "antd/es/avatar/style",
-        "antd/es/button/style",
-        "antd/es/card/style",
-        "antd/es/carousel/style",
-        "antd/es/cascader/style",
-        "antd/es/col/style",
-        "antd/es/collapse/style",
-        "antd/es/divider/style",
-        "antd/es/drawer/style",
-        "antd/es/dropdown/style",
-        "antd/es/menu/style",
-        "antd/es/message/style",
-        "antd/es/notification/style",
-        "antd/es/page-header/style",
-        "antd/es/rate/style",
-        "antd/es/row/style",
-        "antd/es/skeleton/style",
-        "antd/es/space/style",
-        "antd/es/spin/style",
-        "antd/es/steps/style",
-        "antd/es/table/style",
-        "antd/es/tabs/style",
-        "antd/es/typography/style",
-        "classnames",
-        "react",
-        "react-dom"
-      ]
-    }
   }
 }

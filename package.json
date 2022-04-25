@@ -11,7 +11,7 @@
     "build": "vite build",
     "serve": "vite preview --host",
     "start": "npm run dev",
-    "lint": "npm run lint:js && npm run lint:prettier && npm run tsc",
+    "lint": "npm run lint:js && tsc",
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",

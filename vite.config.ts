@@ -22,7 +22,6 @@ export default defineConfig({
         'react',
         {
           react: [
-            'useImperativeHandle',
             'createElement',
             'cloneElement',
             'createContext',

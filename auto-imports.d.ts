@@ -7,6 +7,7 @@ declare global {
   const forwardRef: typeof import('react')['forwardRef']
   const useCallback: typeof import('react')['useCallback']
   const useContext: typeof import('react')['useContext']
+  const useDebugValue: typeof import('react')['useDebugValue']
   const useEffect: typeof import('react')['useEffect']
   const useImperativeHandle: typeof import('react')['useImperativeHandle']
   const useLayoutEffect: typeof import('react')['useLayoutEffect']
